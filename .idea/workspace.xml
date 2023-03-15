@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Viðeigandi skrám bætt við.">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Drögum að tests bætt við.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +71,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ]
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -76,7 +86,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675987897743</updated>
-      <workItem from="1675987899247" duration="8685000" />
+      <workItem from="1675987899247" duration="9896000" />
+      <workItem from="1676979074969" duration="863000" />
+      <workItem from="1677084191063" duration="5066000" />
+      <workItem from="1678791656926" duration="5416000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
@@ -85,7 +98,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676126732678</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Viðeigandi skrám bætt við.">
+      <created>1676127785714</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676127785714</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Nýjum klösum bætt við.">
+      <created>1677103174269</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677103174269</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +131,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Viðeigandi skrám bætt við." />
-    <option name="LAST_COMMIT_MESSAGE" value="Viðeigandi skrám bætt við." />
+    <MESSAGE value="Nýjum klösum bætt við." />
+    <MESSAGE value="Drögum að tests bætt við." />
+    <option name="LAST_COMMIT_MESSAGE" value="Drögum að tests bætt við." />
   </component>
 </project>
