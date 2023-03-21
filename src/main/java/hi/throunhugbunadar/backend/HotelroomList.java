@@ -19,7 +19,9 @@ public class HotelroomList {
     }
 
     public List<HotelRooms> getList() {
-        // FILTER
+        /*
+            FILTER
+        */
         return hotelroomList;
     }
 
