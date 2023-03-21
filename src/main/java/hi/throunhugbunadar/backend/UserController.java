@@ -12,7 +12,7 @@ public class UserController {
      * Uppfæra breytingar á notanda í gagnagrunni.
      */
     public void updateUser() {
-
+        userRepository.updateUser(user);
     }
 
     /**
@@ -24,6 +24,19 @@ public class UserController {
      * @return hvort það heppnaðist að skrá notanda inn
      */
     public boolean login(String username, String password) {
+        User userLoggingIn;
+
+        try {
+            userLoggingIn = userRepository.getUser(username);
+        } catch (Exception e) {
+            return false;
+        }
+
+        if(userLoggingIn.validatePassword(password)) {
+            this.user = userLoggingIn;
+            return true;
+        }
+
         return false;
     }
 
