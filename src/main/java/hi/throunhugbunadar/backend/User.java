@@ -37,7 +37,8 @@ public class User {
         return this.password.equals(password);
     }
 
-    public void changePassword(String password) {
+    public void changePassword(String password) throws Exception {
+        if(password.equals("")) throw new Exception();
         this.password = password;
     }
 

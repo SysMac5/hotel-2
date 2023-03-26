@@ -1,19 +1,20 @@
 package hi.throunhugbunadar.backend;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class UserControllerTest {
     private UserController userController;
 
-    @Before
+    @BeforeEach
     public void setUp() {
-        userController = new UserController();
+        try {
+            userController = new UserController();
+        } catch (Exception e) {
+            Assertions.fail();
+        }
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         userController = null;
     }
@@ -88,11 +89,14 @@ public class UserControllerTest {
         String testPassword = "egErHeima123";
         userController.login(testUsername, testPassword);
 
-        // Gyða
-        // Þarf að vera PaymentInfoMock
-        // PaymentInfoMock er klasi og PaymentInfo er interface
-        // skoða nýjasta fyrirlestur
-        PaymentInfo newPaymentInfo = new PaymentInfo("1234876534569876", "03", "02", "123");
+        PaymentInfo newPaymentInfo;
+        try {
+            newPaymentInfo = new PaymentInfo("1234876534569876", "03", "02", "123");
+        } catch (Exception e) {
+            Assertions.fail();
+            return;
+        }
+
         userController.getUser().setPaymentInfo(newPaymentInfo);
 
         userController.updateUser();
@@ -105,26 +109,22 @@ public class UserControllerTest {
 
     @Test
     public void testChangeToInvalidPaymentInfo() {
-        try {
-            // Gyða
-            // Hér aftur: PaymentInfoMock
-            new PaymentInfo("sCat", "777", "9", "0öö");
-        } catch (Exception e) {
-            Assertions.fail();
-        }
+        Assertions.assertThrows(Exception.class, () -> new PaymentInfo("sCat", "777", "9", "0öö"));
     }
 
     @Test
     public void testChangePassword() {
-        // Gyða
-        // Þarf ekki að setja upp userinn fyrst?
-        // Ath að það þarf þá að vera UserMock
         String testUsername = "maggi2370";
         String testPassword = "egErHeima123";
         userController.login(testUsername, testPassword);
 
         String newPassword = "egErEkkiHeima321";
-        userController.getUser().changePassword(newPassword);
+        try {
+            userController.getUser().changePassword(newPassword);
+        } catch (Exception e) {
+            Assertions.fail();
+        }
+
 
         userController.updateUser();
 
@@ -139,10 +139,6 @@ public class UserControllerTest {
 
         String newPassword = "";
 
-        try {
-            userController.getUser().changePassword(newPassword);
-        } catch (Exception e) {
-            Assertions.fail();
-        }
+        Assertions.assertThrows(Exception.class, () -> {userController.getUser().changePassword(newPassword);});
     }
 }

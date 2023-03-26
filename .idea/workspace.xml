@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Búið til föll fyrir Hotel og HotelRooms klasa. Klasinn HotelroomList búinn til.">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Test uppfærð og Mock object bætt við.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelroomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelroomList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/PaymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/PaymentInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepositoryMock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -75,6 +80,45 @@
     ]
   }
 }</component>
+  <component name="RunManager" selected="JUnit.UserControllerTest">
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotel-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hi.throunhugbunadar.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hi.throunhugbunadar.backend" />
+      <option name="MAIN_CLASS_NAME" value="hi.throunhugbunadar.backend.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testLoginWithWrongPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotel-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hi.throunhugbunadar.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hi.throunhugbunadar.backend" />
+      <option name="MAIN_CLASS_NAME" value="hi.throunhugbunadar.backend.UserControllerTest" />
+      <option name="METHOD_NAME" value="testLoginWithWrongPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserControllerTest.testLoginWithWrongPassword" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -87,6 +131,8 @@
       <workItem from="1676979074969" duration="863000" />
       <workItem from="1677084191063" duration="5066000" />
       <workItem from="1678791656926" duration="5416000" />
+      <workItem from="1679500076569" duration="2068000" />
+      <workItem from="1679854438404" duration="3414000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
@@ -130,6 +176,7 @@
     <MESSAGE value="Viðeigandi skrám bætt við." />
     <MESSAGE value="Nýjum klösum bætt við." />
     <MESSAGE value="Drögum að tests bætt við." />
-    <option name="LAST_COMMIT_MESSAGE" value="Drögum að tests bætt við." />
+    <MESSAGE value="Test uppfærð og Mock object bætt við." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test uppfærð og Mock object bætt við." />
   </component>
 </project>

@@ -6,7 +6,11 @@ package hi.throunhugbunadar.backend;
 
 public class UserController {
     private User user;
-    private UserRepository userRepository;
+    private final iUserRepository userRepository;
+
+    public UserController() throws Exception {
+        userRepository = new UserRepositoryMock();
+    }
 
     /**
      * Uppfæra breytingar á notanda í gagnagrunni.
