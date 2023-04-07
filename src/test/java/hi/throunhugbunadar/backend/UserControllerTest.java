@@ -8,7 +8,8 @@ public class UserControllerTest {
     @BeforeEach
     public void setUp() {
         try {
-            userController = new UserController();
+            iUserRepository userRepository = new UserRepositoryMock();
+            userController = new UserController(userRepository);
         } catch (Exception e) {
             Assertions.fail();
         }
@@ -139,6 +140,6 @@ public class UserControllerTest {
 
         String newPassword = "";
 
-        Assertions.assertThrows(Exception.class, () -> {userController.getUser().changePassword(newPassword);});
+        Assertions.assertThrows(Exception.class, () -> userController.getUser().changePassword(newPassword));
     }
 }

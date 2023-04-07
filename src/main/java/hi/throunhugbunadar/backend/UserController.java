@@ -10,11 +10,9 @@ public class UserController {
 
     /**
      * Smiður fyrir klasann.
-     *
-     * @throws Exception ef mock object kastar villu
      */
-    public UserController() throws Exception {
-        userRepository = new UserRepositoryMock();
+    public UserController(iUserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     /**
