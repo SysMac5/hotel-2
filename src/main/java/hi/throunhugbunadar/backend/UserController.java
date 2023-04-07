@@ -8,6 +8,11 @@ public class UserController {
     private User user;
     private final iUserRepository userRepository;
 
+    /**
+     * Smiður fyrir klasann.
+     *
+     * @throws Exception ef mock object kastar villu
+     */
     public UserController() throws Exception {
         userRepository = new UserRepositoryMock();
     }
