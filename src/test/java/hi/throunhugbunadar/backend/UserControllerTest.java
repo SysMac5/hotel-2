@@ -8,7 +8,7 @@ public class UserControllerTest {
     @BeforeEach
     public void setUp() {
         try {
-            iUserRepository userRepository = new UserRepository();
+            iUserRepository userRepository = new UserRepositoryMock();
             userController = new UserController(userRepository);
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
