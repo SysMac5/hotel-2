@@ -4,13 +4,13 @@ import java.sql.Date;
 import java.util.List;
 
 public class BookingController {
-    private final iBookingRepository hotelRepository;
+    private final iBookingRepository bookingRepository;
 
     /**
      * Smiður fyrir klasann.
      */
-    public BookingController(iBookingRepository hotelRepository) {
-        this.hotelRepository = hotelRepository;
+    public BookingController(iBookingRepository bookingRepository) {
+        this.bookingRepository = bookingRepository;
     }
 
     /**
@@ -52,7 +52,7 @@ public class BookingController {
      * @return fjöldi herbergja sem eru laus
      */
     public int howManyAvailable(Date dayBefore) {
-        return hotelRepository.howManyAvailable(dayBefore);
+        return bookingRepository.howManyAvailable(dayBefore);
     }
 
     public boolean reserveRooms(Reservation reservation) { // óklárað ! !
