@@ -1,28 +1,34 @@
 package hi.throunhugbunadar.backend;
 
 import java.awt.*;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Listi af hótelherbergjum.
  */
 
 public class HotelroomList {
-    private java.util.List<HotelRooms> hotelroomList;
+    private ArrayList<HotelRooms> hotelroomList;
     private int minPrice = 0;
     private int maxPrice = Integer.MAX_VALUE;
     private int minStars = 1;
     private int maxStars = 5;
 
-    public HotelroomList(java.util.List<HotelRooms> hotelroomList) {
+    public HotelroomList(ArrayList<HotelRooms> hotelroomList) {
         this.hotelroomList = hotelroomList;
     }
 
-    public List<HotelRooms> getList() {
-        /*
-            FILTER
-        */
-        return hotelroomList;
+    public ArrayList<HotelRooms> getList() {
+        ArrayList<HotelRooms> filteredList = new ArrayList<>();
+
+        for (HotelRooms room : hotelroomList) {
+            if (room.getPricePerNight() >= minPrice && room.getPricePerNight() <= maxPrice
+                    && room.getHotel().getStars() >= minStars && room.getHotel().getStars() <= maxStars) {
+                filteredList.add(room);
+            }
+        }
+
+        return filteredList;
     }
 
     public void filterByPrice(int minPrice, int maxPrice) {

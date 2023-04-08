@@ -2,7 +2,7 @@ package hi.throunhugbunadar.backend;
 
 import java.util.Date;
 
-public class Critera {
+public class Criteria {
     public String location;
     public Date arrival;
     public Date departure;
