@@ -14,7 +14,7 @@ public class HotelRepository implements iHotelRepository{
      * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
     public HotelRepository() throws SQLException {
-        String url = "jdbc:sqlite:/path/to/your/database.db"; // óklárað ! !
+        String url = "jdbc:sqlite:/path/to/your/database.db.db.db"; // óklárað ! !
         connection = DriverManager.getConnection(url);
     }
 

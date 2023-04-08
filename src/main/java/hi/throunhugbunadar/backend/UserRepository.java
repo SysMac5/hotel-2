@@ -35,7 +35,7 @@ public class UserRepository implements iUserRepository {
                     resultSet.getString("email"),
                     paymentInfo);
         } else {
-            throw new Exception("User not found in database");
+            throw new Exception("User not found in database.db.db");
         }
     }
 
