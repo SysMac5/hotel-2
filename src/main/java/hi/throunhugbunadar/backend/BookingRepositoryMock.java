@@ -1,11 +1,9 @@
 package hi.throunhugbunadar.backend;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
-public class HotelRepository implements iHotelRepository{
+public class BookingRepositoryMock implements iBookingRepository {
     Connection connection;
 
     /**
@@ -13,12 +11,12 @@ public class HotelRepository implements iHotelRepository{
      *
      * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
-    public HotelRepository() throws SQLException {
+    public BookingRepositoryMock() throws SQLException {
         String url = "jdbc:sqlite:/path/to/your/database.db.db.db"; // óklárað ! !
         connection = DriverManager.getConnection(url);
     }
 
-    public int howManyAvailable() { // óklárað ! !
+    public int howManyAvailable(Date dayBefore) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 
