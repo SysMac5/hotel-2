@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Bætti við BookingController, HotelRepository og UserRepository.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GG_7.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dyrholaey1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +155,7 @@
       <workItem from="1679854438404" duration="8413000" />
       <workItem from="1679999196523" duration="4650000" />
       <workItem from="1680878688543" duration="8258000" />
+      <workItem from="1680966960215" duration="2509000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
