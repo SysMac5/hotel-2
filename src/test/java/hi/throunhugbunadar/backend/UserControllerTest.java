@@ -126,10 +126,17 @@ public class UserControllerTest {
             Assertions.fail();
         }
 
-
         userController.updateUser();
 
         Assertions.assertTrue(userController.login(testUsername, newPassword));
+
+        newPassword = "egErHeima321";
+        try {
+            userController.getUser().changePassword(newPassword);
+        } catch (Exception e) {
+            Assertions.fail();
+        }
+        userController.updateUser();
     }
 
     @Test
