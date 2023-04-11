@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Færði mynd">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepositoryMock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/596c27ca-aca7-4326-996d-aa29c1a1078c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/596c27ca-aca7-4326-996d-aa29c1a1078c.xml" afterDir="false" />
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Breyta hotelRepository í bookingRepository.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iHotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,11 +81,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/images" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="hi.throunhugbunadar.backend" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.UserControllerTest">
@@ -230,14 +220,28 @@
       <option name="project" value="LOCAL" />
       <updated>1680963953129</updated>
     </task>
-    <task id="LOCAL-00010" summary="Færði mynd">
-      <created>1680970992505</created>
+    <task id="LOCAL-00010" summary="Bjó til interface fyrir HotelRepository. Method documentation fyrir HotelroomList.">
+      <created>1680985084039</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1680970992505</updated>
+      <updated>1680985084039</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Það var eitthvað vesen með að pusha áðan. Þetta eru örgl þær breytingar.">
+      <created>1680985138694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680985138694</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Breyta hotelRepository í bookingRepository.">
+      <created>1680985410800</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680985410800</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +265,9 @@
     <MESSAGE value="Test uppfærð og Mock object bætt við." />
     <MESSAGE value="Bætti við BookingController, HotelRepository og UserRepository." />
     <MESSAGE value="Bæta við .db." />
-    <MESSAGE value="Færði mynd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Færði mynd" />
+    <MESSAGE value="Bjó til interface fyrir HotelRepository. Method documentation fyrir HotelroomList." />
+    <MESSAGE value="Það var eitthvað vesen með að pusha áðan. Þetta eru örgl þær breytingar." />
+    <MESSAGE value="Breyta hotelRepository í bookingRepository." />
+    <option name="LAST_COMMIT_MESSAGE" value="Breyta hotelRepository í bookingRepository." />
   </component>
 </project>
