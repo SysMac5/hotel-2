@@ -1,12 +1,48 @@
 package hi.throunhugbunadar.backend;
 
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 /**
  * Tilvik af keyrslu.
  */
 
-public class UserController {
+public class UserController implements Initializable {
+    @FXML
+    private TextField usernameTextField;
+    @FXML
+    private TextField passwordTextField;
+    // ATH, sleppa?
+    @FXML
+    private Button loginButton;
+    @FXML
+    private Label alertLabel;
     private User user;
     private final iUserRepository userRepository;
+
+    // ATH, sleppa?
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+    public void buttonMouseClicked(javafx.scene.input.MouseEvent mouseEvent) {
+        String username = usernameTextField.getText();
+        String password = passwordTextField.getText();
+
+        if(login(username, password)) {
+            // login
+        }
+        else {
+            alertLabel.setText("Rangt notandanafn eða lykilorð");
+        }
+    }
 
     /**
      * Smiður fyrir klasann.
@@ -55,4 +91,6 @@ public class UserController {
     public User getUser() {
         return this.user;
     }
+
+
 }
