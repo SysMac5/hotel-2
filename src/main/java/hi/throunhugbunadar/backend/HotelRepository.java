@@ -15,7 +15,7 @@ public class HotelRepository implements iHotelRepository {
     }
 
     /**
-     * Finnur og skilar HotelroomList hlut sem inniheldur hótelherbergi sem uppfylla gefin leitarskilyrði.
+     * Finnur og skilar ArrayList sem inniheldur hótelherbergi sem uppfylla gefin leitarskilyrði.
      *
      * @param criteria Leitarskilyrði sem eru notuð til að leita að hótelherbergjum.
      * @return ArrayList með hótelherbergjum sem uppfylla gefin leitarskilyrði.
