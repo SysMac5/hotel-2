@@ -8,17 +8,12 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/GG_7.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="GG_8" uuid="27c43fd8-c294-43c9-bacd-42d2948f9d5a">
+    <data-source source="LOCAL" name="GG_8" uuid="4339a439-90fe-401f-9ac4-2f97673f543d">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/GG_8.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Gyða Perla\IdeaProjects\hotel-2\src\main\resources\GG_8.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/org/xerial/sqlite-jdbc/3.40.1.0/sqlite-jdbc-3.40.1.0.jar</url>
-        </library>
-      </libraries>
     </data-source>
   </component>
 </project>
