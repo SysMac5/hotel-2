@@ -12,11 +12,50 @@ public class BookingRepository implements iBookingRepository {
      * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
     public BookingRepository() throws SQLException {
-        String url = "jdbc:sqlite:/path/to/your/database.db.db.db"; // óklárað ! !
+        String url = "jdbc:sqlite:GG_8.db";
         connection = DriverManager.getConnection(url);
     }
 
-    public int howManyAvailable(Date dayBefore) { // óklárað ! !
+    /**
+     * Skilar hversu mörg herbergi eru laus fyrir gefna bókun.
+     *
+     * @param reservation bókunin
+     * @return fjöldi herbergja laus
+     */
+    public int howManyAvailable(Reservation reservation) { // óklárað ! !
+        Date arrival = reservation.getArrival();
+        Date departure = reservation.getDeparture();
+        int min = Integer.MAX_VALUE;
+        for (Date day = arrival; day.before(departure); day = nextDay(day)) {
+            if (howManyAvailable(day) < min) {
+                min = howManyAvailable(day);
+            }
+        }
+        return min;
+    }
+
+    /**
+     * Hjálparfall sem skilar deginum eftir {@code day}.
+     *
+     * @param day dagur
+     * @return dagurinn eftir {@code day}
+     */
+    private Date nextDay(Date day) {
+        if (day == null) throw new NullPointerException();
+        java.util.Calendar calendar = java.util.Calendar.getInstance();
+        calendar.setTime(day);
+        calendar.add(java.util.Calendar.DAY_OF_YEAR, 1);
+        java.util.Date dayAfter = calendar.getTime();
+        return new java.sql.Date(dayAfter.getTime());
+    }
+
+    /**
+     * Skilar fjölda herbergja sem eru laus nóttina eftir {@code dayBefore}.
+     *
+     * @param dayBefore dagur fyrir nóttina sem er athuguð
+     * @return fjöldi herbergja sem eru laus
+     */
+    private int howManyAvailable(Date dayBefore) {
         throw new UnsupportedOperationException();
     }
 

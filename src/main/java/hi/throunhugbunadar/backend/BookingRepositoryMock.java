@@ -16,7 +16,7 @@ public class BookingRepositoryMock implements iBookingRepository {
         connection = DriverManager.getConnection(url);
     }
 
-    public int howManyAvailable(Date dayBefore) { // óklárað ! !
+    public int howManyAvailable(Reservation reservation) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 

@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 public interface iBookingRepository {
-    int howManyAvailable(Date dayBefore);
+    int howManyAvailable(Reservation reservation);
 
     boolean reserveRooms(Reservation reservation);
 

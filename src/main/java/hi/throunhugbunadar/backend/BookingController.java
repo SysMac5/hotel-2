@@ -13,46 +13,8 @@ public class BookingController {
         this.bookingRepository = bookingRepository;
     }
 
-    /**
-     * Skilar fjölda herbergja sem eru laus yfir tímabil frá {@code arrival} til {@code departure}.
-     *
-     * @param arrival fyrsti dagur tímabils
-     * @param departure síðasti dagur tímabils
-     * @return fjöldi herbergja laus yfir tímabilið
-     */
-    public int howManyAvailable(Date arrival, Date departure) {
-        int min = Integer.MAX_VALUE;
-        for (Date day = arrival; day.before(departure); day = nextDay(day)) {
-            if (howManyAvailable(day) < min) {
-                min = howManyAvailable(day);
-            }
-        }
-        return min;
-    }
-
-    /**
-     * Hjálparfall sem skilar deginum eftir {@code day}.
-     *
-     * @param day dagur
-     * @return dagurinn eftir {@code day}
-     */
-    private Date nextDay(Date day) {
-        if (day == null) throw new NullPointerException();
-        java.util.Calendar calendar = java.util.Calendar.getInstance();
-        calendar.setTime(day);
-        calendar.add(java.util.Calendar.DAY_OF_YEAR, 1);
-        java.util.Date dayAfter = calendar.getTime();
-        return new java.sql.Date(dayAfter.getTime());
-    }
-
-    /**
-     * Skilar fjölda herbergja sem eru laus nóttina eftir {@code dayBefore}.
-     *
-     * @param dayBefore dagur fyrir nóttina sem er athuguð
-     * @return fjöldi herbergja sem eru laus
-     */
-    public int howManyAvailable(Date dayBefore) {
-        return bookingRepository.howManyAvailable(dayBefore);
+    private int howManyAvailable(Reservation reservation) {
+        return bookingRepository.howManyAvailable(reservation);
     }
 
     public boolean reserveRooms(Reservation reservation) { // óklárað ! !
