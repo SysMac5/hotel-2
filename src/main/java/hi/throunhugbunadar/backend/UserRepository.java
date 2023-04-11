@@ -11,7 +11,7 @@ public class UserRepository implements iUserRepository {
      * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
     public UserRepository() throws SQLException {
-        String url = "jdbc:sqlite:GG_7.db";
+        String url = "jdbc:sqlite:GG_8.db";
         connection = DriverManager.getConnection(url);
     }
 
@@ -35,7 +35,7 @@ public class UserRepository implements iUserRepository {
                     resultSet.getString("email"),
                     paymentInfo);
         } else {
-            throw new Exception("User not found in database.db.db");
+            throw new Exception("User not found in database");
         }
     }
 
