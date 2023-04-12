@@ -57,6 +57,15 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.fxml</include>
+                    <include>**/*.css</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -73,7 +82,7 @@
                 <configuration>
                     <jlinkImageName>hellofx</jlinkImageName>
                     <launcher>launcher</launcher>
-                    <mainClass>hellofx/org.openjfx.App</mainClass>
+                    <mainClass>hi.throunhugbunadar.frontend.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>

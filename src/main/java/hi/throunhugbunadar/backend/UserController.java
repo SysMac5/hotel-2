@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**
@@ -46,8 +47,20 @@ public class UserController implements Initializable {
 
     /**
      * Smiður fyrir klasann.
+     *
+     * @throws SQLException villumelding sem tengist gagnagrunni
      */
-    public UserController(iUserRepository userRepository) {
+    public UserController() throws SQLException {
+        this.userRepository = new UserRepository();
+    }
+
+    /**
+     * Smiður fyrir klasann.
+     *
+     * @param userRepository tenging við gagnagrunn
+     * @throws SQLException villumelding sem tengist gagnagrunni
+     */
+    public UserController(iUserRepository userRepository) throws SQLException {
         this.userRepository = userRepository;
     }
 
