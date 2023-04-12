@@ -1,0 +1,273 @@
+Index: src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml b/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml
+new file mode 100644
+--- /dev/null	(date 1681300464760)
++++ b/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml	(date 1681300464760)
+@@ -0,0 +1,109 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.geometry.Insets?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.control.TextField?>
++<?import javafx.scene.layout.HBox?>
++<?import javafx.scene.layout.VBox?>
++<?import javafx.scene.text.Font?>
++
++
++<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hi.throunhugbunadar.backend.UserController">
++<children>
++    <Label text="Mínar upplýsingar">
++        <VBox.margin>
++            <Insets bottom="5.0" left="10.0" top="5.0" />
++        </VBox.margin>
++        <font>
++            <Font size="24.0" />
++        </font>
++        <padding>
++            <Insets top="15.0" />
++        </padding>
++    </Label>
++    <Label text="Grunnupplýsingar">
++        <VBox.margin>
++            <Insets bottom="5.0" left="10.0" top="15.0" />
++        </VBox.margin>
++        <font>
++            <Font size="14.0" />
++        </font>
++    </Label>
++    <VBox alignment="CENTER_LEFT">
++        <children>
++            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
++                <children>
++                    <VBox spacing="5.0">
++                        <children>
++                            <Label prefHeight="25.0" text="Fullt nafn:" />
++                            <Label prefHeight="25.0" text="Notandanafn:" />
++                            <Label prefHeight="25.0" text="Símanúmer:" />
++                            <Label prefHeight="25.0" text="Netfang:" />
++                        </children>
++                    </VBox>
++                    <VBox prefHeight="200.0" prefWidth="200.0" spacing="5.0">
++                        <children>
++                            <TextField fx:id="textFieldName" />
++                            <Label fx:id="labelUsername" prefHeight="25.0" />
++                            <TextField fx:id="textFieldPhoneNumber" maxWidth="-Infinity" prefWidth="70.0" />
++                            <TextField fx:id="textFieldEmail" maxWidth="-Infinity" prefWidth="150.0" />
++                        </children>
++                    </VBox>
++                </children>
++            </HBox>
++        </children>
++        <VBox.margin>
++            <Insets bottom="10.0" left="20.0" top="10.0" />
++        </VBox.margin>
++    </VBox>
++    <Label text="Kortaupplýsingar">
++        <VBox.margin>
++            <Insets bottom="5.0" left="10.0" top="15.0" />
++        </VBox.margin>
++        <font>
++            <Font size="14.0" />
++        </font>
++    </Label>
++    <VBox>
++        <children>
++            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
++                <children>
++                    <VBox spacing="5.0">
++                        <children>
++                            <Label prefHeight="25.0" text="Kortanúmer:" />
++                            <Label prefHeight="25.0" text="Gildistími (MM/YY):" />
++                            <Label prefHeight="25.0" text="CVV:" />
++                        </children>
++                    </VBox>
++                    <VBox prefHeight="200.0" prefWidth="200.0" spacing="5.0">
++                        <children>
++                            <TextField fx:id="textFieldCardNumber" />
++                            <HBox alignment="CENTER_LEFT" spacing="5.0">
++                                <children>
++                                    <TextField fx:id="textFieldMonthValid" alignment="CENTER" prefWidth="30.0" />
++                                    <Label text="/" />
++                                    <TextField fx:id="textFieldYearValid" alignment="CENTER" prefWidth="30.0" />
++                                </children>
++                            </HBox>
++                            <TextField fx:id="textFieldCvv" alignment="CENTER" maxWidth="-Infinity" prefWidth="35.0" />
++                        </children>
++                    </VBox>
++                </children>
++            </HBox>
++        </children>
++        <VBox.margin>
++            <Insets left="20.0" top="10.0" />
++        </VBox.margin>
++    </VBox>
++    <HBox alignment="CENTER_RIGHT">
++        <children>
++            <Button mnemonicParsing="false" onMouseClicked="#vistaMouseClicked" text="Vista">
++                <HBox.margin>
++                    <Insets bottom="20.0" right="20.0" top="10.0" />
++                </HBox.margin>
++            </Button>
++        </children>
++    </HBox>
++</children>
++</VBox>
+Index: src/main/java/hi/throunhugbunadar/frontend/search.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/hi/throunhugbunadar/frontend/search.fxml b/src/main/java/hi/throunhugbunadar/frontend/search.fxml
+new file mode 100644
+--- /dev/null	(date 1681303506293)
++++ b/src/main/java/hi/throunhugbunadar/frontend/search.fxml	(date 1681303506293)
+@@ -0,0 +1,74 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import javafx.geometry.Insets?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.ChoiceBox?>
++<?import javafx.scene.control.DatePicker?>
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.control.Menu?>
++<?import javafx.scene.control.MenuBar?>
++<?import javafx.scene.control.TextField?>
++<?import javafx.scene.layout.HBox?>
++<?import javafx.scene.layout.VBox?>
++<?import javafx.scene.text.Font?>
++
++<VBox prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hi.throunhugbunadar.backend.HotelController">
++    <children>
++        <MenuBar VBox.vgrow="NEVER">
++            <menus>
++                <Menu mnemonicParsing="false" onAction="#userInformationOnAction" text="Mínar upplýsingar" />
++            </menus>
++        </MenuBar>
++        <HBox alignment="CENTER_RIGHT" spacing="5.0">
++            <children>
++                <TextField fx:id="textFieldHotel" text="Leita af hóteli" />
++                <Button mnemonicParsing="false" onMouseClicked="#leitaHotelMouseClicked" text="Leita" />
++            </children>
++            <VBox.margin>
++                <Insets bottom="10.0" right="10.0" top="10.0" />
++            </VBox.margin>
++        </HBox>
++        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Hótel á Íslandi">
++            <font>
++                <Font size="24.0" />
++            </font>
++            <VBox.margin>
++                <Insets bottom="20.0" top="5.0" />
++            </VBox.margin>
++        </Label>
++        <HBox alignment="CENTER" spacing="30.0">
++            <children>
++                <VBox alignment="CENTER_LEFT" spacing="5.0">
++                    <children>
++                        <Label prefHeight="25.0" text="Staðsetning:" />
++                        <Label prefHeight="25.0" text="Koma:" />
++                        <Label prefHeight="25.0" text="Brottför:" />
++                        <Label prefHeight="25.0" text="Fjöldi gesta í herbergi:" />
++                    </children>
++                    <HBox.margin>
++                        <Insets left="20.0" />
++                    </HBox.margin>
++                </VBox>
++                <VBox spacing="5.0">
++                    <children>
++                        <ChoiceBox fx:id="choiceBoxLocation" prefWidth="125.0" />
++                        <DatePicker fx:id="datePickerArrival" maxWidth="-Infinity" prefWidth="100.0" />
++                        <DatePicker fx:id="datePickerDeparture" maxWidth="-Infinity" prefWidth="100.0" />
++                        <TextField fx:id="textFieldGuestCount" maxWidth="-Infinity" prefWidth="30.0" />
++                    </children>
++                </VBox>
++            </children>
++            <VBox.margin>
++                <Insets bottom="10.0" />
++            </VBox.margin>
++        </HBox>
++        <HBox alignment="CENTER">
++            <children>
++                <Button mnemonicParsing="false" onMouseClicked="#leitaHotelherbergiMouseClicked" text="Leita" />
++            </children>
++            <VBox.margin>
++                <Insets bottom="20.0" />
++            </VBox.margin>
++        </HBox>
++    </children>
++</VBox>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"74f809db-f7fd-4dc9-bc40-ff4e70b73b6e\" name=\"Changes\" comment=\"Bætti við viðmóti fyrir innskráningu. Bjó til Main fall til að geta keyrt forritið sjálft. Virkar ekki, vantar einhverjar tengingar í IntelliJ.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExportToHTMLSettings\">\r\n    <option name=\"OUTPUT_DIRECTORY\" value=\"$PROJECT_DIR$/exportToHTML\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"850a6dfc-92c0-462f-9c27-aeb29dec36b0\" />\r\n        <option name=\"url\" value=\"https://github.com/SysMac5/hotel-2.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2LWXdDIMZINvUgareR1fIGqRvrt\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"C:/Users/Gyða Perla/Documents/HI_tolvunarfraedi/vor_1/Vidmotsforritun/Skilaverkefni6\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"database.query.execution\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"sqlite\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/images\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"hi.throunhugbunadar.backend\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"hi.throunhugbunadar.frontend.Main\" />\r\n      <module name=\"hotel-2\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"--module-path /path/to/JavaFX/lib --add-modules=javafx.controls\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"hi.throunhugbunadar.frontend.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UserControllerTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"hotel-2\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"hi.throunhugbunadar.backend.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"hi.throunhugbunadar.backend\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"hi.throunhugbunadar.backend.UserControllerTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UserControllerTest.testLogin\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"hotel-2\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"hi.throunhugbunadar.backend.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"hi.throunhugbunadar.backend\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"hi.throunhugbunadar.backend.UserControllerTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testLogin\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UserControllerTest.testLoginWithWrongPassword\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"hotel-2\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"hi.throunhugbunadar.backend.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"hi.throunhugbunadar.backend\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"hi.throunhugbunadar.backend.UserControllerTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testLoginWithWrongPassword\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"JUnit.UserControllerTest\" />\r\n      <item itemvalue=\"JUnit.UserControllerTest.testLogin\" />\r\n      <item itemvalue=\"JUnit.UserControllerTest.testLoginWithWrongPassword\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"JUnit.UserControllerTest\" />\r\n        <item itemvalue=\"JUnit.UserControllerTest.testLogin\" />\r\n        <item itemvalue=\"JUnit.UserControllerTest.testLoginWithWrongPassword\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"74f809db-f7fd-4dc9-bc40-ff4e70b73b6e\" name=\"Changes\" comment=\"\" />\r\n      <created>1675987897743</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1675987897743</updated>\r\n      <workItem from=\"1675987899247\" duration=\"9896000\" />\r\n      <workItem from=\"1676979074969\" duration=\"863000\" />\r\n      <workItem from=\"1677084191063\" duration=\"5066000\" />\r\n      <workItem from=\"1678791656926\" duration=\"5416000\" />\r\n      <workItem from=\"1679500076569\" duration=\"2068000\" />\r\n      <workItem from=\"1679854438404\" duration=\"8413000\" />\r\n      <workItem from=\"1679999196523\" duration=\"4650000\" />\r\n      <workItem from=\"1680878688543\" duration=\"14073000\" />\r\n      <workItem from=\"1681243851061\" duration=\"4275000\" />\r\n      <workItem from=\"1681295566238\" duration=\"889000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Viðeigandi skrám bætt við.\">\r\n      <created>1676126732678</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676126732678</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Viðeigandi skrám bætt við.\">\r\n      <created>1676127785714</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676127785714</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Nýjum klösum bætt við.\">\r\n      <created>1677103174269</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1677103174269</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Test uppfærð og Mock object bætt við.\">\r\n      <created>1679858032645</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1679858032645</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Test uppfærð og Mock object bætt við.\">\r\n      <created>1680878786251</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680878786251</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Bætti við BookingController, HotelRepository og UserRepository.\">\r\n      <created>1680887839531</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680887839531</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Bæta við .db.\">\r\n      <created>1680963930309</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680963930309</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Bæta við .db.\">\r\n      <created>1680963945387</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680963945387</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Bæta við .db.\">\r\n      <created>1680963953129</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680963953129</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Færði mynd\">\r\n      <created>1680970992505</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680970992505</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Breyta HotelRepository í BookingRepository.\">\r\n      <created>1681213166492</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681213166492</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Lýsingar á föll í HotelRepository.\">\r\n      <created>1681214306001</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681214306001</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Laga lýsingar á föllum í HotelRepository.\">\r\n      <created>1681214793425</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681214793425</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Bætti við viðmóti fyrir innskráningu. Bjó til Main fall til að geta keyrt forritið sjálft. Virkar ekki, vantar einhverjar tengingar í IntelliJ.\">\r\n      <created>1681251605048</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681251605048</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Viðeigandi skrám bætt við.\" />\r\n    <MESSAGE value=\"Nýjum klösum bætt við.\" />\r\n    <MESSAGE value=\"Drögum að tests bætt við.\" />\r\n    <MESSAGE value=\"Test uppfærð og Mock object bætt við.\" />\r\n    <MESSAGE value=\"Bætti við BookingController, HotelRepository og UserRepository.\" />\r\n    <MESSAGE value=\"Bæta við .db.\" />\r\n    <MESSAGE value=\"Færði mynd\" />\r\n    <MESSAGE value=\"Einhverjar breytingar.\" />\r\n    <MESSAGE value=\"Breyta HotelRepository í BookingRepository.\" />\r\n    <MESSAGE value=\"Lýsingar á föll í HotelRepository.\" />\r\n    <MESSAGE value=\"Laga lýsingar á föllum í HotelRepository.\" />\r\n    <MESSAGE value=\"Bætti við viðmóti fyrir innskráningu. Bjó til Main fall til að geta keyrt forritið sjálft. Virkar ekki, vantar einhverjar tengingar í IntelliJ.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Bætti við viðmóti fyrir innskráningu. Bjó til Main fall til að geta keyrt forritið sjálft. Virkar ekki, vantar einhverjar tengingar í IntelliJ.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3d671aa5432891fd5b63cdd673075f38d13871c5)
++++ b/.idea/workspace.xml	(date 1681303642160)
+@@ -4,9 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Bætti við viðmóti fyrir innskráningu. Bjó til Main fall til að geta keyrt forritið sjálft. Virkar ekki, vantar einhverjar tengingar í IntelliJ.">
++    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Breytti aftur í Java 11. Skrifaði lýsingu fyrir mouseClicked event.">
++      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/search.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -20,8 +21,9 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Interface" />
+-        <option value="FxmlFile" />
+         <option value="Class" />
++        <option value="JavaFXApplication" />
++        <option value="FxmlFile" />
+       </list>
+     </option>
+   </component>
+@@ -183,7 +185,7 @@
+       <workItem from="1679999196523" duration="4650000" />
+       <workItem from="1680878688543" duration="14073000" />
+       <workItem from="1681243851061" duration="4275000" />
+-      <workItem from="1681295566238" duration="889000" />
++      <workItem from="1681295566238" duration="2856000" />
+     </task>
+     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
+       <created>1676126732678</created>
+@@ -283,7 +285,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1681251605048</updated>
+     </task>
+-    <option name="localTasksCounter" value="15" />
++    <task id="LOCAL-00015" summary="Breytti aftur í Java 11. Skrifaði lýsingu fyrir mouseClicked event.">
++      <created>1681296497607</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1681296497607</updated>
++    </task>
++    <option name="localTasksCounter" value="16" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -313,6 +322,7 @@
+     <MESSAGE value="Lýsingar á föll í HotelRepository." />
+     <MESSAGE value="Laga lýsingar á föllum í HotelRepository." />
+     <MESSAGE value="Bætti við viðmóti fyrir innskráningu. Bjó til Main fall til að geta keyrt forritið sjálft. Virkar ekki, vantar einhverjar tengingar í IntelliJ." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Bætti við viðmóti fyrir innskráningu. Bjó til Main fall til að geta keyrt forritið sjálft. Virkar ekki, vantar einhverjar tengingar í IntelliJ." />
++    <MESSAGE value="Breytti aftur í Java 11. Skrifaði lýsingu fyrir mouseClicked event." />
++    <option name="LAST_COMMIT_MESSAGE" value="Breytti aftur í Java 11. Skrifaði lýsingu fyrir mouseClicked event." />
+   </component>
+ </project>
+\ No newline at end of file
