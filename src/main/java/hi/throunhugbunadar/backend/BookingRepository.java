@@ -57,11 +57,34 @@ public class BookingRepository implements iBookingRepository {
      * @param hotelRoomId auðkenni hotelherbergistegundar
      * @return fjöldi herbergja sem eru laus
      */
-    private int howManyAvailable(Date dayBefore, int hotelRoomId) {
+
+    private int howManyAvailable(Date dayBefore, int hotelRoomId) throws SQLException {
+        PreparedStatement statement1 = connection.prepareStatement("SELECT SUM(r.number_of_rooms) AS booked_rooms FROM reservations r\n" +
+                "JOIN hotel_rooms hr ON r.hotel_rooms_id = hr.id WHERE hr.id = ?\n" +
+                "AND (arrival_date <= ? AND departure_date > ?)\n");
+        statement1.setInt(1, hotelRoomId);
+        statement1.setDate(2, dayBefore);
+        statement1.setDate(3, dayBefore);
+        int Occupied = statement.executeQuery();
+
+
+        PreparedStatement statement2 = connection.prepareStatement("SELECT capacity from hotel_rooms where id = ?");
+
+
+        statement1.setInt(1, hotelRoomId);
+
+
+        int Capacity = statement2.executeQuery();
+
+
+        return Capacity - Occupied;
+
         throw new UnsupportedOperationException();
+
     }
 
-    public boolean reserveRooms(Reservation reservation) { // óklárað ! !
+
+        public boolean reserveRooms(Reservation reservation) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 
