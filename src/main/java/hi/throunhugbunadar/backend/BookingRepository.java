@@ -65,16 +65,10 @@ public class BookingRepository implements iBookingRepository {
         statement1.setInt(1, hotelRoomId);
         statement1.setDate(2, dayBefore);
         statement1.setDate(3, dayBefore);
-        int Occupied = statement.executeQuery();
-
+        Occupied = statement1.executeQuery();
 
         PreparedStatement statement2 = connection.prepareStatement("SELECT capacity from hotel_rooms where id = ?");
-
-
-        statement1.setInt(1, hotelRoomId);
-
-
-        int Capacity = statement2.executeQuery();
+        ResultSet Capacity = statement2.executeQuery();
 
 
         return Capacity - Occupied;
