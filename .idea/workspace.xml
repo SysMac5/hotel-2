@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Virkar núna!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRooms.java" afterDir="false" />
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Push var rejected, veit ekki hvaða breytingar eru hérna.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,6 +304,7 @@
     <MESSAGE value="Lýsingar á föll í HotelRepository." />
     <MESSAGE value="Laga lýsingar á föllum í HotelRepository." />
     <MESSAGE value="Virkar núna!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Virkar núna!" />
+    <MESSAGE value="Push var rejected, veit ekki hvaða breytingar eru hérna." />
+    <option name="LAST_COMMIT_MESSAGE" value="Push var rejected, veit ekki hvaða breytingar eru hérna." />
   </component>
 </project>

@@ -1,5 +1,8 @@
 package hi.throunhugbunadar.backend;
 
+import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
+
 import java.util.ArrayList;
 
 // ATH, hafa documention hér?
@@ -53,5 +56,14 @@ public class HotelController {
             // ATH, skila hverju?
             throw new Exception();
         }
+    }
+
+    public void userInformationOnAction(ActionEvent actionEvent) {
+    }
+
+    public void leitaHotelMouseClicked(MouseEvent mouseEvent) {
+    }
+
+    public void leitaHotelherbergiMouseClicked(MouseEvent mouseEvent) {
     }
 }
