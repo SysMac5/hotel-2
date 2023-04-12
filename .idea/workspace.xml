@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="setja inn í howManyAvailable">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Lýsingar á föll í HotelRepository.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +136,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.UserControllerTest" />
+      <item itemvalue="JUnit.UserControllerTest.testLogin" />
+      <item itemvalue="JUnit.UserControllerTest.testLoginWithWrongPassword" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserControllerTest" />
@@ -245,14 +250,7 @@
       <option name="project" value="LOCAL" />
       <updated>1681214306001</updated>
     </task>
-    <task id="LOCAL-00013" summary="setja inn í howManyAvailable">
-      <created>1681304154083</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1681304154083</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +278,6 @@
     <MESSAGE value="Einhverjar breytingar." />
     <MESSAGE value="Breyta HotelRepository í BookingRepository." />
     <MESSAGE value="Lýsingar á föll í HotelRepository." />
-    <MESSAGE value="setja inn í howManyAvailable" />
-    <option name="LAST_COMMIT_MESSAGE" value="setja inn í howManyAvailable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lýsingar á föll í HotelRepository." />
   </component>
 </project>

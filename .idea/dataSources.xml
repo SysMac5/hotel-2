@@ -27,5 +27,12 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="GG_9" uuid="816eb0d8-0066-4963-b93a-f333a464cd94">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/Desktop/R/Throun_hugb/GG_9.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
