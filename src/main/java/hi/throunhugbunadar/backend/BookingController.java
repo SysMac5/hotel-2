@@ -1,6 +1,7 @@
 package hi.throunhugbunadar.backend;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.List;
 
 public class BookingController {
@@ -13,7 +14,7 @@ public class BookingController {
         this.bookingRepository = bookingRepository;
     }
 
-    private int howManyAvailable(Reservation reservation) {
+    private int howManyAvailable(Reservation reservation) throws SQLException {
         return bookingRepository.howManyAvailable(reservation);
     }
 

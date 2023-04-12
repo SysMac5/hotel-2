@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Bætti við GG_9">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GG_9.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="setja inn í howManyAvailable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,8 +81,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="hi.throunhugbunadar.backend" />
@@ -251,12 +250,12 @@
       <option name="project" value="LOCAL" />
       <updated>1681214306001</updated>
     </task>
-    <task id="LOCAL-00013" summary="Bætti við GG_9">
-      <created>1681318561901</created>
+    <task id="LOCAL-00013" summary="setja inn í howManyAvailable">
+      <created>1681304154083</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1681318561901</updated>
+      <updated>1681304154083</updated>
     </task>
     <option name="localTasksCounter" value="14" />
     <servers />
@@ -286,7 +285,7 @@
     <MESSAGE value="Einhverjar breytingar." />
     <MESSAGE value="Breyta HotelRepository í BookingRepository." />
     <MESSAGE value="Lýsingar á föll í HotelRepository." />
-    <MESSAGE value="Bætti við GG_9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bætti við GG_9" />
+    <MESSAGE value="setja inn í howManyAvailable" />
+    <option name="LAST_COMMIT_MESSAGE" value="setja inn í howManyAvailable" />
   </component>
 </project>
