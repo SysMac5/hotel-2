@@ -12,7 +12,7 @@ public class BookingRepository implements iBookingRepository {
      * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
     public BookingRepository() throws SQLException {
-        String url = "jdbc:sqlite:GG_8.db";
+        String url = "jdbc:sqlite:GG_9.db";
         connection = DriverManager.getConnection(url);
     }
 
