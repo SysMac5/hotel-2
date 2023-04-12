@@ -25,10 +25,11 @@ public class BookingRepository implements iBookingRepository {
     public int howManyAvailable(Reservation reservation) { // óklárað ! !
         Date arrival = reservation.getArrival();
         Date departure = reservation.getDeparture();
+        int hotelRoomId = reservation.getHotelType().getId();
         int min = Integer.MAX_VALUE;
         for (Date day = arrival; day.before(departure); day = nextDay(day)) {
-            if (howManyAvailable(day) < min) {
-                min = howManyAvailable(day);
+            if (howManyAvailable(day, hotelRoomId) < min) {
+                min = howManyAvailable(day, hotelRoomId);
             }
         }
         return min;
@@ -53,9 +54,10 @@ public class BookingRepository implements iBookingRepository {
      * Skilar fjölda herbergja sem eru laus nóttina eftir {@code dayBefore}.
      *
      * @param dayBefore dagur fyrir nóttina sem er athuguð
+     * @param hotelRoomId auðkenni hotelherbergistegundar
      * @return fjöldi herbergja sem eru laus
      */
-    private int howManyAvailable(Date dayBefore) {
+    private int howManyAvailable(Date dayBefore, int hotelRoomId) {
         throw new UnsupportedOperationException();
     }
 

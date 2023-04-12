@@ -1,5 +1,6 @@
 package hi.throunhugbunadar.backend;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class HotelRepository implements iHotelRepository {
@@ -22,6 +23,31 @@ public class HotelRepository implements iHotelRepository {
      */
     @Override
     public ArrayList<HotelRooms> searchByCriteria(Criteria criteria) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Hjálparfall sem skilar hversu mörg herbergi af
+     * hotelherbergjategund eru laus á gefnu tímabili.
+     *
+     * @param arrival komudagur
+     * @param departure brottfarardagur
+     * @param hotelRoomId auðkenni hotelherbergjategundar
+     * @return fjöldi herbergja laus
+     */
+    private int howManyAvailable(Date arrival, Date departure, int hotelRoomId) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Hjálparfall skilar fjölda herbergja af ákveðinni hotelherbergjategund
+     * sem eru laus nóttina eftir {@code dayBefore}.
+     *
+     * @param dayBefore dagur fyrir nóttina sem er athuguð
+     * @param hotelRoomId auðkenni hotelherbergjategundar
+     * @return fjöldi herbergja laus
+     */
+    private int howManyAvailable(Date dayBefore, int hotelRoomId) {
         throw new UnsupportedOperationException();
     }
 }

@@ -5,16 +5,18 @@ package hi.throunhugbunadar.backend;
  */
 
 public class HotelRooms {
-    private Hotel hotel;
-    private int capacity;
-    private int numberOfGuests;
-    private int pricePerNight;
+    private final Hotel hotel;
+    private final int capacity;
+    private final int numberOfGuests;
+    private final int pricePerNight;
+    private final int id;
 
-    public HotelRooms(Hotel hotel, int capacity, int numberOfGuests, int pricePerNight) {
+    public HotelRooms(Hotel hotel, int capacity, int numberOfGuests, int pricePerNight, int id) {
         this.hotel = hotel;
         this.capacity = capacity;
         this.numberOfGuests = numberOfGuests;
         this.pricePerNight = pricePerNight;
+        this.id = id;
     }
 
     public Hotel getHotel() {
@@ -31,5 +33,9 @@ public class HotelRooms {
 
     public int getPricePerNight() {
         return pricePerNight;
+    }
+
+    public int getId() {
+        return id;
     }
 }
