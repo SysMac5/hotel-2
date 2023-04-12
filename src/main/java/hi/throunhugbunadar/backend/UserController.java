@@ -32,6 +32,10 @@ public class UserController implements Initializable {
 
     }
 
+    /**
+     * Skrá notanda inn.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður.
+     */
     public void buttonMouseClicked(javafx.scene.input.MouseEvent mouseEvent) {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
