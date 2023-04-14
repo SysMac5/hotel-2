@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -22,6 +23,7 @@ public class LoginView implements Initializable {
     @FXML
     private Label alertLabel;
     private UserController userController;
+    private SearchView sv;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -51,18 +53,33 @@ public class LoginView implements Initializable {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
 
+        login(); // ATH, á meðan ekki tengt við gagnagrunn
+        /*
         if(userController.login(username, password)) {
             login();
         }
         else {
             alertLabel.setText("Rangt notandanafn eða lykilorð");
         }
+         */
     }
 
     /**
      * Sýnir nýja senu með leitarviðmóti.
      */
     private void login() {
-        //Stage s = (Stage)
+        Stage s = (Stage) usernameTextField.getScene().getWindow();
+
+        s.setScene(sv.getTextFieldHotel().getScene());
+
+        s.setTitle("Hótel á Íslandi");
+    }
+
+    /**
+     * Tengir LoginView við SearchView.
+     * @param sv SearchView
+     */
+    public void setTenging(SearchView sv) {
+        this.sv = sv;
     }
 }

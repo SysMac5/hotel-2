@@ -57,13 +57,4 @@ public class HotelController {
             throw new Exception();
         }
     }
-
-    public void userInformationOnAction(ActionEvent actionEvent) {
-    }
-
-    public void leitaHotelMouseClicked(MouseEvent mouseEvent) {
-    }
-
-    public void leitaHotelherbergiMouseClicked(MouseEvent mouseEvent) {
-    }
 }

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hi.throunhugbunadar.backend.HotelController">
+<VBox prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hi.throunhugbunadar.frontend.SearchView">
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <menus>
@@ -67,7 +67,7 @@
                 <Button mnemonicParsing="false" onMouseClicked="#leitaHotelherbergiMouseClicked" text="Leita" />
             </children>
             <VBox.margin>
-                <Insets bottom="20.0" />
+                <Insets bottom="40.0" />
             </VBox.margin>
         </HBox>
     </children>
