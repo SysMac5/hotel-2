@@ -14,40 +14,9 @@ import java.util.ResourceBundle;
  * Tilvik af keyrslu.
  */
 
-public class UserController implements Initializable {
-    @FXML
-    private TextField usernameTextField;
-    @FXML
-    private TextField passwordTextField;
-    // ATH, sleppa?
-    @FXML
-    private Button loginButton;
-    @FXML
-    private Label alertLabel;
+public class UserController {
     private User user;
     private final iUserRepository userRepository;
-
-    // ATH, sleppa?
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
-    /**
-     * Skrá notanda inn.
-     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður.
-     */
-    public void buttonMouseClicked(javafx.scene.input.MouseEvent mouseEvent) {
-        String username = usernameTextField.getText();
-        String password = passwordTextField.getText();
-
-        if(login(username, password)) {
-            // login
-        }
-        else {
-            alertLabel.setText("Rangt notandanafn eða lykilorð");
-        }
-    }
 
     /**
      * Smiður fyrir klasann.
