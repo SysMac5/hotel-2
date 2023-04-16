@@ -59,7 +59,6 @@ public class BookingRepository implements iBookingRepository {
      */
 
     private int howManyAvailable(Date dayBefore, int hotelRoomId) throws SQLException {
-        /*
         PreparedStatement statement1 = connection.prepareStatement("SELECT SUM(r.number_of_rooms) AS booked_rooms FROM reservations r\n" +
                 "JOIN hotel_rooms hr ON r.hotel_rooms_id = hr.id WHERE hr.id = ?\n" +
                 "AND (arrival_date <= ? AND departure_date > ?)\n");
@@ -88,9 +87,6 @@ public class BookingRepository implements iBookingRepository {
         //throw new UnsupportedOperationException();
 
         return  capacity - occupied;
-
-         */
-        throw new UnsupportedOperationException();
     }
 
 
