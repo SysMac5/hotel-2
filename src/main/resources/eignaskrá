@@ -13,4 +13,5 @@ Gyða {
 Maggi {
     Testin (test)
     UserRepository
+    UserController
 }
