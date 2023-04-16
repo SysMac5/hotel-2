@@ -8,102 +8,103 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="hi.throunhugbunadar.backend.UserController">
-<children>
-    <Label text="Mínar upplýsingar">
-        <VBox.margin>
-            <Insets bottom="5.0" left="10.0" top="5.0" />
-        </VBox.margin>
-        <font>
-            <Font size="24.0" />
-        </font>
-        <padding>
-            <Insets top="15.0" />
-        </padding>
-    </Label>
-    <Label text="Grunnupplýsingar">
-        <VBox.margin>
-            <Insets bottom="5.0" left="10.0" top="15.0" />
-        </VBox.margin>
-        <font>
-            <Font size="14.0" />
-        </font>
-    </Label>
-    <VBox alignment="CENTER_LEFT">
-        <children>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-                <children>
-                    <VBox spacing="5.0">
-                        <children>
-                            <Label prefHeight="25.0" text="Fullt nafn:" />
-                            <Label prefHeight="25.0" text="Notandanafn:" />
-                            <Label prefHeight="25.0" text="Símanúmer:" />
-                            <Label prefHeight="25.0" text="Netfang:" />
-                        </children>
-                    </VBox>
-                    <VBox prefHeight="200.0" prefWidth="200.0" spacing="5.0">
-                        <children>
-                            <TextField fx:id="textFieldName" />
-                            <Label fx:id="labelUsername" prefHeight="25.0" />
-                            <TextField fx:id="textFieldPhoneNumber" maxWidth="-Infinity" prefWidth="70.0" />
-                            <TextField fx:id="textFieldEmail" maxWidth="-Infinity" prefWidth="150.0" />
-                        </children>
-                    </VBox>
-                </children>
-            </HBox>
-        </children>
-        <VBox.margin>
-            <Insets bottom="10.0" left="20.0" top="10.0" />
-        </VBox.margin>
-    </VBox>
-    <Label text="Kortaupplýsingar">
-        <VBox.margin>
-            <Insets bottom="5.0" left="10.0" top="15.0" />
-        </VBox.margin>
-        <font>
-            <Font size="14.0" />
-        </font>
-    </Label>
-    <VBox>
-        <children>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-                <children>
-                    <VBox spacing="5.0">
-                        <children>
-                            <Label prefHeight="25.0" text="Kortanúmer:" />
-                            <Label prefHeight="25.0" text="Gildistími (MM/YY):" />
-                            <Label prefHeight="25.0" text="CVV:" />
-                        </children>
-                    </VBox>
-                    <VBox prefHeight="200.0" prefWidth="200.0" spacing="5.0">
-                        <children>
-                            <TextField fx:id="textFieldCardNumber" />
-                            <HBox alignment="CENTER_LEFT" spacing="5.0">
-                                <children>
-                                    <TextField fx:id="textFieldMonthValid" alignment="CENTER" prefWidth="30.0" />
-                                    <Label text="/" />
-                                    <TextField fx:id="textFieldYearValid" alignment="CENTER" prefWidth="30.0" />
-                                </children>
-                            </HBox>
-                            <TextField fx:id="textFieldCvv" alignment="CENTER" maxWidth="-Infinity" prefWidth="35.0" />
-                        </children>
-                    </VBox>
-                </children>
-            </HBox>
-        </children>
-        <VBox.margin>
-            <Insets left="20.0" top="10.0" />
-        </VBox.margin>
-    </VBox>
-    <HBox alignment="CENTER_RIGHT">
-        <children>
-            <Button mnemonicParsing="false" onMouseClicked="#vistaMouseClicked" text="Vista">
-                <HBox.margin>
-                    <Insets bottom="20.0" right="20.0" top="10.0" />
-                </HBox.margin>
-            </Button>
-        </children>
-    </HBox>
-</children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.throunhugbunadar.frontend.UserView">
+    <children>
+        <Label text="Mínar upplýsingar">
+            <VBox.margin>
+                <Insets bottom="5.0" left="10.0" top="5.0" />
+            </VBox.margin>
+            <font>
+                <Font size="24.0" />
+            </font>
+            <padding>
+                <Insets top="15.0" />
+            </padding>
+        </Label>
+        <Label text="Grunnupplýsingar">
+            <VBox.margin>
+                <Insets bottom="5.0" left="10.0" top="15.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <VBox alignment="CENTER_LEFT">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label prefHeight="25.0" text="Fullt nafn:" />
+                                <Label prefHeight="25.0" text="Notandanafn:" />
+                                <Label prefHeight="25.0" text="Lykilorð:" />
+                                <Label prefHeight="25.0" text="Símanúmer:" />
+                                <Label prefHeight="25.0" text="Netfang:" />
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="200.0" spacing="5.0">
+                            <children>
+                                <TextField fx:id="textFieldName" />
+                                <Label fx:id="labelUsername" prefHeight="25.0" />
+                                <TextField fx:id="textFieldPassword" />
+                                <TextField fx:id="textFieldPhoneNumber" maxWidth="-Infinity" prefWidth="70.0" />
+                                <TextField fx:id="textFieldEmail" maxWidth="-Infinity" prefWidth="150.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0" left="20.0" top="10.0" />
+            </VBox.margin>
+        </VBox>
+        <Label text="Kortaupplýsingar">
+            <VBox.margin>
+                <Insets bottom="5.0" left="10.0" top="15.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <VBox>
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label prefHeight="25.0" text="Kortanúmer:" />
+                                <Label prefHeight="25.0" text="Gildistími (MM/YY):" />
+                                <Label prefHeight="25.0" text="CVV:" />
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="200.0" spacing="5.0">
+                            <children>
+                                <TextField fx:id="textFieldCardNumber" />
+                                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                    <children>
+                                        <TextField fx:id="textFieldMonthValid" alignment="CENTER" prefWidth="30.0" />
+                                        <Label text="/" />
+                                        <TextField fx:id="textFieldYearValid" alignment="CENTER" prefWidth="30.0" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="textFieldCvv" alignment="CENTER" maxWidth="-Infinity" prefWidth="35.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets left="20.0" top="10.0" />
+            </VBox.margin>
+        </VBox>
+        <VBox alignment="CENTER_RIGHT" spacing="10.0">
+            <children>
+                <Button mnemonicParsing="false" onMouseClicked="#saveMouseClicked" text="Vista" />
+                <Label fx:id="labelAlert" textFill="#56bf22" />
+            </children>
+            <VBox.margin>
+                <Insets bottom="20.0" right="20.0" top="20.0" />
+            </VBox.margin>
+        </VBox>
+    </children>
 </VBox>

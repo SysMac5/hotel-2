@@ -1,5 +1,6 @@
 package hi.throunhugbunadar.frontend;
 
+import hi.throunhugbunadar.backend.User;
 import hi.throunhugbunadar.backend.UserController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,6 +25,7 @@ public class LoginView implements Initializable {
     private Label alertLabel;
     private UserController userController;
     private SearchView sv;
+    private User user;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -53,10 +55,11 @@ public class LoginView implements Initializable {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
 
-        login(); // ATH, á meðan ekki tengt við gagnagrunn
+        login();
         /*
         if(userController.login(username, password)) {
             login();
+            user = userController.getUser();
         }
         else {
             alertLabel.setText("Rangt notandanafn eða lykilorð");
@@ -81,5 +84,13 @@ public class LoginView implements Initializable {
      */
     public void setTenging(SearchView sv) {
         this.sv = sv;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public UserController getUserController() {
+        return userController;
     }
 }
