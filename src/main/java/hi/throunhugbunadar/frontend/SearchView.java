@@ -87,6 +87,11 @@ public class SearchView implements Initializable {
         return textFieldHotel;
     }
 
+    /**
+     * Sýnir notandaviðmót með lista af hótelherbergjum m.t.t. leitarskilyrða notanda.
+     * @param actionEvent atburðurinn sem kemur inn en er ónotaður
+     * @throws Exception
+     */
     public void searchHotelroomsMouseClicked(ActionEvent actionEvent) throws Exception {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hotelroom-search-results.fxml"));
@@ -97,6 +102,20 @@ public class SearchView implements Initializable {
         Scene s = new Scene(root, 400, 505);
         stage.setScene(s);
 
+        ArrayList<HotelRooms> hotelroomList = searchByCriteria();
+
+        //uv.setTenging(lv);
+        hv.frumstilla(hotelroomList);
+
+        stage.show();
+    }
+
+    /**
+     * Skilar lista af hótelherbergjum m.t.t. leitarskilyrða notanda.
+     * @return listi af hótelherbergjum m.t.t. leitarskilyrða
+     * @throws Exception
+     */
+    private ArrayList<HotelRooms> searchByCriteria() throws Exception {
         Criteria criteria = new Criteria();
 
         String selectedLocation = (String) choiceBoxLocation.getValue(); // Get the selected value from the choice box
@@ -132,12 +151,7 @@ public class SearchView implements Initializable {
         criteria.guestCount = (int) spinnerGuestCount.getValue();
 
         HotelroomList hotelroomList = hotelController.searchByCriteria(criteria);
-        ArrayList<HotelRooms> hotelrooms = hotelroomList.getList();
-
-        //uv.setTenging(lv);
-        hv.frumstilla(hotelrooms);
-
-        stage.show();
+        return hotelroomList.getList();
     }
 
     /**
