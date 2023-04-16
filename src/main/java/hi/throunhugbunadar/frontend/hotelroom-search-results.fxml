@@ -8,11 +8,9 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import org.controlsfx.control.RangeSlider?>
 
 <VBox xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.throunhugbunadar.frontend.HotelRoomsView">
     <children>
@@ -72,14 +70,6 @@
                             <children>
                                 <Button mnemonicParsing="false" text="Sía" />
                                 <Button mnemonicParsing="false" text="Endurstilla" />
-                                <VBox alignment="CENTER" spacing="150" padding="75">
-                                    <children>
-                                        <RangeSlider fx:id="slider" showTickLabels="true" showTickMarks="true"
-                                                     majorTickUnit="25" blockIncrement="10"
-                                                     min="0" max="100" lowValue="10" highValue="90"/>
-                                        <Label fx:id="valueLabel" text=""/>
-                                    </children>
-                                </VBox>
                             </children>
                             <padding>
                                 <Insets top="10.0" />
@@ -104,7 +94,7 @@
                         </HBox>
                         <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="545.0" prefWidth="430.0">
                             <content>
-                                <ListView prefHeight="545.0" prefWidth="430.0" />
+                                <ListView fx:id="listViewHotelroomList" prefHeight="545.0" prefWidth="430.0" />
                             </content>
                         </ScrollPane>
                     </children>

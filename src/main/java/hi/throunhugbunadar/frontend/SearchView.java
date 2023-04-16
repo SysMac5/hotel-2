@@ -1,8 +1,6 @@
 package hi.throunhugbunadar.frontend;
 
-import hi.throunhugbunadar.backend.HotelController;
-import hi.throunhugbunadar.backend.HotelRepository;
-import hi.throunhugbunadar.backend.UserController;
+import hi.throunhugbunadar.backend.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,17 +9,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SearchView implements Initializable {
@@ -31,13 +31,13 @@ public class SearchView implements Initializable {
     @FXML
     private Button buttonSearchHotel;
     @FXML
-    private ChoiceBox choiceBoxLocation;
+    private ChoiceBox<String> choiceBoxLocation;
     @FXML
     private DatePicker datePickerArrival;
     @FXML
     private DatePicker datePickerDeparture;
     @FXML
-    private TextField textFieldGuestCount;
+    private Spinner<Integer> spinnerGuestCount;
     @FXML
     private Button buttonSearchHotelrooms;
     private LoginView lv;
@@ -46,15 +46,6 @@ public class SearchView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*
-        try {
-            this.hotelController = new HotelController();
-        } catch (SQLException e) {
-            // ATH, handle the exception here
-        }
-
-         */
-
         frumstillaGogn();
 
         searchHotelRule();
@@ -67,6 +58,10 @@ public class SearchView implements Initializable {
     private void frumstillaGogn() {
         ObservableList<String> regionNode = FXCollections.observableArrayList(region);
         choiceBoxLocation.setItems(regionNode);
+
+        //Spinner<Integer> spinnerGuestCount = new Spinner<>();
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 4,0,1);
+        spinnerGuestCount.setValueFactory(valueFactory);
     }
 
     /**
@@ -77,7 +72,6 @@ public class SearchView implements Initializable {
                 choiceBoxLocation.valueProperty().isNull()
                         .or(datePickerArrival.valueProperty().isNull())
                                 .or(datePickerDeparture.valueProperty().isNull())
-                                        .or(textFieldGuestCount.textProperty().isEmpty()) //ATH, verður að vera tala?
         );
     }
 
@@ -93,18 +87,55 @@ public class SearchView implements Initializable {
         return textFieldHotel;
     }
 
-    public void searchHotelroomsMouseClicked(ActionEvent actionEvent) throws IOException {
+    public void searchHotelroomsMouseClicked(ActionEvent actionEvent) throws Exception {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hotelroom-search-results.fxml"));
         Parent root = loader.load();
-        HotelRoomsView uv = loader.getController();
+        HotelRoomsView hv = loader.getController();
 
-        stage.setTitle("Mínar upplýsingar");
+        stage.setTitle("Leitarniðurstöður");
         Scene s = new Scene(root, 400, 505);
         stage.setScene(s);
 
+        Criteria criteria = new Criteria();
+
+        String selectedLocation = (String) choiceBoxLocation.getValue(); // Get the selected value from the choice box
+        switch (selectedLocation) {
+            case "Höfuðborgarsvæðið":
+                criteria.location = Region.HOFUDBORGARSVAEDID.getLocation();
+                break;
+            case "Suðurland":
+                criteria.location = Region.SUDURLAND.getLocation();
+                break;
+            case "Norðurland":
+                criteria.location = Region.NORDURLAND.getLocation();
+                break;
+            case "Austurland":
+                criteria.location = Region.AUSTURLAND.getLocation();
+                break;
+            case "Vesturland":
+                criteria.location = Region.VESTURLAND.getLocation();
+                break;
+        }
+
+        LocalDate localDateArrival = datePickerArrival.getValue();
+        ZoneId zoneId = ZoneId.systemDefault();
+        Instant instantArrival = localDateArrival.atStartOfDay(zoneId).toInstant();
+        java.sql.Date sqlDateArrival = new java.sql.Date(instantArrival.toEpochMilli());
+        criteria.arrival = sqlDateArrival;
+
+        LocalDate localDateDeparture = datePickerArrival.getValue();
+        Instant instantDeparture = localDateDeparture.atStartOfDay(zoneId).toInstant();
+        java.sql.Date sqlDateDeparture = new java.sql.Date(instantDeparture.toEpochMilli());
+        criteria.departure = sqlDateDeparture;
+
+        criteria.guestCount = (int) spinnerGuestCount.getValue();
+
+        HotelroomList hotelroomList = hotelController.searchByCriteria(criteria);
+        ArrayList<HotelRooms> hotelrooms = hotelroomList.getList();
+
         //uv.setTenging(lv);
-        //uv.frumstilla();
+        hv.frumstilla(hotelrooms);
 
         stage.show();
     }

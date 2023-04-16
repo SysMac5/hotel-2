@@ -51,15 +51,12 @@ public class LoginView implements Initializable {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
 
-        login();
-        /*
         if(userController.login(username, password)) {
             login();
         }
         else {
             alertLabel.setText("Rangt notandanafn eða lykilorð");
         }
-         */
     }
 
     /**

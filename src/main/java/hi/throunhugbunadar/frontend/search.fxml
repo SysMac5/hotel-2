@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.Spinner?>
 <VBox prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.throunhugbunadar.frontend.SearchView">
     <children>
         <HBox alignment="CENTER">
@@ -54,7 +55,7 @@
                         <ChoiceBox fx:id="choiceBoxLocation" prefWidth="140.0" />
                         <DatePicker fx:id="datePickerArrival" maxWidth="-Infinity" prefWidth="100.0" />
                         <DatePicker fx:id="datePickerDeparture" maxWidth="-Infinity" prefWidth="100.0" />
-                        <TextField fx:id="textFieldGuestCount" maxWidth="-Infinity" prefWidth="30.0" />
+                        <Spinner fx:id="spinnerGuestCount" prefWidth="60.0" />
                     </children>
                 </VBox>
             </children>
