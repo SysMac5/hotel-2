@@ -1,16 +1,5 @@
 package hi.throunhugbunadar.backend;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
 /**
  * Tilvik af keyrslu.
  */
@@ -67,9 +56,5 @@ public class UserController {
      */
     public User getUser() {
         return this.user;
-    }
-
-
-    public void vistaMouseClicked(MouseEvent mouseEvent) {
     }
 }
