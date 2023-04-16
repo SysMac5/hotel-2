@@ -1,7 +1,6 @@
 package hi.throunhugbunadar.backend;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class BookingRepository implements iBookingRepository {
@@ -12,8 +11,9 @@ public class BookingRepository implements iBookingRepository {
      *
      * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
-    public BookingRepository(Connection connection) {
-        this.connection = connection;
+    public BookingRepository() throws SQLException {
+        String url = "jdbc:sqlite:GG_9.db";
+        connection = DriverManager.getConnection(url);
     }
 
     /**
@@ -87,70 +87,19 @@ public class BookingRepository implements iBookingRepository {
         //throw new UnsupportedOperationException();
 
         return  capacity - occupied;
-    }
-
-
-
-
-    public boolean reserveRooms(Reservation reservation) { // óklárað ! !
-        PreparedStatement statement1 = null;
-        ResultSet result1;
-        int maxId = 0;
-        try {
-            statement1 = connection.prepareStatement("Select Max(id) as max from reservations;");
-            result1 = statement1.executeQuery();
-
-            maxId = result1.getInt("max");
-        } catch (SQLException e) {
-            return false;
-        }
-
-
-
-
-        maxId = maxId + 1;
-
-        PreparedStatement statement2 = null;
-        try {
-            statement2 = connection.prepareStatement("Insert into reservations (id, hotel_rooms_id, user_id, number_of_rooms, arrival_date, departure_date) values (?,?,?,?,?,?)");
-
-        } catch (SQLException e) {
-            return false;
-        }
-
-        try {
-            ResultSet result2;
-            result2 = statement2.executeQuery();
-            statement1.setInt(1, maxId);
-            statement1.setInt(2, reservation.getHotelType().getId());
-            statement1.setString(3, reservation.getUser().getUsername());
-            statement1.setInt(4, reservation.getNumberOfRooms());
-            statement1.setDate(5, reservation.getArrival());
-            statement1.setDate(6, reservation.getDeparture());
-
-            ResultSet result3;
-            result3 = statement2.executeQuery();
-
-            int maxIdCheck = 0;
-            maxIdCheck = result3.getInt("max");
-
-            if (maxId == maxIdCheck) return true;
-            else return false;
-
-        } catch (SQLException e) {
-            return false;
-        }
 
     }
 
-    public ArrayList<Reservation> getReservations(Hotel hotel) { // óklárað ! !
-        //PreparedStatement statement1 = connection.prepareStatement("Select t1.hotel_rooms_id, t1.user_id, t1.number_of_rooms, t1.arrival_date, t1.departure_date, t2.number_of_guests, t4.phone_number, t4.name, t4.email from reservations t1 left join hotel_rooms t2 on t1.hotel_rooms_id = t2.id join hotels t3 on t2.hotel_id = t3.id join users t4 on t4.username = t1.user_id where t3.id = ?");
-        //statement1.setInt(1, hotel.getId());
-        // ResultSet result = statement1.executeQuery();
 
 
 
 
+
+        public boolean reserveRooms(Reservation reservation) { // óklárað ! !
+        throw new UnsupportedOperationException();
+    }
+
+    public List<Reservation> getReservations(Hotel hotel) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 }
