@@ -27,16 +27,17 @@ public class SearchView implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    public void userInformationOnAction(ActionEvent actionEvent) {
-    }
-
-    public void leitaHotelMouseClicked(MouseEvent mouseEvent) {
-    }
-
-    public void leitaHotelherbergiMouseClicked(MouseEvent mouseEvent) {
-    }
 
     public TextField getTextFieldHotel() {
         return textFieldHotel;
+    }
+
+    public void userInformationMouseClicked(ActionEvent actionEvent) {
+    }
+
+    public void searchHotelMouseClicked(ActionEvent actionEvent) {
+    }
+
+    public void searchHotelroomsMouseClicked(ActionEvent actionEvent) {
     }
 }
