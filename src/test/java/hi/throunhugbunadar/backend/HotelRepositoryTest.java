@@ -27,7 +27,7 @@ public class HotelRepositoryTest {
         try {
             this.connection.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -50,7 +50,8 @@ public class HotelRepositoryTest {
             ArrayList<Hotel> hotels = hotelRepository.searchForHotel(hotelHalfName);
             Assertions.assertTrue(hotels.size() > 1);
             for (Hotel hotel : hotels) {
-                Assertions.assertTrue(hotel.getName().contains(hotelHalfName));
+                System.out.println(hotelHalfName + " in " + hotel.getName());
+                Assertions.assertTrue(hotel.getName().toLowerCase().contains(hotelHalfName.toLowerCase()));
             }
         }
     }

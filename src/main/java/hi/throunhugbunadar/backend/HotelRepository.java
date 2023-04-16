@@ -1,7 +1,6 @@
 package hi.throunhugbunadar.backend;
 
 
-import java.awt.*;
 import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +20,26 @@ public class HotelRepository implements iHotelRepository {
      */
     @Override
     public ArrayList<Hotel> searchForHotel(String hotelName) {
-        throw new UnsupportedOperationException();
+        ArrayList<Hotel> hotels = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM hotels WHERE LOWER(hotel_name) LIKE ?");
+            statement.setString(1, "%" + hotelName + "%");
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                hotels.add(new Hotel(resultSet.getInt("id"),
+                        resultSet.getString("hotel_name"),
+                        resultSet.getString("information"),
+                        getImageList(resultSet.getInt("id")),
+                        getHotelRoomsList(resultSet.getInt("id")),
+                        resultSet.getInt("stars"),
+                        resultSet.getString("location")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return hotels;
     }
 
     /**
@@ -32,8 +50,8 @@ public class HotelRepository implements iHotelRepository {
      */
     @Override
     public ArrayList<Hotel> searchByCriteria(Criteria criteria) {
-        ArrayList<Hotel> hotel = new ArrayList<>();
-        if (criteria.arrival.after(criteria.departure)) return hotel;
+        ArrayList<Hotel> hotels = new ArrayList<>();
+        if (criteria.arrival.after(criteria.departure)) return hotels;
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM hotel_rooms hr JOIN hotels h ON hr.hotel_id = h.id WHERE h.location = ? AND number_of_guests = ? ORDER BY hr.capacity DESC");
             statement.setString(1, criteria.location);
@@ -43,7 +61,7 @@ public class HotelRepository implements iHotelRepository {
 
             while (resultSet.next()) {
                 if (howManyAvailable(criteria.arrival, criteria.departure, resultSet.getInt("id")) > 0) {
-                    hotel.add(new Hotel(resultSet.getInt("hotel_id"),
+                    hotels.add(new Hotel(resultSet.getInt("hotel_id"),
                             resultSet.getString("hotel_name"),
                             resultSet.getString("information"),
                             getImageList(resultSet.getInt("hotel_id")),
@@ -55,7 +73,7 @@ public class HotelRepository implements iHotelRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return hotel;
+        return hotels;
     }
 
     private ArrayList<File> getImageList(int hotelId) {
@@ -68,7 +86,6 @@ public class HotelRepository implements iHotelRepository {
 
             while (resultSet.next()) {
                 String url = "images/" + resultSet.getString("file_name");
-                System.out.println(url);
                 File image = new File(url);
                 images.add(image);
             }

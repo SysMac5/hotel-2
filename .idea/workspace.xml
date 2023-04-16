@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="na">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="HotelRepository og HotelController næstum klárað">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GG_9.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GG_9.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/HotelRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/HotelRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +91,22 @@
       <recent name="hi.throunhugbunadar.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserRepositoryTest">
+  <component name="RunManager" selected="JUnit.HotelRepositoryTest">
+    <configuration name="HotelRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotel-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hi.throunhugbunadar.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hi.throunhugbunadar.backend" />
+      <option name="MAIN_CLASS_NAME" value="hi.throunhugbunadar.backend.HotelRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hotel-2" />
       <extension name="coverage">
@@ -151,6 +170,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.HotelRepositoryTest" />
       <item itemvalue="JUnit.UserRepositoryTest" />
       <item itemvalue="JUnit.UserControllerTest" />
       <item itemvalue="JUnit.UserControllerTest.testLogin" />
@@ -158,6 +178,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HotelRepositoryTest" />
         <item itemvalue="JUnit.UserRepositoryTest" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UserControllerTest.testLogin" />
@@ -309,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681657852405</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="HotelRepository og HotelController næstum klárað">
+      <created>1681676773370</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1681676773370</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +371,7 @@
     <MESSAGE value="View breytingar" />
     <MESSAGE value="Samræmingar" />
     <MESSAGE value="na" />
-    <option name="LAST_COMMIT_MESSAGE" value="na" />
+    <MESSAGE value="HotelRepository og HotelController næstum klárað" />
+    <option name="LAST_COMMIT_MESSAGE" value="HotelRepository og HotelController næstum klárað" />
   </component>
 </project>
