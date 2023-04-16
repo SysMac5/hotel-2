@@ -16,16 +16,16 @@
         <HBox alignment="CENTER">
             <children>
                 <Button mnemonicParsing="false" onMouseClicked="#userInformationMouseClicked" text="Mínar upplýsingar" />
-                <Pane prefWidth="270.0" />
+                <Pane prefWidth="230.0" />
                 <HBox alignment="CENTER_RIGHT" spacing="5.0">
                     <children>
-                        <TextField fx:id="textFieldHotel" text="Leita af hóteli" />
-                        <Button mnemonicParsing="false" onMouseClicked="#searchHotelMouseClicked" text="Leita" />
+                        <TextField fx:id="textFieldHotel" />
+                        <Button fx:id="buttonSearchHotel" mnemonicParsing="false" onMouseClicked="#searchHotelMouseClicked" text="Leita af hóteli" />
                     </children>
                 </HBox>
             </children>
             <VBox.margin>
-                <Insets bottom="5.0" top="10.0" />
+                <Insets bottom="30.0" top="10.0" />
             </VBox.margin>
         </HBox>
         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Hótel á Íslandi">
@@ -51,7 +51,7 @@
                 </VBox>
                 <VBox spacing="5.0">
                     <children>
-                        <ChoiceBox fx:id="choiceBoxLocation" prefWidth="125.0" />
+                        <ChoiceBox fx:id="choiceBoxLocation" prefWidth="140.0" />
                         <DatePicker fx:id="datePickerArrival" maxWidth="-Infinity" prefWidth="100.0" />
                         <DatePicker fx:id="datePickerDeparture" maxWidth="-Infinity" prefWidth="100.0" />
                         <TextField fx:id="textFieldGuestCount" maxWidth="-Infinity" prefWidth="30.0" />

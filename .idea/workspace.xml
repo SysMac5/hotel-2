@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Birta upplýsingar í &quot;Mínar upplýsingar&quot; og vista ef þær eru breyttar. Tenging UserView við UserController.">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Bætti við að hægt sé að breyta passwordi í viðmóti.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Region.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Region.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/UserView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/search.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +168,7 @@
       <workItem from="1679999196523" duration="4650000" />
       <workItem from="1680878688543" duration="14073000" />
       <workItem from="1681488336072" duration="4345000" />
-      <workItem from="1681644505995" duration="5353000" />
+      <workItem from="1681644505995" duration="7408000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
@@ -317,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681649187059</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Bætti við að hægt sé að breyta passwordi í viðmóti.">
+      <created>1681649907092</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1681649907092</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,6 +360,7 @@
     <MESSAGE value="Nú getur &quot;Mínar upplýsingar&quot; gluggi birst út frá Search viðmóti." />
     <MESSAGE value="Var búin að commenta út kóða svo ég gæti keyrt." />
     <MESSAGE value="Birta upplýsingar í &quot;Mínar upplýsingar&quot; og vista ef þær eru breyttar. Tenging UserView við UserController." />
-    <option name="LAST_COMMIT_MESSAGE" value="Birta upplýsingar í &quot;Mínar upplýsingar&quot; og vista ef þær eru breyttar. Tenging UserView við UserController." />
+    <MESSAGE value="Bætti við að hægt sé að breyta passwordi í viðmóti." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bætti við að hægt sé að breyta passwordi í viðmóti." />
   </component>
 </project>
