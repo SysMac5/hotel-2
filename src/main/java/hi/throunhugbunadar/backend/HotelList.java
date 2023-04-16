@@ -80,4 +80,20 @@ public class HotelList {
         minStars = 1;
         maxStars = 5;
     }
+
+
+    public Criteria getCriteria() {
+        return criteria;
+    }
+
+
+    public int getPrice(Hotel hotel) throws Exception {
+        //ATH, geri ekki ráð fyrir að það gætu verið tvær týpur með sama gildi í guestCount
+        for (HotelRooms room: hotel.getHotelRoomsList()) {
+            if (room.getNumberOfGuests() == criteria.guestCount) {
+                return room.getPricePerNight();
+            }
+        }
+        throw new Exception();
+    }
 }

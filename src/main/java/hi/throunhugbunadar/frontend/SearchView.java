@@ -3,7 +3,6 @@ package hi.throunhugbunadar.frontend;
 import hi.throunhugbunadar.backend.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,15 +12,11 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Date;
-import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SearchView implements Initializable {
@@ -60,7 +55,7 @@ public class SearchView implements Initializable {
         choiceBoxLocation.setItems(regionNode);
 
         //Spinner<Integer> spinnerGuestCount = new Spinner<>();
-        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 4,0,1);
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5,1,1);
         spinnerGuestCount.setValueFactory(valueFactory);
     }
 
@@ -89,23 +84,23 @@ public class SearchView implements Initializable {
 
     /**
      * Sýnir notandaviðmót með lista af hótelherbergjum m.t.t. leitarskilyrða notanda.
-     * @param actionEvent atburðurinn sem kemur inn en er ónotaður
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
      * @throws Exception
      */
-    public void searchHotelroomsMouseClicked(ActionEvent actionEvent) throws Exception {
+    public void searchHotelroomsMouseClicked(MouseEvent mouseEvent) throws Exception {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hotelroom-search-results.fxml"));
         Parent root = loader.load();
         HotelRoomsView hv = loader.getController();
 
         stage.setTitle("Leitarniðurstöður");
-        Scene s = new Scene(root, 400, 505);
+        Scene s = new Scene(root, 650, 590);
         stage.setScene(s);
 
-        ArrayList<HotelRooms> hotelroomList = searchByCriteria();
+        HotelList hotelList = searchByCriteria();
 
         //uv.setTenging(lv);
-        hv.frumstilla(hotelroomList);
+        hv.frumstilla(hotelList);
 
         stage.show();
     }
@@ -115,7 +110,7 @@ public class SearchView implements Initializable {
      * @return listi af hótelherbergjum m.t.t. leitarskilyrða
      * @throws Exception
      */
-    private ArrayList<HotelRooms> searchByCriteria() throws Exception {
+    private HotelList searchByCriteria() throws Exception {
         Criteria criteria = new Criteria();
 
         String selectedLocation = (String) choiceBoxLocation.getValue(); // Get the selected value from the choice box
@@ -150,8 +145,7 @@ public class SearchView implements Initializable {
 
         criteria.guestCount = (int) spinnerGuestCount.getValue();
 
-        HotelroomList hotelroomList = hotelController.searchByCriteria(criteria);
-        return hotelroomList.getList();
+        return hotelController.searchByCriteria(criteria);
     }
 
     /**
