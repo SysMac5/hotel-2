@@ -2,6 +2,8 @@ package hi.throunhugbunadar.backend;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class HotelRepository implements iHotelRepository {
@@ -30,8 +32,15 @@ public class HotelRepository implements iHotelRepository {
      */
     @Override
     public ArrayList<HotelRooms> searchByCriteria(Criteria criteria) {
-        throw new UnsupportedOperationException();
+        PreparedStatement statement1 = connection.prepareStatement(" Select * from hotel_rooms t1 join hotels t2 on t1.hotel_id = t2.id left join pictures t3 on t2.id  = t3.hotel_id WHERE t2.location = ? AND number_of_guests = ? order by t1.id desc");
+        statement1.setString(1, );
+
+
     }
+
+
+
+
 
     /**
      * Hjálparfall sem skilar hversu mörg herbergi af
