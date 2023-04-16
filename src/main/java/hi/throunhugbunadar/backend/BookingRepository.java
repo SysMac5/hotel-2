@@ -93,7 +93,54 @@ public class BookingRepository implements iBookingRepository {
 
 
     public boolean reserveRooms(Reservation reservation) { // óklárað ! !
-        throw new UnsupportedOperationException();
+        PreparedStatement statement1 = null;
+        ResultSet result1;
+        int maxId = 0;
+        try {
+            statement1 = connection.prepareStatement("Select Max(id) as max from reservations;");
+            result1 = statement1.executeQuery();
+
+            maxId = result1.getInt("max");
+        } catch (SQLException e) {
+            return false;
+        }
+
+
+
+
+        maxId = maxId + 1;
+
+        PreparedStatement statement2 = null;
+        try {
+            statement2 = connection.prepareStatement("Insert into reservations (id, hotel_rooms_id, user_id, number_of_rooms, arrival_date, departure_date) values (?,?,?,?,?,?)");
+
+        } catch (SQLException e) {
+            return false;
+        }
+
+        try {
+            ResultSet result2;
+            result2 = statement2.executeQuery();
+            statement1.setInt(1, maxId);
+            statement1.setInt(2, reservation.getHotelType().getId());
+            statement1.setString(3, reservation.getUser().getUsername());
+            statement1.setInt(4, reservation.getNumberOfRooms());
+            statement1.setDate(5, reservation.getArrival());
+            statement1.setDate(6, reservation.getDeparture());
+
+            ResultSet result3;
+            result3 = statement2.executeQuery();
+
+            int maxIdCheck = 0;
+            maxIdCheck = result3.getInt("max");
+
+            if (maxId == maxIdCheck) return true;
+            else return false;
+
+        } catch (SQLException e) {
+            return false;
+        }
+
     }
 
 

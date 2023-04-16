@@ -12,6 +12,8 @@ public class Reservation {
     private Date arrival;
     private Date departure;
 
+    private int numberOfRooms;
+
     public User getUser() {
         return user;
     }
@@ -27,4 +29,6 @@ public class Reservation {
     public Date getDeparture() {
         return departure;
     }
+
+    public int getNumberOfRooms() { return numberOfRooms; }
 }
