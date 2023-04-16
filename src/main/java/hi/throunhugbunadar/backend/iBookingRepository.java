@@ -2,6 +2,7 @@ package hi.throunhugbunadar.backend;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface iBookingRepository {
@@ -9,5 +10,5 @@ public interface iBookingRepository {
 
     boolean reserveRooms(Reservation reservation);
 
-    List<Reservation> getReservations(Hotel hotel);
+    ArrayList<Reservation> getReservations(Hotel hotel);
 }

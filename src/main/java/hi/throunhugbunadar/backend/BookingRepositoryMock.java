@@ -1,6 +1,7 @@
 package hi.throunhugbunadar.backend;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookingRepositoryMock implements iBookingRepository {
@@ -24,7 +25,7 @@ public class BookingRepositoryMock implements iBookingRepository {
         throw new UnsupportedOperationException();
     }
 
-    public List<Reservation> getReservations(Hotel hotel) { // óklárað ! !
+    public ArrayList<Reservation> getReservations(Hotel hotel) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 }
