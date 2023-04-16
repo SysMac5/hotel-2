@@ -21,19 +21,9 @@ public class UserController {
     /**
      * Smiður fyrir klasann.
      *
-     * @throws SQLException villumelding sem tengist gagnagrunni
-     */
-    public UserController() throws SQLException {
-        this.userRepository = new UserRepository();
-    }
-
-    /**
-     * Smiður fyrir klasann.
-     *
      * @param userRepository tenging við gagnagrunn
-     * @throws SQLException villumelding sem tengist gagnagrunni
      */
-    public UserController(iUserRepository userRepository) throws SQLException {
+    public UserController(iUserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

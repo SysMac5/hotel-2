@@ -1,6 +1,7 @@
 package hi.throunhugbunadar.backend;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookingRepository implements iBookingRepository {
@@ -11,9 +12,8 @@ public class BookingRepository implements iBookingRepository {
      *
      * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
-    public BookingRepository() throws SQLException {
-        String url = "jdbc:sqlite:GG_9.db";
-        connection = DriverManager.getConnection(url);
+    public BookingRepository(Connection connection) {
+        this.connection = connection;
     }
 
     /**
@@ -99,7 +99,7 @@ public class BookingRepository implements iBookingRepository {
         throw new UnsupportedOperationException();
     }
 
-    public List<Reservation> getReservations(Hotel hotel) { // óklárað ! !
+    public ArrayList<Reservation> getReservations(Hotel hotel) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 }

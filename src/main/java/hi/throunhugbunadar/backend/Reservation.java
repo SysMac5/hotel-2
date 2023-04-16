@@ -12,6 +12,13 @@ public class Reservation {
     private Date arrival;
     private Date departure;
 
+    public Reservation(User user, HotelRooms hotelType, Date arrival, Date departure) {
+        this.user = user;
+        this.hotelType = hotelType;
+        this.arrival = arrival;
+        this.departure = departure;
+    }
+
     public User getUser() {
         return user;
     }

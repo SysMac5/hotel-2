@@ -1,6 +1,6 @@
 package hi.throunhugbunadar.backend;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Criteria {
     public String location;
