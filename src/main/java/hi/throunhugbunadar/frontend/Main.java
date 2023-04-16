@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        String url = "jdbc:sqlite:GG_9.db";
+        String url = "jdbc:sqlite:src/main/resources/GG_9.db";
         this.connection = DriverManager.getConnection(url);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
