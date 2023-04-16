@@ -7,12 +7,9 @@ public class UserRepository implements iUserRepository {
 
     /**
      * Býr til nýja tengingu við gagnagrunninn.
-     *
-     * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
-    public UserRepository() throws SQLException {
-        String url = "jdbc:sqlite:GG_8.db";
-        connection = DriverManager.getConnection(url);
+    public UserRepository(Connection connection) {
+        this.connection = connection;
     }
 
     /**

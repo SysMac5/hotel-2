@@ -2,6 +2,7 @@ package hi.throunhugbunadar.frontend;
 
 import hi.throunhugbunadar.backend.User;
 import hi.throunhugbunadar.backend.UserController;
+import hi.throunhugbunadar.backend.UserRepository;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -25,15 +27,9 @@ public class LoginView implements Initializable {
     private Label alertLabel;
     private UserController userController;
     private SearchView sv;
-    private User user;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        try {
-            this.userController = new UserController();
-        } catch (SQLException e) {
-            // ATH, handle the exception here
-        }
         loginRule();
     }
 
@@ -55,13 +51,15 @@ public class LoginView implements Initializable {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
 
+        login();
+        /*
         if(userController.login(username, password)) {
             login();
-            user = userController.getUser();
         }
         else {
             alertLabel.setText("Rangt notandanafn eða lykilorð");
         }
+         */
     }
 
     /**
@@ -83,11 +81,12 @@ public class LoginView implements Initializable {
         this.sv = sv;
     }
 
-    public User getUser() {
-        return user;
-    }
-
     public UserController getUserController() {
         return userController;
+    }
+
+    public void setUserController(Connection connection) {
+        UserRepository userRepository = new UserRepository(connection);
+        this.userController = new UserController(userRepository);
     }
 }

@@ -2,6 +2,7 @@ package hi.throunhugbunadar.backend;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookingController {
@@ -22,7 +23,7 @@ public class BookingController {
         throw new UnsupportedOperationException();
     }
 
-    public List<Reservation> getReservations(Hotel hotel) { // óklárað ! !
+    public ArrayList<Reservation> getReservations(Hotel hotel) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 }

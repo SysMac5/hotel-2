@@ -15,12 +15,9 @@ public class HotelController {
      * Smiður fyrir HotelController.
      *
      * @param hotelRepository Sér um samskipti við gagnagrunn.
-     * @param hotelroomList Listi með hótelherbergjum.
      */
-    public HotelController(iHotelRepository hotelRepository, HotelroomList hotelroomList) {
+    public HotelController(iHotelRepository hotelRepository) {
         this.hotelRepository = hotelRepository;
-        // ATH, sleppa að frumstilla hotelroomList?
-        this.hotelroomList = hotelroomList;
     }
 
 

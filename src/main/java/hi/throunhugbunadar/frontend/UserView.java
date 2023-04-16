@@ -14,6 +14,8 @@ public class UserView {
     @FXML
     private Label labelUsername;
     @FXML
+    private TextField textFieldPassword;
+    @FXML
     private TextField textFieldPhoneNumber;
     @FXML
     private TextField textFieldEmail;
@@ -44,6 +46,7 @@ public class UserView {
     public void frumstilla() {
         textFieldName.setText(user.getName());
         labelUsername.setText(user.getUsername());
+        textFieldPassword.setText(user.getPassword());
         textFieldPhoneNumber.setText(user.getPhoneNumber());
         textFieldEmail.setText(user.getEmail());
 
@@ -58,8 +61,9 @@ public class UserView {
      * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
      * @throws Exception
      */
-    public void vistaMouseClicked(MouseEvent mouseEvent) throws Exception {
+    public void saveMouseClicked(MouseEvent mouseEvent) throws Exception {
         user.setName(textFieldName.getText());
+        user.changePassword(textFieldPassword.getText());
         user.setPhoneNumber(textFieldPhoneNumber.getText());
         user.setEmail(textFieldEmail.getText());
 
@@ -69,6 +73,8 @@ public class UserView {
         String newCvv = textFieldCvv.getText();
         PaymentInfo newPaymentInfo = new PaymentInfo(newCardNumber, newMonthValid, newYearValid, newCvv);
         user.setPaymentInfo(newPaymentInfo);
+
+        userController.updateUser();
 
         labelAlert.setText("Breytingar vistaðar");
     }

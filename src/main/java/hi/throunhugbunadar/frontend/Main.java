@@ -6,22 +6,44 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.*;
+
 public class Main extends Application {
+    private Connection connection;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+        String url = "jdbc:sqlite:GG_9.db";
+        this.connection = DriverManager.getConnection(url);
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root1 = loader.load();
         LoginView v1 = loader.getController();
+        v1.setUserController(connection);
 
         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("search.fxml"));
         Parent root2 = loader2.load();
         SearchView v2 = loader2.getController();
+        v2.setHotelController(connection);
 
         stillaView(v1, v2);
 
         nyrGluggi(primaryStage, root1);
 
         new Scene(root2, 600, 320);
+    }
+
+    @Override
+    public void stop() {
+        // Close the database connection
+        try {
+            if (connection != null) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            // Handle any exceptions thrown while closing the connection
+            e.printStackTrace();
+        }
     }
 
     /**

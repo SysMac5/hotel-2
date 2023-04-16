@@ -1,11 +1,17 @@
 package hi.throunhugbunadar.frontend;
 
+import hi.throunhugbunadar.backend.HotelController;
+import hi.throunhugbunadar.backend.HotelRepository;
+import hi.throunhugbunadar.backend.UserController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -13,11 +19,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SearchView implements Initializable {
+
     @FXML
     private TextField textFieldHotel;
+    @FXML
+    private Button buttonSearchHotel;
     @FXML
     private ChoiceBox choiceBoxLocation;
     @FXML
@@ -26,11 +37,55 @@ public class SearchView implements Initializable {
     private DatePicker datePickerDeparture;
     @FXML
     private TextField textFieldGuestCount;
+    @FXML
+    private Button buttonSearchHotelrooms;
     private LoginView lv;
+    private static final String[] region = {"Höfuðborgarsvæðið", "Suðurland", "Norðurland", "Austurland", "Vesturland"};
+    private HotelController hotelController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*
+        try {
+            this.hotelController = new HotelController();
+        } catch (SQLException e) {
+            // ATH, handle the exception here
+        }
 
+         */
+
+        frumstillaGogn();
+
+        searchHotelRule();
+        searchHotelroomsRule();
+    }
+
+    /**
+     * Setja upp notendaviðmót.
+     */
+    private void frumstillaGogn() {
+        ObservableList<String> regionNode = FXCollections.observableArrayList(region);
+        choiceBoxLocation.setItems(regionNode);
+    }
+
+    /**
+     * Regla búin til um hvenær hnappurinn til að leita af hótelherbergjum á að vera óvirkur/virkur.
+     */
+    private void searchHotelroomsRule() {
+        buttonSearchHotelrooms.disableProperty().bind(
+                choiceBoxLocation.valueProperty().isNull()
+                        .or(datePickerArrival.valueProperty().isNull())
+                                .or(datePickerDeparture.valueProperty().isNull())
+                                        .or(textFieldGuestCount.textProperty().isEmpty()) //ATH, verður að vera tala?
+        );
+    }
+
+    /**
+     * Regla búin til um hvenær hnappurinn til að leita af hóteli á að vera óvirkur/virkur.
+     */
+    private void searchHotelRule() {
+        buttonSearchHotel.disableProperty().bind(
+                textFieldHotel.textProperty().isEmpty());
     }
 
     public TextField getTextFieldHotel() {
@@ -38,6 +93,7 @@ public class SearchView implements Initializable {
     }
 
     public void searchHotelroomsMouseClicked(ActionEvent actionEvent) {
+
     }
 
     /**
@@ -52,7 +108,7 @@ public class SearchView implements Initializable {
         UserView uv = loader.getController();
 
         stage.setTitle("Mínar upplýsingar");
-        Scene s = new Scene(root, 400, 475);
+        Scene s = new Scene(root, 400, 505);
         stage.setScene(s);
 
         uv.setTenging(lv);
@@ -61,10 +117,20 @@ public class SearchView implements Initializable {
         stage.show();
     }
 
-    public void searchHotelMouseClicked(MouseEvent mouseEvent) {
+    public void searchHotelMouseClicked(MouseEvent mouseEvent) throws Exception {
+        //hotelController.searchForHotel(textFieldHotel.getText());
     }
 
+    /**
+     * Tengir SearchView við LoginView.
+     * @param lv LoginView
+     */
     public void setTenging(LoginView lv) {
         this.lv = lv;
+    }
+
+    public void setHotelController(Connection connection) {
+        HotelRepository hotelRepository = new HotelRepository(connection);
+        this.hotelController = new HotelController(hotelRepository);
     }
 }

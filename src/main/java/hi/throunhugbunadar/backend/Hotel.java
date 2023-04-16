@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 public class Hotel {
+    private final int id;
     private String name;
     private String info;
     private java.util.List<Image> imageList;
@@ -15,13 +16,18 @@ public class Hotel {
     private int stars;
     private String location;
 
-    public Hotel(String name, String info, java.util.List<Image> imageList, List<HotelRooms> hotelRoomsList, int stars, String location) {
+    public Hotel(int id, String name, String info, java.util.List<Image> imageList, List<HotelRooms> hotelRoomsList, int stars, String location) {
+        this.id = id;
         this.name = name;
         this.info = info;
         this.imageList = imageList;
         this.hotelRoomsList = hotelRoomsList;
         this.stars = stars;
         this.location = location;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

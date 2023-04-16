@@ -1,9 +1,16 @@
 package hi.throunhugbunadar.backend;
 
+import java.sql.Connection;
 import java.sql.Date;
 import java.util.ArrayList;
 
 public class HotelRepository implements iHotelRepository {
+    Connection connection;
+
+    public HotelRepository(Connection connection) {
+        this.connection = connection;
+    }
+
     /**
      * Finnur og skilar lista af hótelum sem uppfylla leit m.t.t. nafn hótels.
      *
