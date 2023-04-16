@@ -117,8 +117,8 @@ public class SearchView implements Initializable {
         stage.show();
     }
 
-    public void searchHotelMouseClicked(MouseEvent mouseEvent) {
-
+    public void searchHotelMouseClicked(MouseEvent mouseEvent) throws Exception {
+        //hotelController.searchForHotel(textFieldHotel.getText());
     }
 
     /**

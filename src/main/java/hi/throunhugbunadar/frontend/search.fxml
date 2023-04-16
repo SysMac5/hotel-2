@@ -30,7 +30,7 @@
         </HBox>
         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Hótel á Íslandi">
             <font>
-                <Font size="24.0" />
+                <Font size="34.0" />
             </font>
             <VBox.margin>
                 <Insets bottom="20.0" top="5.0" />
