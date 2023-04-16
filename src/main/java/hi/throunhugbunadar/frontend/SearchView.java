@@ -52,7 +52,7 @@ public class SearchView implements Initializable {
         UserView uv = loader.getController();
 
         stage.setTitle("Mínar upplýsingar");
-        Scene s = new Scene(root, 400, 475);
+        Scene s = new Scene(root, 400, 505);
         stage.setScene(s);
 
         uv.setTenging(lv);
