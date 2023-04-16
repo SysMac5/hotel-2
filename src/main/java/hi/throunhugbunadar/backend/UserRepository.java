@@ -19,7 +19,7 @@ public class UserRepository implements iUserRepository {
      * @return notandinn sem var sóttur
      * @throws Exception ef notandi með natandanafn {@code username} er ekki til
      */
-    public User getUser(String username) throws Exception { // óklárað ! !
+    public User getUser(String username) throws Exception {
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
         statement.setString(1,username);
         ResultSet resultSet = statement.executeQuery();
@@ -36,7 +36,7 @@ public class UserRepository implements iUserRepository {
         }
     }
 
-    private PaymentInfo getPaymentInfo(int id) throws Exception { // óklárað ! !
+    private PaymentInfo getPaymentInfo(int id) throws Exception {
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM payment_info WHERE id = ?");
         statement.setInt(1,id);
         ResultSet resultSet = statement.executeQuery();
