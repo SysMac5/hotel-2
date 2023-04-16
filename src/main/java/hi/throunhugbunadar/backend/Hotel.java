@@ -1,6 +1,7 @@
 package hi.throunhugbunadar.backend;
 
-import java.awt.*;
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,14 +10,14 @@ import java.util.List;
 
 public class Hotel {
     private final int id;
-    private String name;
-    private String info;
-    private java.util.List<Image> imageList;
-    private List<HotelRooms> hotelRoomsList;
-    private int stars;
-    private String location;
+    private final String name;
+    private final String info;
+    private final ArrayList<File> imageList;
+    private final List<HotelRooms> hotelRoomsList;
+    private final int stars;
+    private final String location;
 
-    public Hotel(int id, String name, String info, java.util.List<Image> imageList, List<HotelRooms> hotelRoomsList, int stars, String location) {
+    public Hotel(int id, String name, String info, ArrayList<File> imageList, List<HotelRooms> hotelRoomsList, int stars, String location) {
         this.id = id;
         this.name = name;
         this.info = info;
@@ -38,7 +39,7 @@ public class Hotel {
         return info;
     }
 
-    public List<Image> getImageList() {
+    public List<File> getImageList() {
         return imageList;
     }
 

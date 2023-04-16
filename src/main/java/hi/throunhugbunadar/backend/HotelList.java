@@ -6,20 +6,22 @@ import java.util.ArrayList;
  * Listi af hótelherbergjum sem hægt er að sía eftir verði og stjörnum hótela.
  */
 
-public class HotelroomList {
-    private ArrayList<HotelRooms> hotelroomList;
+public class HotelList {
+    private final ArrayList<Hotel> hotelList;
     private int minPrice = 0;
     private int maxPrice = Integer.MAX_VALUE;
     private int minStars = 1;
     private int maxStars = 5;
+    private final Criteria criteria;
 
     /**
      * Smiður sem tekur inn lista af hótelherbergjum.
      *
-     * @param hotelroomList Listi af hótelherbergjum.
+     * @param hotelList Listi af hótelum.
      */
-    public HotelroomList(ArrayList<HotelRooms> hotelroomList) {
-        this.hotelroomList = hotelroomList;
+    public HotelList(ArrayList<Hotel> hotelList, Criteria criteria) {
+        this.hotelList = hotelList;
+        this.criteria = criteria;
     }
 
     /**
@@ -27,13 +29,21 @@ public class HotelroomList {
      *
      * @return ArrayList með hótelherbergjum sem uppfylla núverandi skilyrði.
      */
-    public ArrayList<HotelRooms> getList() {
-        ArrayList<HotelRooms> filteredList = new ArrayList<>();
+    public ArrayList<Hotel> getList() {
+        ArrayList<Hotel> filteredList = new ArrayList<>();
 
-        for (HotelRooms room : hotelroomList) {
-            if (room.getPricePerNight() >= minPrice && room.getPricePerNight() <= maxPrice
-                    && room.getHotel().getStars() >= minStars && room.getHotel().getStars() <= maxStars) {
-                filteredList.add(room);
+        for (Hotel hotel : hotelList) {
+            HotelRooms theHotelRoom = null;
+            for (HotelRooms hotelRoom : hotel.getHotelRoomsList()) {
+                if (hotelRoom.getNumberOfGuests() == criteria.guestCount) {
+                    theHotelRoom = hotelRoom;
+                    break;
+                }
+            }
+            if (theHotelRoom == null) continue;
+            if (theHotelRoom.getPricePerNight() >= minPrice && theHotelRoom.getPricePerNight() <= maxPrice
+                    && hotel.getStars() >= minStars && hotel.getStars() <= maxStars) {
+                filteredList.add(hotel);
             }
         }
 

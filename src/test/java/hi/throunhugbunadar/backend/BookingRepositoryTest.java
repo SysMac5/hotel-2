@@ -16,7 +16,7 @@ public class BookingRepositoryTest {
 
     @BeforeEach
     public void setUp() {
-        String url = "jdbc:sqlite:GG_9.db";
+        String url = "jdbc:sqlite:src/main/resources/GG_9.db";
         try {
             this.connection = DriverManager.getConnection(url);
             bookingRepository = new BookingRepository(this.connection);
@@ -41,8 +41,8 @@ public class BookingRepositoryTest {
         ArrayList<Reservation> reservations = bookingRepository.getReservations(hotel);
 
         for (Reservation reservation : reservations) {
-            Assertions.assertEquals(hotel.getName(), reservation.getHotelType().getHotel().getName());
-            Assertions.assertTrue(hotel.getHotelRoomsList().contains(reservation.getHotelType()));
+            Assertions.assertEquals(hotel.getName(), reservation.getHotel().getName());
+            Assertions.assertTrue(hotel.getHotelRoomsList().contains(reservation.getHotelRooms()));
         }
     }
 
@@ -53,8 +53,8 @@ public class BookingRepositoryTest {
         Hotel hotel = hotelRepository.searchForHotel("Hótel Íslands").get(0);
         try {
             User user = userRepository.getUser("maggi");
-            HotelRooms hotelRooms = new HotelRooms(hotel ,50,4,25000,143);
-            Reservation reservation = new Reservation(user,hotelRooms,new Date(1679226210),new Date(1679312610));
+            HotelRooms hotelRooms = new HotelRooms(50,4,25000,143);
+            Reservation reservation = new Reservation(user,hotelRooms,hotel,new Date(1679226210),new Date(1679312610));
             Assertions.assertTrue(bookingRepository.reserveRooms(reservation));
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
@@ -68,8 +68,8 @@ public class BookingRepositoryTest {
         Hotel hotel = hotelRepository.searchForHotel("Hótel Íslands").get(0);
         try {
             User user = userRepository.getUser("maggi");
-            HotelRooms hotelRooms = new HotelRooms(hotel ,50,4,25000,143);
-            Assertions.assertThrows(Exception.class, () -> new Reservation(user, hotelRooms, new Date(1679312610), new Date(1679226210)));
+            HotelRooms hotelRooms = new HotelRooms(50,4,25000,143);
+            Assertions.assertThrows(Exception.class, () -> new Reservation(user, hotelRooms, hotel, new Date(1679312610), new Date(1679226210)));
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
         }

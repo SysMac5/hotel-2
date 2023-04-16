@@ -2,17 +2,14 @@ package hi.throunhugbunadar.backend;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class BookingRepository implements iBookingRepository {
     Connection connection;
 
     /**
      * Býr til nýja tengingu við gagnagrunninn.
-     *
-     * @throws SQLException þegar tenging við gagnagrunn klikkar
      */
-    public BookingRepository(Connection connection) throws SQLException {
+    public BookingRepository(Connection connection) {
         this.connection = connection;
     }
 
@@ -25,7 +22,7 @@ public class BookingRepository implements iBookingRepository {
     public int howManyAvailable(Reservation reservation) throws SQLException { // óklárað ! !
         Date arrival = reservation.getArrival();
         Date departure = reservation.getDeparture();
-        int hotelRoomId = reservation.getHotelType().getId();
+        int hotelRoomId = reservation.getHotelRooms().getId();
         int min = Integer.MAX_VALUE;
         for (Date day = arrival; day.before(departure); day = nextDay(day)) {
             if (howManyAvailable(day, hotelRoomId) < min) {
@@ -59,9 +56,9 @@ public class BookingRepository implements iBookingRepository {
      */
 
     private int howManyAvailable(Date dayBefore, int hotelRoomId) throws SQLException {
-        PreparedStatement statement1 = connection.prepareStatement("SELECT SUM(r.number_of_rooms) AS booked_rooms FROM reservations r\n" +
-                "JOIN hotel_rooms hr ON r.hotel_rooms_id = hr.id WHERE hr.id = ?\n" +
-                "AND (arrival_date <= ? AND departure_date > ?)\n");
+        PreparedStatement statement1 = connection.prepareStatement("SELECT SUM(r.number_of_rooms) AS booked_rooms FROM reservations r " +
+                "JOIN hotel_rooms hr ON r.hotel_rooms_id = hr.id WHERE hr.id = ? " +
+                "AND (arrival_date <= ? AND departure_date > ?)");
 
 
         statement1.setInt(1, hotelRoomId);

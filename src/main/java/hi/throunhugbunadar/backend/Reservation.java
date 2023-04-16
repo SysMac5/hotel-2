@@ -7,16 +7,18 @@ import java.sql.Date;
  */
 
 public class Reservation {
-    private User user;
-    private HotelRooms hotelType;
-    private Date arrival;
-    private Date departure;
+    private final User user;
+    private final HotelRooms hotelRooms;
+    private final Hotel hotel;
+    private final Date arrival;
+    private final Date departure;
 
     private int numberOfRooms;
 
-    public Reservation(User user, HotelRooms hotelType, Date arrival, Date departure) {
+    public Reservation(User user, HotelRooms hotelRooms, Hotel hotel, Date arrival, Date departure) {
         this.user = user;
-        this.hotelType = hotelType;
+        this.hotelRooms = hotelRooms;
+        this.hotel = hotel;
         this.arrival = arrival;
         this.departure = departure;
     }
@@ -25,8 +27,12 @@ public class Reservation {
         return user;
     }
 
-    public HotelRooms getHotelType() {
-        return hotelType;
+    public HotelRooms getHotelRooms() {
+        return hotelRooms;
+    }
+
+    public Hotel getHotel() {
+        return hotel;
     }
 
     public Date getArrival() {

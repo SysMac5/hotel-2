@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Samræmingar">
     <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="na">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/hotelroom-search-results.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/hotelroom-search-results.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/search.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -347,7 +341,6 @@
     <MESSAGE value="Vantaði throw exception." />
     <MESSAGE value="Bjó til LoginView. Breytti passwordTestField í passwordField. Disable innskráningartakka ef ekkert í textField og passwordField. Byrja að búa til SearchView." />
     <MESSAGE value="View breytingar" />
-    <option name="LAST_COMMIT_MESSAGE" value="View breytingar" />
     <MESSAGE value="Samræmingar" />
     <MESSAGE value="na" />
     <option name="LAST_COMMIT_MESSAGE" value="na" />

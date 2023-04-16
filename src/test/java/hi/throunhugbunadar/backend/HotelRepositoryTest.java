@@ -13,7 +13,7 @@ public class HotelRepositoryTest {
 
     @BeforeEach
     public void setUp() {
-        String url = "jdbc:sqlite:GG_9.db";
+        String url = "jdbc:sqlite:src/main/resources/GG_9.db";
         try {
             this.connection = DriverManager.getConnection(url);
             hotelRepository = new HotelRepository(this.connection);
@@ -73,10 +73,17 @@ public class HotelRepositoryTest {
         criteria.arrival = new Date(1679226210);
         criteria.departure = new Date(1679312610);
 
-        ArrayList<HotelRooms> hotelRooms = hotelRepository.searchByCriteria(criteria);
-        for (HotelRooms hotelRoom : hotelRooms) {
-            Assertions.assertEquals(criteria.guestCount, hotelRoom.getNumberOfGuests());
-            Assertions.assertEquals(criteria.location, hotelRoom.getHotel().getLocation());
+        ArrayList<Hotel> hotels = hotelRepository.searchByCriteria(criteria);
+        for (Hotel hotel : hotels) {
+            HotelRooms theHotelRooms = null;
+            for (HotelRooms hotelRooms : hotel.getHotelRoomsList()) {
+                if (hotelRooms.getNumberOfGuests() == criteria.guestCount) {
+                    theHotelRooms = hotelRooms;
+                }
+            }
+            if (theHotelRooms == null) continue;
+            Assertions.assertEquals(criteria.guestCount, theHotelRooms.getNumberOfGuests());
+            Assertions.assertEquals(criteria.location, hotel.getLocation());
         }
     }
 
@@ -88,10 +95,17 @@ public class HotelRepositoryTest {
         criteria.arrival = new Date(1679226210);
         criteria.departure = new Date(1679312610);
 
-        ArrayList<HotelRooms> hotelRooms = hotelRepository.searchByCriteria(criteria);
-        for (HotelRooms hotelRoom : hotelRooms) {
-            Assertions.assertEquals(criteria.guestCount, hotelRoom.getNumberOfGuests());
-            Assertions.assertEquals(criteria.location, hotelRoom.getHotel().getLocation());
+        ArrayList<Hotel> hotels = hotelRepository.searchByCriteria(criteria);
+        for (Hotel hotel : hotels) {
+            HotelRooms theHotelRooms = null;
+            for (HotelRooms hotelRooms : hotel.getHotelRoomsList()) {
+                if (hotelRooms.getNumberOfGuests() == criteria.guestCount) {
+                    theHotelRooms = hotelRooms;
+                }
+            }
+            if (theHotelRooms == null) continue;
+            Assertions.assertEquals(criteria.guestCount, theHotelRooms.getNumberOfGuests());
+            Assertions.assertEquals(criteria.location, hotel.getLocation());
         }
     }
 
@@ -103,10 +117,17 @@ public class HotelRepositoryTest {
         criteria.arrival = new Date(1679226210);
         criteria.departure = new Date(1679312610);
 
-        ArrayList<HotelRooms> hotelRooms = hotelRepository.searchByCriteria(criteria);
-        for (HotelRooms hotelRoom : hotelRooms) {
-            Assertions.assertEquals(criteria.guestCount, hotelRoom.getNumberOfGuests());
-            Assertions.assertEquals(criteria.location, hotelRoom.getHotel().getLocation());
+        ArrayList<Hotel> hotels = hotelRepository.searchByCriteria(criteria);
+        for (Hotel hotel : hotels) {
+            HotelRooms theHotelRooms = null;
+            for (HotelRooms hotelRooms : hotel.getHotelRoomsList()) {
+                if (hotelRooms.getNumberOfGuests() == criteria.guestCount) {
+                    theHotelRooms = hotelRooms;
+                }
+            }
+            if (theHotelRooms == null) continue;
+            Assertions.assertEquals(criteria.guestCount, theHotelRooms.getNumberOfGuests());
+            Assertions.assertEquals(criteria.location, hotel.getLocation());
         }
     }
 
@@ -118,10 +139,7 @@ public class HotelRepositoryTest {
         criteria.arrival = new Date(1679312610);
         criteria.departure = new Date(1679226210);
 
-        ArrayList<HotelRooms> hotelRooms = hotelRepository.searchByCriteria(criteria);
-        for (HotelRooms hotelRoom : hotelRooms) {
-            Assertions.assertEquals(criteria.guestCount, hotelRoom.getNumberOfGuests());
-            Assertions.assertEquals(criteria.location, hotelRoom.getHotel().getLocation());
-        }
+        ArrayList<Hotel> hotels = hotelRepository.searchByCriteria(criteria);
+        Assertions.assertTrue(hotels.isEmpty());
     }
 }

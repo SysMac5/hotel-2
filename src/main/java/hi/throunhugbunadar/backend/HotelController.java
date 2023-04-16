@@ -1,15 +1,12 @@
 package hi.throunhugbunadar.backend;
 
-import javafx.event.ActionEvent;
-import javafx.scene.input.MouseEvent;
-
 import java.util.ArrayList;
 
 // ATH, hafa documention hér?
 
 public class HotelController {
     private final iHotelRepository hotelRepository;
-    private HotelroomList hotelroomList;
+    private HotelList hotelList;
 
     /**
      * Smiður fyrir HotelController.
@@ -44,11 +41,11 @@ public class HotelController {
      * @param criteria Leitarskilyrði sem eru notuð til að leita að hótelherbergjum.
      * @return HotelroomList með hótelherbergjum sem uppfylla gefin leitarskilyrði.
      */
-    public HotelroomList searchByCriteria(Criteria criteria) throws Exception {
+    public HotelList searchByCriteria(Criteria criteria) throws Exception {
         if (criteria == null) throw new NullPointerException();
 
         try {
-            return new HotelroomList(hotelRepository.searchByCriteria(criteria));
+            return new HotelList(hotelRepository.searchByCriteria(criteria), criteria);
         } catch (Exception e) {
             // ATH, skila hverju?
             throw new Exception();
