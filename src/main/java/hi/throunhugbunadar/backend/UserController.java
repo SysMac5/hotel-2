@@ -16,14 +16,6 @@ import java.util.ResourceBundle;
  */
 
 public class UserController {
-    public TextField textFieldName;
-    public Label labelUsername;
-    public TextField textFieldPhoneNumber;
-    public TextField textFieldEmail;
-    public TextField textFieldCardNumber;
-    public TextField textFieldMonthValid;
-    public TextField textFieldYearValid;
-    public TextField textFieldCvv;
     private User user;
     private final iUserRepository userRepository;
 

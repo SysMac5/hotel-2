@@ -31,6 +31,7 @@ public class Main extends Application {
      */
     private void stillaView(LoginView v1, SearchView v2) {
         v1.setTenging(v2);
+        v2.setTenging(v1);
     }
 
     /**
