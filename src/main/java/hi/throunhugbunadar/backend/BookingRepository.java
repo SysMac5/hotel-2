@@ -93,13 +93,19 @@ public class BookingRepository implements iBookingRepository {
 
 
 
-
-
-        public boolean reserveRooms(Reservation reservation) { // óklárað ! !
+    public boolean reserveRooms(Reservation reservation) { // óklárað ! !
         throw new UnsupportedOperationException();
     }
 
+
     public List<Reservation> getReservations(Hotel hotel) { // óklárað ! !
+        //PreparedStatement statement1 = connection.prepareStatement("Select t1.hotel_rooms_id, t1.user_id, t1.number_of_rooms, t1.arrival_date, t1.departure_date, t2.number_of_guests, t4.phone_number, t4.name, t4.email from reservations t1 left join hotel_rooms t2 on t1.hotel_rooms_id = t2.id join hotels t3 on t2.hotel_id = t3.id join users t4 on t4.username = t1.user_id where t3.id = ?");
+        //statement1.setInt(1, hotel.getId());
+        // ResultSet result = statement1.executeQuery();
+
+
+
+
         throw new UnsupportedOperationException();
     }
 }
