@@ -8,10 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -19,6 +16,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class HotelRoomsView {
+    @FXML
+    private ChoiceBox<String> choiceBoxSort;
     @FXML
     private Slider sliderMinPrice;
     @FXML
@@ -34,15 +33,37 @@ public class HotelRoomsView {
     @FXML
     private ListView<Hotel> listViewHotelroomList;
     private HotelList hotelList;
+    private static final String[] sort = {"Verði", "Stjörnum"};
+    //ATH vantar ennþá sort (raða eftir)
 
     /**
-     *
      * Setja upp notendaviðmót.
      * @param hotelList listi af hótelum sem á að birta
      */
     public void frumstilla(HotelList hotelList) {
         this.hotelList = hotelList;
 
+        ObservableList<String> sortNode = FXCollections.observableArrayList(sort);
+        choiceBoxSort.setItems(sortNode);
+
+        showList(hotelList);
+
+        listViewHotelroomList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                try {
+                    nyrGluggi(newValue);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    /**
+     * Sýnir lista af hótelum.
+     * @param hotelList listi af hótelum
+     */
+    private void showList(HotelList hotelList) {
         ObservableList<Hotel> hotelObservableList = FXCollections.observableArrayList(hotelList.getList());
 
         listViewHotelroomList.setItems(hotelObservableList);
@@ -59,17 +80,6 @@ public class HotelRoomsView {
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
-                }
-            }
-        });
-
-        listViewHotelroomList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null) {
-                Hotel selectedHotel = (Hotel) newValue;
-                try {
-                    nyrGluggi(selectedHotel);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
                 }
             }
         });
@@ -91,6 +101,10 @@ public class HotelRoomsView {
         stage.show();
     }
 
+    /**
+     * Síar lista af hótelum.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
+     */
     public void filterMouseClicked(MouseEvent mouseEvent) {
         hotelList.filterByPrice((int)sliderMinPrice.getValue()*1000, (int)sliderMaxPrice.getValue()*1000);
         hotelList.filterByStars((int)sliderMinStars.getValue(), (int)sliderMaxStars.getValue());
@@ -100,6 +114,10 @@ public class HotelRoomsView {
         listViewHotelroomList.setItems(hotelObservableList);
     }
 
+    /**
+     * Endurstillir síun á lista hótela.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
+     */
     public void resetMouseClicked(MouseEvent mouseEvent) {
         sliderMinPrice.setValue(0);
         sliderMaxPrice.setValue(40);

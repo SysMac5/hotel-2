@@ -102,7 +102,7 @@
                         <HBox spacing="10.0">
                             <children>
                                 <Label prefHeight="25.0" text="Raða eftir:" />
-                                <ChoiceBox prefWidth="125.0" />
+                                <ChoiceBox fx:id="choiceBoxSort" prefWidth="100.0" />
                             </children>
                             <padding>
                                 <Insets bottom="5.0" left="5.0" top="10.0" />
