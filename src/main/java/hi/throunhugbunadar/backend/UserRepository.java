@@ -24,11 +24,11 @@ public class UserRepository implements iUserRepository {
         statement.setString(1,username);
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()) {
-            PaymentInfo paymentInfo = getPaymentInfo(resultSet.getInt("paymentInfo"));
+            PaymentInfo paymentInfo = getPaymentInfo(resultSet.getInt("payment_info_id"));
             return new User(resultSet.getString("name"),
                     username,
                     resultSet.getString("password"),
-                    resultSet.getString("phoneNumber"),
+                    resultSet.getString("phone_number"),
                     resultSet.getString("email"),
                     paymentInfo);
         } else {
@@ -36,9 +36,18 @@ public class UserRepository implements iUserRepository {
         }
     }
 
-    // mögulega ehv rusl, setja frekar í skipun fyrir ofan
-    private PaymentInfo getPaymentInfo(int id) { // óklárað ! !
-        throw new UnsupportedOperationException();
+    private PaymentInfo getPaymentInfo(int id) throws Exception { // óklárað ! !
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM payment_info WHERE id = ?");
+        statement.setInt(1,id);
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            return new PaymentInfo(resultSet.getString("card_number"),
+                    resultSet.getString("month_valid"),
+                    resultSet.getString("year_valid"),
+                    resultSet.getString("cvv"));
+        } else {
+            throw new Exception("Payment information not found in database");
+        }
     }
 
     /**
