@@ -123,7 +123,7 @@ public class BookingRepository implements iBookingRepository {
             // ResultSet result2;
             // result2 = statement2.executeQuery();
             statement1.setInt(1, maxId);
-            statement1.setInt(2, reservation.getHotelType().getId());
+            statement1.setInt(2, reservation.getHotelRooms().getId());
             statement1.setString(3, reservation.getUser().getUsername());
             statement1.setInt(4, reservation.getNumberOfRooms());
             statement1.setDate(5, reservation.getArrival());
@@ -235,7 +235,6 @@ public class BookingRepository implements iBookingRepository {
         } return addedHotelRooms;
     };
 
-
     public ArrayList<Reservation> getReservations(Hotel hotel) { // óklárað ! !
         PreparedStatement statement1;
         try {
@@ -259,10 +258,16 @@ public class BookingRepository implements iBookingRepository {
                 ArrayList<HotelRooms> listOfHotelRooms = getHotelRooms(result);
                 hotelRoomsFromList = listOfHotelRooms.get(count1);
 
+                // Hotel
+                Hotel hotelFromList;
+                ArrayList<Hotel> listOfHotels = getHotels(result); // Kalla á fallið
+                hotelFromList = listOfHotels.get(count1); // Fyrsta stakið og koll af kolli
+
+
                 // Data objt = new Data(name, address, contact); // Creating a new object
                 // Contacts.add(objt); // Adding it to the list
 
-                Reservation newReservation = new Reservation(userFromList, hotelRoomsFromList,
+                Reservation newReservation = new Reservation(userFromList, hotelRoomsFromList, hotelFromList,
                         result.getDate("arrival_date"),
                         result.getDate("departure_date"),
                         result.getInt("number_of_rooms"));
