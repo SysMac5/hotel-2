@@ -1,0 +1,17 @@
+Helga {
+    BookingRepository
+}
+
+Helena {
+
+}
+
+Gyða {
+    Viðmótið (frontend)
+}
+
+Maggi {
+    Testin (test)
+    UserRepository
+    UserController
+}

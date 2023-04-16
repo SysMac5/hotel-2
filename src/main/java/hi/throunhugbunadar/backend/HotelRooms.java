@@ -38,9 +38,4 @@ public class HotelRooms {
     public int getId() {
         return id;
     }
-
-    /*@Override
-    public boolean equals(HotelRooms hotelRooms) {
-        return this.id == hotel.getId();
-    }*/
 }
