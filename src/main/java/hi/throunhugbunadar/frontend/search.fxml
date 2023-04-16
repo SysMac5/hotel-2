@@ -15,12 +15,12 @@
     <children>
         <HBox alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" onAction="#userInformationMouseClicked" text="Mínar upplýsingar" />
+                <Button mnemonicParsing="false" onMouseClicked="#userInformationMouseClicked" text="Mínar upplýsingar" />
                 <Pane prefWidth="270.0" />
                 <HBox alignment="CENTER_RIGHT" spacing="5.0">
                     <children>
                         <TextField fx:id="textFieldHotel" text="Leita af hóteli" />
-                        <Button mnemonicParsing="false" onAction="#searchHotelMouseClicked" onMouseClicked="#leitaHotelMouseClicked" text="Leita" />
+                        <Button mnemonicParsing="false" onMouseClicked="#searchHotelMouseClicked" text="Leita" />
                     </children>
                 </HBox>
             </children>
@@ -64,7 +64,7 @@
         </HBox>
         <HBox alignment="CENTER">
             <children>
-                <Button fx:id="buttonSearchHotelrooms" mnemonicParsing="false" onAction="#searchHotelroomsMouseClicked" onMouseClicked="#leitaHotelherbergiMouseClicked" text="Leita" />
+                <Button fx:id="buttonSearchHotelrooms" mnemonicParsing="false" onMouseClicked="#searchHotelroomsMouseClicked" text="Leita" />
             </children>
             <VBox.margin>
                 <Insets bottom="40.0" />

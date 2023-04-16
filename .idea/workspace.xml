@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Tengdi LoginView við SearchView svo nú birtist leitarviðmótið þegar einstaklingur skráir sig inn.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8__apr___2023_19_10_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8__apr___2023_19_10__Changes_.xml" beforeDir="false" />
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Laga SearchView viðmót. Setja inn ný föll.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/UserView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/userInformation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +170,7 @@
       <workItem from="1679999196523" duration="4650000" />
       <workItem from="1680878688543" duration="14073000" />
       <workItem from="1681488336072" duration="4345000" />
-      <workItem from="1681644505995" duration="999000" />
+      <workItem from="1681644505995" duration="2600000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
@@ -289,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681509610235</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Laga SearchView viðmót. Setja inn ný föll.">
+      <created>1681645551471</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681645551471</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +330,7 @@
     <MESSAGE value="Vantaði throw exception." />
     <MESSAGE value="Bjó til LoginView. Breytti passwordTestField í passwordField. Disable innskráningartakka ef ekkert í textField og passwordField. Byrja að búa til SearchView." />
     <MESSAGE value="Tengdi LoginView við SearchView svo nú birtist leitarviðmótið þegar einstaklingur skráir sig inn." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tengdi LoginView við SearchView svo nú birtist leitarviðmótið þegar einstaklingur skráir sig inn." />
+    <MESSAGE value="Laga SearchView viðmót. Setja inn ný föll." />
+    <option name="LAST_COMMIT_MESSAGE" value="Laga SearchView viðmót. Setja inn ný föll." />
   </component>
 </project>
