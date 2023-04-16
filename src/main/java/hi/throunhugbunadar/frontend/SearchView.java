@@ -26,6 +26,7 @@ public class SearchView implements Initializable {
     private DatePicker datePickerDeparture;
     @FXML
     private TextField textFieldGuestCount;
+    private LoginView lv;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,12 +55,16 @@ public class SearchView implements Initializable {
         Scene s = new Scene(root, 400, 475);
         stage.setScene(s);
 
-        uv.setTenging(this);
+        uv.setTenging(lv);
         uv.frumstilla();
 
         stage.show();
     }
 
     public void searchHotelMouseClicked(MouseEvent mouseEvent) {
+    }
+
+    public void setTenging(LoginView lv) {
+        this.lv = lv;
     }
 }
