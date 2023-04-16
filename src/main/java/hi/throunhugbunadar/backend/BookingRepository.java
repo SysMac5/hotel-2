@@ -87,7 +87,6 @@ public class BookingRepository implements iBookingRepository {
         //throw new UnsupportedOperationException();
 
         return  capacity - occupied;
-
     }
 
 

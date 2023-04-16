@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -15,6 +16,14 @@ import java.util.ResourceBundle;
  */
 
 public class UserController {
+    public TextField textFieldName;
+    public Label labelUsername;
+    public TextField textFieldPhoneNumber;
+    public TextField textFieldEmail;
+    public TextField textFieldCardNumber;
+    public TextField textFieldMonthValid;
+    public TextField textFieldYearValid;
+    public TextField textFieldCvv;
     private User user;
     private final iUserRepository userRepository;
 
@@ -79,4 +88,6 @@ public class UserController {
     }
 
 
+    public void vistaMouseClicked(MouseEvent mouseEvent) {
+    }
 }

@@ -2,11 +2,15 @@ package hi.throunhugbunadar.frontend;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,16 +31,35 @@ public class SearchView implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    public void userInformationOnAction(ActionEvent actionEvent) {
-    }
-
-    public void leitaHotelMouseClicked(MouseEvent mouseEvent) {
-    }
-
-    public void leitaHotelherbergiMouseClicked(MouseEvent mouseEvent) {
-    }
 
     public TextField getTextFieldHotel() {
         return textFieldHotel;
+    }
+
+    public void searchHotelroomsMouseClicked(ActionEvent actionEvent) {
+    }
+
+    /**
+     * Opnar nýjan glugga með upplýsingum um notanda.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
+     * @throws java.io.IOException
+     */
+    public void userInformationMouseClicked(MouseEvent mouseEvent) throws java.io.IOException{
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("userInformation.fxml"));
+        Parent root = loader.load();
+        UserView uv = loader.getController();
+
+        stage.setTitle("Mínar upplýsingar");
+        Scene s = new Scene(root, 400, 475);
+        stage.setScene(s);
+
+        uv.setTenging(this);
+        uv.frumstilla();
+
+        stage.show();
+    }
+
+    public void searchHotelMouseClicked(MouseEvent mouseEvent) {
     }
 }
