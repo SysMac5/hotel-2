@@ -5,9 +5,18 @@ import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Geymsla fyrir hótelin.
+ */
+
 public class HotelRepository implements iHotelRepository {
     Connection connection;
 
+    /**
+     * Smiður fyrir geymsluna.
+     *
+     * @param connection tenging við SQLite gagnagrunninn.
+     */
     public HotelRepository(Connection connection) {
         this.connection = connection;
     }
@@ -76,6 +85,12 @@ public class HotelRepository implements iHotelRepository {
         return hotels;
     }
 
+    /**
+     * Skilar lista yfir myndir af hóteli með auðkenni {@code hotelId}.
+     *
+     * @param hotelId auðkennið
+     * @return myndalistinn
+     */
     private ArrayList<File> getImageList(int hotelId) {
         ArrayList<File> images = new ArrayList<>();
         try {
@@ -95,6 +110,12 @@ public class HotelRepository implements iHotelRepository {
         return images;
     }
 
+    /**
+     * Skilar lista yfir tegundir af hótelherbergjum í hóteli með auðkenni {@code hotelId}.
+     *
+     * @param hotelId auðkennið
+     * @return hótelherbergjategundir
+     */
     private ArrayList<HotelRooms> getHotelRoomsList(int hotelId) {
         ArrayList<HotelRooms> hotelRooms = new ArrayList<>();
         try {

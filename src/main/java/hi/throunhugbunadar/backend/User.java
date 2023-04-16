@@ -74,7 +74,6 @@ public class User {
      * @param password nýtt lykilorð
      * @throws Exception ef nýtt lykilorð er tómastrengurinn
      */
-
     public void changePassword(String password) throws Exception {
         if(password.equals("")) throw new Exception();
         this.password = password;
@@ -134,6 +133,11 @@ public class User {
         this.paymentInfo = paymentInfo;
     }
 
+    /**
+     * Skilar lykilorði notanda, þ.e. {@link User#password}.
+     *
+     * @return lykilorðið
+     */
     public String getPassword() {
         return password;
     }
