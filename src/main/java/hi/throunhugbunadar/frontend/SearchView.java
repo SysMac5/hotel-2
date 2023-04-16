@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -92,8 +93,20 @@ public class SearchView implements Initializable {
         return textFieldHotel;
     }
 
-    public void searchHotelroomsMouseClicked(ActionEvent actionEvent) {
+    public void searchHotelroomsMouseClicked(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hotelroom-search-results.fxml"));
+        Parent root = loader.load();
+        HotelRoomsView uv = loader.getController();
 
+        stage.setTitle("Mínar upplýsingar");
+        Scene s = new Scene(root, 400, 505);
+        stage.setScene(s);
+
+        //uv.setTenging(lv);
+        //uv.frumstilla();
+
+        stage.show();
     }
 
     /**
