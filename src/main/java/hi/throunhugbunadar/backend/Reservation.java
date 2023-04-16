@@ -29,6 +29,7 @@ public class Reservation {
         this.hotel = hotel;
         this.arrival = arrival;
         this.departure = departure;
+        this.numberOfRooms = numberOfRooms;
     }
 
     /**
