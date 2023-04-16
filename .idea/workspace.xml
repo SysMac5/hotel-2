@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Búa til nýtt fall searchByCriteria upp á snyrtileika. Documentation á föll.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/booking.fxml" afterDir="false" />
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="HotelRepository og HotelController næstum klárað">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Samræmingar">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/hotelroom-search-results.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/hotelroom-search-results.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GG_9.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GG_9.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/HotelRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/HotelRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepositoryMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepositoryMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,22 +90,7 @@
       <recent name="hi.throunhugbunadar.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HotelRepositoryTest">
-    <configuration name="HotelRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hotel-2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hi.throunhugbunadar.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hi.throunhugbunadar.backend" />
-      <option name="MAIN_CLASS_NAME" value="hi.throunhugbunadar.backend.HotelRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UserRepositoryTest">
     <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hotel-2" />
       <extension name="coverage">
@@ -177,7 +154,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.HotelRepositoryTest" />
       <item itemvalue="JUnit.UserRepositoryTest" />
       <item itemvalue="JUnit.UserControllerTest" />
       <item itemvalue="JUnit.UserControllerTest.testLogin" />
@@ -185,7 +161,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HotelRepositoryTest" />
         <item itemvalue="JUnit.UserRepositoryTest" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UserControllerTest.testLogin" />
@@ -337,14 +312,7 @@
       <option name="project" value="LOCAL" />
       <updated>1681657852405</updated>
     </task>
-    <task id="LOCAL-00019" summary="HotelRepository og HotelController næstum klárað">
-      <created>1681676773370</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1681676773370</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,8 +345,6 @@
     <MESSAGE value="Bjó til LoginView. Breytti passwordTestField í passwordField. Disable innskráningartakka ef ekkert í textField og passwordField. Byrja að búa til SearchView." />
     <MESSAGE value="View breytingar" />
     <MESSAGE value="Samræmingar" />
-    <MESSAGE value="na" />
-    <MESSAGE value="HotelRepository og HotelController næstum klárað" />
-    <option name="LAST_COMMIT_MESSAGE" value="HotelRepository og HotelController næstum klárað" />
+    <option name="LAST_COMMIT_MESSAGE" value="Samræmingar" />
   </component>
 </project>
