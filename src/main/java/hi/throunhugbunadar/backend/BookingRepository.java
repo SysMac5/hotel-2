@@ -219,16 +219,9 @@ public class BookingRepository implements iBookingRepository {
     private ArrayList<HotelRooms> getHotelRooms(ResultSet resultSet) throws SQLException {
         ArrayList<HotelRooms> addedHotelRooms = new ArrayList<>();
 
-        // Hotel
-        int count3 = 0;
-        Hotel hotelFromList;
-        ArrayList<Hotel> listOfHotels = getHotels(resultSet); // Kalla á fallið
-        hotelFromList = listOfHotels.get(count3); // Fyrsta stakið og koll af kolli
-
         while(true){
             try {
                 addedHotelRooms.add(new HotelRooms(
-                        hotelFromList, // Hotel
                         resultSet.getInt("capacity"),
                         resultSet.getInt("number_of_guests"),
                         resultSet.getInt("price_per_night"),
@@ -238,7 +231,6 @@ public class BookingRepository implements iBookingRepository {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            count3 = count3 + 1;
 
         } return addedHotelRooms;
     };
