@@ -2,6 +2,10 @@ package hi.throunhugbunadar.backend;
 
 import java.sql.*;
 
+/**
+ * Geymslan fyrir notendurna.
+ */
+
 public class UserRepository implements iUserRepository {
     Connection connection;
 
@@ -36,6 +40,13 @@ public class UserRepository implements iUserRepository {
         }
     }
 
+    /**
+     * Sækja greiðsluupplýsingar með auðkennið {@code id}.
+     *
+     * @param id auðkennið
+     * @return greiðsluupplýsingar
+     * @throws Exception ef greiðsluupplýsingar finnast ekki í gagnagrunni
+     */
     private PaymentInfo getPaymentInfo(int id) throws Exception {
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM payment_info WHERE id = ?");
         statement.setInt(1,id);

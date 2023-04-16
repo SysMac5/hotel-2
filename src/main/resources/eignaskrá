@@ -14,4 +14,6 @@ Maggi {
     Testin (test)
     UserRepository
     UserController
+    HotelController
+    HotelRepository
 }
