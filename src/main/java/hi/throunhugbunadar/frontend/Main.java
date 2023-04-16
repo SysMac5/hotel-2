@@ -19,10 +19,12 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root1 = loader.load();
         LoginView v1 = loader.getController();
+        v1.setUserController(connection);
 
         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("search.fxml"));
         Parent root2 = loader2.load();
         SearchView v2 = loader2.getController();
+        v2.setHotelController(connection);
 
         stillaView(v1, v2);
 

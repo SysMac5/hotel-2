@@ -1,5 +1,8 @@
 package hi.throunhugbunadar.frontend;
 
+import hi.throunhugbunadar.backend.HotelController;
+import hi.throunhugbunadar.backend.HotelRepository;
+import hi.throunhugbunadar.backend.UserController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +19,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SearchView implements Initializable {
@@ -36,9 +41,19 @@ public class SearchView implements Initializable {
     private Button buttonSearchHotelrooms;
     private LoginView lv;
     private static final String[] region = {"Höfuðborgarsvæðið", "Suðurland", "Norðurland", "Austurland", "Vesturland"};
+    private HotelController hotelController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*
+        try {
+            this.hotelController = new HotelController();
+        } catch (SQLException e) {
+            // ATH, handle the exception here
+        }
+
+         */
+
         frumstillaGogn();
 
         searchHotelRule();
@@ -103,9 +118,19 @@ public class SearchView implements Initializable {
     }
 
     public void searchHotelMouseClicked(MouseEvent mouseEvent) {
+
     }
 
+    /**
+     * Tengir SearchView við LoginView.
+     * @param lv LoginView
+     */
     public void setTenging(LoginView lv) {
         this.lv = lv;
+    }
+
+    public void setHotelController(Connection connection) {
+        HotelRepository hotelRepository = new HotelRepository(connection);
+        this.hotelController = new HotelController(hotelRepository);
     }
 }
