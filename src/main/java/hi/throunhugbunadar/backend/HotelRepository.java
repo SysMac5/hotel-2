@@ -3,8 +3,6 @@ package hi.throunhugbunadar.backend;
 import java.sql.*;
 import java.util.ArrayList;
 
-import static hi.throunhugbunadar.backend.HelperFunctions.*;
-
 /**
  * Geymsla fyrir hótelin.
  */
@@ -40,8 +38,8 @@ public class HotelRepository implements iHotelRepository {
                 hotels.add(new Hotel(resultSet.getInt("id"),
                         resultSet.getString("hotel_name"),
                         resultSet.getString("information"),
-                        getImageList(resultSet.getInt("id"), connection),
-                        getHotelRoomsList(resultSet.getInt("id"), connection),
+                        HelperFunctions.getImageList(resultSet.getInt("id"), connection),
+                        HelperFunctions.getHotelRoomsList(resultSet.getInt("id"), connection),
                         resultSet.getInt("stars"),
                         resultSet.getString("location")));
             }
@@ -69,12 +67,12 @@ public class HotelRepository implements iHotelRepository {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                if (howManyAvailable(criteria.arrival, criteria.departure, resultSet.getInt("id"), connection) > 0) {
+                if (HelperFunctions.howManyAvailable(criteria.arrival, criteria.departure, resultSet.getInt("id"), connection) > 0) {
                     hotels.add(new Hotel(resultSet.getInt("hotel_id"),
                             resultSet.getString("hotel_name"),
                             resultSet.getString("information"),
-                            getImageList(resultSet.getInt("hotel_id"), connection),
-                            getHotelRoomsList(resultSet.getInt("hotel_id"), connection),
+                            HelperFunctions.getImageList(resultSet.getInt("hotel_id"), connection),
+                            HelperFunctions.getHotelRoomsList(resultSet.getInt("hotel_id"), connection),
                             resultSet.getInt("stars"),
                             resultSet.getString("location")));
                 }

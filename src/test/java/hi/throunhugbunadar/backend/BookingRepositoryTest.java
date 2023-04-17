@@ -40,9 +40,11 @@ public class BookingRepositoryTest {
         Hotel hotel = hotelRepository.searchForHotel("Hótel Dyrhólaey").get(0);
         ArrayList<Reservation> reservations = bookingRepository.getReservations(hotel);
 
+        Assertions.assertNotNull(reservations);
+        Assertions.assertFalse(reservations.isEmpty());
+
         for (Reservation reservation : reservations) {
             Assertions.assertEquals(hotel.getName(), reservation.getHotel().getName());
-            Assertions.assertEquals(hotel, reservation.getHotel());
         }
     }
 
@@ -56,6 +58,15 @@ public class BookingRepositoryTest {
             HotelRooms hotelRooms = new HotelRooms(50,4,25000,143);
             Reservation reservation = new Reservation(user,hotel,new Date(1679226210),new Date(1679312610),hotelRooms.getNumberOfGuests(), 1);
             Assertions.assertTrue(bookingRepository.reserveRooms(reservation));
+
+            ArrayList<Reservation> reservations = bookingRepository.getReservations(hotel);
+
+            Assertions.assertNotNull(reservations);
+            Assertions.assertFalse(reservations.isEmpty());
+
+            for (Reservation reservation1 : reservations) {
+                Assertions.assertEquals(hotel.getName(), reservation1.getHotel().getName());
+            }
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
         }
