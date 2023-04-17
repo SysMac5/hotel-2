@@ -170,7 +170,7 @@ public class BookingRepository implements iBookingRepository {
         PreparedStatement statement1;
         try {
             ArrayList<Reservation> reservationsList = new ArrayList<Reservation>();
-            statement1 = connection.prepareStatement("Select * from reservations t1 left join hotel_rooms t2 on t1.hotel_rooms_id = t2.id join hotels t3 on t2.hotel_id = t3.id join users t4 on t4.username = t1.user_id where t3.id = ?");
+            statement1 = connection.prepareStatement("Select * from reservations t1 left join hotel_rooms t2 on t1.hotel_rooms_id = t2.id join hotels t3 on t2.hotel_id = t3.id join users t4 on t4.username = t1.user_id join payment_info t5 on t4.payment_info_id = t5.id where t3.id = ?");
             // Það þarf að bæta við fleiri töflum, ss setja allar töflurnar saman miðað við allt sem er beðið um í reservations, við vitum að það er ekki nauðsynlegt fyrir þær upplýsingar sem við þurfum að sýna úr þessu falli, get ég komist hjá þessari svaka vinnu?
             statement1.setInt(1, hotel.getId());
             ResultSet result = statement1.executeQuery();
