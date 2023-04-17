@@ -15,6 +15,8 @@ import java.time.format.DateTimeFormatter;
 
 public class BookingView {
     @FXML
+    private Spinner<Integer> spinnerNumberOfRooms;
+    @FXML
     private Label labelHotelName;
     @FXML
     private Label labelLocation;
@@ -51,12 +53,19 @@ public class BookingView {
     private User user;//frekar en usercontroller?
     private HotelView hotelView;
 
+    /**
+     * Setja upp bókunarviðmót.
+     * @param hotel hótel sem á að sýna
+     * @param hotelrooms satt ef notandi velur ákveðið herbergi á hótelinu
+     */
     public void frumstilla(Hotel hotel, boolean hotelrooms) {
         rules();
 
         // ATH hafa min og max m.t.t. hvers hótels?
-        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5,1,1);
-        spinnerGuestCount.setValueFactory(valueFactory);
+        SpinnerValueFactory<Integer> valueFactoryGuestCount = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5,1,1);
+        spinnerGuestCount.setValueFactory(valueFactoryGuestCount);
+
+
 
         if(hotelrooms) {
             user = hotelRoomsView.getUser();
@@ -79,6 +88,9 @@ public class BookingView {
         else {
             user = hotelView.getUser();
         }
+
+        SpinnerValueFactory<Integer> valueFactoryNumberOfRooms = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100,1,1);
+        spinnerNumberOfRooms.setValueFactory(valueFactoryNumberOfRooms);
 
         labelHotelName.setText(hotel.getName());
 
@@ -133,6 +145,9 @@ public class BookingView {
         System.out.println("user");
     }
 
+    /**
+     * Regla búin til um hvenær hnappurinn til að bóka herbergi á að vera óvirkur/virkur.
+     */
     private void rules() {
         buttonReserve.disableProperty().bind(
                 datePickerArrival.valueProperty().isNull()
@@ -147,6 +162,9 @@ public class BookingView {
         );
     }
 
+    /**
+     * Sýna upplýsingar um notanda í viðmóti.
+     */
     private void frumstillaNotandaUpplysingar() {
         textFieldName.setText(user.getName());
         textFieldPhoneNumber.setText(user.getPhoneNumber());
@@ -159,12 +177,21 @@ public class BookingView {
     }
 
     public void reserveMouseClicked(MouseEvent mouseEvent) {
+
     }
 
+    /**
+     * Tengir BookingView við HotelRoomsView.
+     * @param hotelRoomsView HotelRoomsView
+     */
     public void setTenging(HotelRoomsView hotelRoomsView) {
         this.hotelRoomsView = hotelRoomsView;
     }
 
+    /**
+     * Tengir BookingView við HotelView.
+     * @param hotelView HotelView
+     */
     public void setTenging(HotelView hotelView) {
         this.hotelView = hotelView;
     }

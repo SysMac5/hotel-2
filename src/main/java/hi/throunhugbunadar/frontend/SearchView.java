@@ -83,6 +83,11 @@ public class SearchView implements Initializable {
         return textFieldHotel;
     }
 
+    /**
+     * Sýnir notendaviðmót með lista af hótelum m.t.t. innsláttar.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
+     * @throws Exception
+     */
     public void searchHotelMouseClicked(MouseEvent mouseEvent) throws Exception {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hotel-search-results.fxml"));
@@ -102,7 +107,7 @@ public class SearchView implements Initializable {
     }
 
     /**
-     * Sýnir notandaviðmót með lista af hótelherbergjum m.t.t. leitarskilyrða notanda.
+     * Sýnir notendaviðmót með lista af hótelherbergjum m.t.t. leitarskilyrða notanda.
      * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
      * @throws Exception
      */

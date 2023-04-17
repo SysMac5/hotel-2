@@ -38,7 +38,10 @@ public class UserView {
     // ATH, setja inn röksegðir?
     // setja reglu með hvenær má vista, allt þarf að vera til staðar
 
-    // ATH, sleppa?
+    /**
+     * Tengir UserView við LoginView.
+     * @param lv LoginView
+     */
     public void setTenging(LoginView lv) {
         userController = lv.getUserController();
         user = userController.getUser();

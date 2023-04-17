@@ -20,10 +20,18 @@ public class HotelView {
     private ListView<Hotel> listViewHotelList;
     private SearchView searchView;
 
+    /**
+     * Tengir HotelView við SearchView.
+     * @param searchView SearchView
+     */
     public void setTenging(SearchView searchView) {
         this.searchView = searchView;
     }
 
+    /**
+     * Setja upp notendaviðmót.
+     * @param hotelList listi af hótelum sem á að birta
+     */
     public void frumstilla(ArrayList<Hotel> hotelList) {
         showList(hotelList);
 
@@ -38,6 +46,10 @@ public class HotelView {
         });
     }
 
+    /**
+     * Sýnir lista af hótelum.
+     * @param hotelList listi af hótelum
+     */
     private void showList(ArrayList<Hotel> hotelList) {
         ObservableList<Hotel> hotelObservableList = FXCollections.observableArrayList(hotelList);
 
@@ -60,6 +72,11 @@ public class HotelView {
         });
     }
 
+    /**
+     * Sýnir bókunarglugga.
+     * @param selectedHotel Hótel sem er valið úr lista
+     * @throws IOException
+     */
     private void nyrGluggi(Hotel selectedHotel) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("booking.fxml"));
@@ -67,7 +84,7 @@ public class HotelView {
         BookingView bv = loader.getController();
 
         stage.setTitle(selectedHotel.getName());
-        Scene s = new Scene(root, 600, 707);
+        Scene s = new Scene(root, 600, 730);
         stage.setScene(s);
 
         bv.setTenging(this);

@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.throunhugbunadar.frontend.BookingView">
     <children>
         <Label fx:id="labelHotelName">
@@ -49,6 +48,7 @@
                 <VBox spacing="5.0">
                     <children>
                         <Label maxHeight="-Infinity" prefHeight="25.0" text="Fjöldi gesta í herbergi:" />
+                        <Label text="Fjöldi herbergja:" />
                         <Label maxHeight="-Infinity" prefHeight="25.0" text="Koma:" />
                         <Label prefHeight="25.0" text="Brottför:" />
                     </children>
@@ -56,6 +56,7 @@
                 <VBox spacing="5.0">
                     <children>
                         <Spinner fx:id="spinnerGuestCount" prefWidth="60.0" />
+                        <Spinner fx:id="spinnerNumberOfRooms" prefWidth="60.0" />
                         <DatePicker fx:id="datePickerArrival" prefWidth="100.0" />
                         <DatePicker fx:id="datePickerDeparture" prefWidth="100.0" />
                     </children>

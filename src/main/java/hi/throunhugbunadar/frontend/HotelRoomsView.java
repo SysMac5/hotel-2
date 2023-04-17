@@ -85,6 +85,11 @@ public class HotelRoomsView {
         });
     }
 
+    /**
+     * Sýnir bókunarglugga.
+     * @param selectedHotel Hótel sem er valið úr lista
+     * @throws IOException
+     */
     private void nyrGluggi(Hotel selectedHotel) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("booking.fxml"));
@@ -92,7 +97,7 @@ public class HotelRoomsView {
         BookingView bv = loader.getController();
 
         stage.setTitle(selectedHotel.getName());
-        Scene s = new Scene(root, 600, 707);
+        Scene s = new Scene(root, 600, 730);
         stage.setScene(s);
 
         bv.setTenging(this);
@@ -135,6 +140,10 @@ public class HotelRoomsView {
         return hotelList.getCriteria();
     }
 
+    /**
+     * Tengir HotelRoomsView við SearchView.
+     * @param searchView SearchView
+     */
     public void setTenging(SearchView searchView) {
         this.searchView = searchView;
     }
