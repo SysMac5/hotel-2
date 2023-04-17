@@ -8,25 +8,25 @@ import java.sql.Date;
 
 public class Reservation {
     private final User user;
-    private final HotelRooms hotelRooms;
     private final Hotel hotel;
     private final Date arrival;
     private final Date departure;
+    private final int guestsPerRoom;
     private final int numberOfRooms;
 
     /**
      * Smiður fyrir bókunina.
      *
      * @param user notandinn skrifaður fyrir bókun
-     * @param hotelRooms tegund af hótelherbergis
      * @param hotel hótelið
      * @param arrival komudagur
      * @param departure brottfarardagur
+     * @param guestsPerRoom fjöldi í hverju herbergi
      * @param numberOfRooms fjöldi herbergja bókuð
      */
-    public Reservation(User user, HotelRooms hotelRooms, Hotel hotel, Date arrival, Date departure, int numberOfRooms) {
+    public Reservation(User user, Hotel hotel, Date arrival, Date departure, int guestsPerRoom, int numberOfRooms) {
         this.user = user;
-        this.hotelRooms = hotelRooms;
+        this.guestsPerRoom = guestsPerRoom;
         this.hotel = hotel;
         this.arrival = arrival;
         this.departure = departure;
@@ -43,12 +43,12 @@ public class Reservation {
     }
 
     /**
-     * Skilar hótelherbergjategund sem er bókuð.
+     * Skilar þeim fjölda sem gistir í hverju herbergi.
      *
-     * @return hótelherbergjabókun
+     * @return fjölda í hverju herbergi
      */
-    public HotelRooms getHotelRooms() {
-        return hotelRooms;
+    public int getGuestPerRoom() {
+        return guestsPerRoom;
     }
 
     /**

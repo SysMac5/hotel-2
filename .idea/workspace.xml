@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Búið til HelperFunctions sem er með fullt af hjálparföllum til þess að minka endurtekningar.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HelperFunctions.java" afterDir="false" />
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="@return docs bætt við.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Hotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/BookingRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/BookingRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +29,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -378,7 +377,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681685611506</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Búið til HelperFunctions sem er með fullt af hjálparföllum til þess að minka endurtekningar.">
+      <created>1681754153355</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1681754153355</updated>
+    </task>
+    <task id="LOCAL-00023" summary="HotelList tilvik tekið.">
+      <created>1681754176466</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1681754176466</updated>
+    </task>
+    <task id="LOCAL-00024" summary="@return docs bætt við.">
+      <created>1681754238511</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1681754238511</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +451,8 @@
     <MESSAGE value="HotelRepository klárað." />
     <MESSAGE value="Setja inn docs." />
     <MESSAGE value="Búið til HelperFunctions sem er með fullt af hjálparföllum til þess að minka endurtekningar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Búið til HelperFunctions sem er með fullt af hjálparföllum til þess að minka endurtekningar." />
+    <MESSAGE value="HotelList tilvik tekið." />
+    <MESSAGE value="@return docs bætt við." />
+    <option name="LAST_COMMIT_MESSAGE" value="@return docs bætt við." />
   </component>
 </project>

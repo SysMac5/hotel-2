@@ -47,6 +47,15 @@ public class Hotel {
         return hotelRoomsList;
     }
 
+    public HotelRooms getHotelRoom(int guestCount) {
+        for (HotelRooms hotelRooms : hotelRoomsList) {
+            if (hotelRooms.getNumberOfGuests() == guestCount) {
+                return hotelRooms;
+            }
+        }
+        throw new RuntimeException("HotelRooms with guest count '" + guestCount + "' not found in hotel '" + name + "'");
+    }
+
     public int getStars() {
         return stars;
     }

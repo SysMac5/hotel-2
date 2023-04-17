@@ -41,7 +41,7 @@ public class BookingRepository implements iBookingRepository {
 
         try {
             statement2.setInt(1, maxId);
-            statement2.setInt(2, reservation.getHotelRooms().getId());
+            statement2.setInt(2, reservation.getHotel().getHotelRoom(reservation.getGuestPerRoom()).getId());
             statement2.setString(3, reservation.getUser().getUsername());
             statement2.setInt(4, reservation.getNumberOfRooms());
             statement2.setDate(5, reservation.getArrival());
@@ -71,7 +71,7 @@ public class BookingRepository implements iBookingRepository {
 
     public int howManyAvailable(Reservation reservation) {
         try {
-            return HelperFunctions.howManyAvailable(reservation.getArrival(), reservation.getDeparture(), reservation.getHotelRooms().getId(), connection);
+            return HelperFunctions.howManyAvailable(reservation.getArrival(), reservation.getDeparture(), reservation.getHotel().getHotelRoom(reservation.getGuestPerRoom()).getId(), connection);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -92,7 +92,7 @@ public class BookingRepository implements iBookingRepository {
                 throw new RuntimeException(e);
             }
         } return addedPaymentInfo;
-    };
+    }
 
     private ArrayList<User> getUsers(ResultSet resultSet) throws SQLException {
         ArrayList<User> addedUser = new ArrayList<>();
@@ -121,7 +121,7 @@ public class BookingRepository implements iBookingRepository {
             }
             System.out.print(addedUser);
         } return addedUser;
-    };
+    }
 
     // resultSet.getList<Image>("file_name")
 
@@ -145,7 +145,7 @@ public class BookingRepository implements iBookingRepository {
                 throw new RuntimeException(e);
             }
         } return addedHotels;
-    };
+    }
 
 
     private ArrayList<HotelRooms> getHotelRooms(ResultSet resultSet) throws SQLException {
@@ -165,12 +165,12 @@ public class BookingRepository implements iBookingRepository {
             }
 
         } return addedHotelRooms;
-    };
+    }
 
     public ArrayList<Reservation> getReservations(Hotel hotel) { // óklárað ! !
         PreparedStatement statement1;
         try {
-            ArrayList<Reservation> reservationsList = new ArrayList<Reservation>();
+            ArrayList<Reservation> reservationsList = new ArrayList<>();
             statement1 = connection.prepareStatement("Select * from reservations t1 left join hotel_rooms t2 on t1.hotel_rooms_id = t2.id join hotels t3 on t2.hotel_id = t3.id join users t4 on t4.username = t1.user_id join payment_info t5 on t4.payment_info_id = t5.id where t3.id = ?");
             // Það þarf að bæta við fleiri töflum, ss setja allar töflurnar saman miðað við allt sem er beðið um í reservations, við vitum að það er ekki nauðsynlegt fyrir þær upplýsingar sem við þurfum að sýna úr þessu falli, get ég komist hjá þessari svaka vinnu?
 
@@ -206,10 +206,10 @@ public class BookingRepository implements iBookingRepository {
                 // System.out.println(hotelFromList);
 
                 Reservation newReservation = new Reservation(userFromList,
-                        hotelRoomsFromList,
                         hotelFromList,
                         result.getDate("arrival_date"),
                         result.getDate("departure_date"),
+                        hotelRoomsFromList.getNumberOfGuests(),
                         result.getInt("number_of_rooms"));
 
 
