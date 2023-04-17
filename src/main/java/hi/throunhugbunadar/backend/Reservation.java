@@ -12,7 +12,7 @@ public class Reservation {
     private final Hotel hotel;
     private final Date arrival;
     private final Date departure;
-    private int numberOfRooms;
+    private final int numberOfRooms;
 
     /**
      * Smiður fyrir bókunina.
@@ -22,8 +22,9 @@ public class Reservation {
      * @param hotel hótelið
      * @param arrival komudagur
      * @param departure brottfarardagur
+     * @param numberOfRooms fjöldi herbergja bókuð
      */
-    public Reservation(User user, HotelRooms hotelRooms, Hotel hotel, Date arrival, Date departure) {
+    public Reservation(User user, HotelRooms hotelRooms, Hotel hotel, Date arrival, Date departure, int numberOfRooms) {
         this.user = user;
         this.hotelRooms = hotelRooms;
         this.hotel = hotel;

@@ -54,7 +54,7 @@ public class BookingRepositoryTest {
         try {
             User user = userRepository.getUser("maggi");
             HotelRooms hotelRooms = new HotelRooms(50,4,25000,143);
-            Reservation reservation = new Reservation(user,hotelRooms,hotel,new Date(1679226210),new Date(1679312610));
+            Reservation reservation = new Reservation(user,hotelRooms,hotel,new Date(1679226210),new Date(1679312610), 1);
             Assertions.assertTrue(bookingRepository.reserveRooms(reservation));
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
@@ -69,7 +69,7 @@ public class BookingRepositoryTest {
         try {
             User user = userRepository.getUser("maggi");
             HotelRooms hotelRooms = new HotelRooms(50,4,25000,143);
-            Assertions.assertThrows(Exception.class, () -> new Reservation(user, hotelRooms, hotel, new Date(1679312610), new Date(1679226210)));
+            Assertions.assertThrows(Exception.class, () -> new Reservation(user, hotelRooms, hotel, new Date(1679312610), new Date(1679226210), 1));
         } catch (Exception e) {
             Assertions.fail(e.getMessage());
         }

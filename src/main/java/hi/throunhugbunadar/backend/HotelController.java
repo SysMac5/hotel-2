@@ -2,7 +2,9 @@ package hi.throunhugbunadar.backend;
 
 import java.util.ArrayList;
 
-// ATH, hafa documention hér?
+/**
+ * Stýringar fyrir hótelin.
+ */
 
 public class HotelController {
     private final iHotelRepository hotelRepository;
@@ -23,16 +25,11 @@ public class HotelController {
      *
      * @param hotelName Nafn á hóteli sem leitað er eftir.
      * @return ArrayList með hótelum sem uppfylla leit.
+     * @throws Exception ef {@code hotelName} er {@code null}
      */
     public ArrayList<Hotel> searchForHotel(String hotelName) throws Exception {
-        if(hotelName.equals("")) throw new Exception();
-
-        try {
-            return hotelRepository.searchForHotel(hotelName);
-        } catch (Exception e) {
-            // ATH, skila hverju?
-            throw new Exception();
-        }
+        if(hotelName.equals("")) throw new Exception("Searched for an empty String.");
+        return hotelRepository.searchForHotel(hotelName);
     }
 
     /**
@@ -40,15 +37,10 @@ public class HotelController {
      *
      * @param criteria Leitarskilyrði sem eru notuð til að leita að hótelherbergjum.
      * @return HotelroomList með hótelherbergjum sem uppfylla gefin leitarskilyrði.
+     * @throws NullPointerException ef {@code criteria} er {@code null}
      */
-    public HotelList searchByCriteria(Criteria criteria) throws Exception {
-        if (criteria == null) throw new NullPointerException();
-
-        try {
-            return new HotelList(hotelRepository.searchByCriteria(criteria), criteria);
-        } catch (Exception e) {
-            // ATH, skila hverju?
-            throw new Exception();
-        }
+    public HotelList searchByCriteria(Criteria criteria) throws NullPointerException {
+        if (criteria == null) throw new NullPointerException("Criteria is null.");
+        return new HotelList(hotelRepository.searchByCriteria(criteria), criteria);
     }
 }
