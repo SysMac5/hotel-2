@@ -119,6 +119,7 @@ public class BookingRepository implements iBookingRepository {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+            System.out.print(addedUser);
         } return addedUser;
     };
 
@@ -172,6 +173,8 @@ public class BookingRepository implements iBookingRepository {
             ArrayList<Reservation> reservationsList = new ArrayList<Reservation>();
             statement1 = connection.prepareStatement("Select * from reservations t1 left join hotel_rooms t2 on t1.hotel_rooms_id = t2.id join hotels t3 on t2.hotel_id = t3.id join users t4 on t4.username = t1.user_id join payment_info t5 on t4.payment_info_id = t5.id where t3.id = ?");
             // Það þarf að bæta við fleiri töflum, ss setja allar töflurnar saman miðað við allt sem er beðið um í reservations, við vitum að það er ekki nauðsynlegt fyrir þær upplýsingar sem við þurfum að sýna úr þessu falli, get ég komist hjá þessari svaka vinnu?
+
+            System.out.println(hotel.getId());
             statement1.setInt(1, hotel.getId());
             ResultSet result = statement1.executeQuery();
             // t1.hotel_rooms_id, t1.user_id, t1.number_of_rooms, t1.arrival_date, t1.departure_date, t2.number_of_guests, t4.phone_number, t4.name, t4.email
@@ -197,6 +200,10 @@ public class BookingRepository implements iBookingRepository {
 
                 // Data objt = new Data(name, address, contact); // Creating a new object
                 // Contacts.add(objt); // Adding it to the list
+
+                System.out.println(userFromList);
+                // System.out.println(hotelRoomsFromList);
+                // System.out.println(hotelFromList);
 
                 Reservation newReservation = new Reservation(userFromList,
                         hotelRoomsFromList,
