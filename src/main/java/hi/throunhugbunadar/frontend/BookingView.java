@@ -173,6 +173,10 @@ public class BookingView {
         textFieldCvv.setText(user.getPaymentInfo().getCvv());
     }
 
+    /**
+     * Bóka herbergi.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
+     */
     public void reserveMouseClicked(MouseEvent mouseEvent) {
         int guestCount = spinnerGuestCount.getValue();
         int numberOfRooms = spinnerNumberOfRooms.getValue();
