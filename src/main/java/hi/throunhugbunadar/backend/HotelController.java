@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class HotelController {
     private final iHotelRepository hotelRepository;
-    private HotelList hotelList;
 
     /**
      * Smiður fyrir HotelController.
