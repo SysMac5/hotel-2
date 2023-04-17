@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b3552b-786c-46ea-8dd3-2b940b19e35f" name="Changes" comment="Náði ekki að klára bókunarvirkni þar sem Reservation klasi er ekki réttur.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/ReservationsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/reservations.fxml" afterDir="false" />
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Búið til HelperFunctions sem er með fullt af hjálparföllum til þess að minka endurtekningar.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HelperFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HotelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iBookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/BookingRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/BookingRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +25,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -214,7 +216,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="20b3552b-786c-46ea-8dd3-2b940b19e35f" name="Changes" comment="Alls konar tengingar. Nú er hægt að leita af hóteli og líka bóka." />
+      <changelist id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="" />
       <created>1675987897743</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -228,7 +230,6 @@
       <workItem from="1679999196523" duration="4650000" />
       <workItem from="1680878688543" duration="14073000" />
       <workItem from="1681488336072" duration="4205000" />
-      <workItem from="1681747958554" duration="2772000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
@@ -377,28 +378,7 @@
       <option name="project" value="LOCAL" />
       <updated>1681685611506</updated>
     </task>
-    <task id="LOCAL-00022" summary="Alls konar tengingar. Nú er hægt að leita af hóteli og líka bóka.">
-      <created>1681737451645</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1681737451645</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Documentation.">
-      <created>1681749201286</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1681749201286</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Náði ekki að klára bókunarvirkni þar sem Reservation klasi er ekki réttur.">
-      <created>1681750433478</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1681750433478</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,9 +430,7 @@
     <MESSAGE value="HotelRepository og HotelController næstum klárað" />
     <MESSAGE value="HotelRepository klárað." />
     <MESSAGE value="Setja inn docs." />
-    <MESSAGE value="Alls konar tengingar. Nú er hægt að leita af hóteli og líka bóka." />
-    <MESSAGE value="Documentation." />
-    <MESSAGE value="Náði ekki að klára bókunarvirkni þar sem Reservation klasi er ekki réttur." />
-    <option name="LAST_COMMIT_MESSAGE" value="Náði ekki að klára bókunarvirkni þar sem Reservation klasi er ekki réttur." />
+    <MESSAGE value="Búið til HelperFunctions sem er með fullt af hjálparföllum til þess að minka endurtekningar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Búið til HelperFunctions sem er með fullt af hjálparföllum til þess að minka endurtekningar." />
   </component>
 </project>
