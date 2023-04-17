@@ -1,5 +1,6 @@
 package hi.throunhugbunadar.frontend;
 
+import hi.throunhugbunadar.backend.BookingController;
 import hi.throunhugbunadar.backend.Hotel;
 import hi.throunhugbunadar.backend.User;
 import javafx.collections.FXCollections;
@@ -19,6 +20,7 @@ public class HotelView {
     @FXML
     private ListView<Hotel> listViewHotelList;
     private SearchView searchView;
+    private BookingController bookingController;
 
     /**
      * Tengir HotelView við SearchView.
@@ -89,11 +91,16 @@ public class HotelView {
 
         bv.setTenging(this);
         bv.frumstilla(selectedHotel, false);
+        bv.setBookingController(bookingController);
 
         stage.show();
     }
 
     public User getUser() {
         return searchView.getUser();
+    }
+
+    public void setBookingController(BookingController bookingController) {
+        this.bookingController = bookingController;
     }
 }

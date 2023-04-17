@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b3552b-786c-46ea-8dd3-2b940b19e35f" name="Changes" comment="Alls konar tengingar. Nú er hægt að leita af hóteli og líka bóka.">
+    <list default="true" id="20b3552b-786c-46ea-8dd3-2b940b19e35f" name="Changes" comment="Documentation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelRoomsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/HotelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/UserView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/booking.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/booking.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +229,7 @@
       <workItem from="1679999196523" duration="4650000" />
       <workItem from="1680878688543" duration="14073000" />
       <workItem from="1681488336072" duration="4205000" />
-      <workItem from="1681747958554" duration="1200000" />
+      <workItem from="1681747958554" duration="2419000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
@@ -386,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681737451645</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Documentation.">
+      <created>1681749201286</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1681749201286</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,6 +445,7 @@
     <MESSAGE value="HotelRepository klárað." />
     <MESSAGE value="Setja inn docs." />
     <MESSAGE value="Alls konar tengingar. Nú er hægt að leita af hóteli og líka bóka." />
-    <option name="LAST_COMMIT_MESSAGE" value="Alls konar tengingar. Nú er hægt að leita af hóteli og líka bóka." />
+    <MESSAGE value="Documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation." />
   </component>
 </project>

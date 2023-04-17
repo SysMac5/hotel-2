@@ -12,7 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.sql.Connection;
 
 public class HotelRoomsView {
     @FXML
@@ -34,6 +34,7 @@ public class HotelRoomsView {
     private HotelList hotelList;
     private static final String[] sort = {"Verði", "Stjörnum"}; //ATH vantar ennþá sort (raða eftir)
     private SearchView searchView;
+    private BookingController bookingController;
 
 
     /**
@@ -102,6 +103,7 @@ public class HotelRoomsView {
 
         bv.setTenging(this);
         bv.frumstilla(selectedHotel, true);
+        bv.setBookingController(bookingController);
 
         stage.show();
     }
@@ -150,5 +152,9 @@ public class HotelRoomsView {
 
     public User getUser() {
         return searchView.getUser();
+    }
+
+    public void setBookingController(BookingController bookingController) {
+        this.bookingController = bookingController;
     }
 }

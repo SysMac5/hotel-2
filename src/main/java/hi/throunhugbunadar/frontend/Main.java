@@ -24,7 +24,7 @@ public class Main extends Application {
         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("search.fxml"));
         Parent root2 = loader2.load();
         SearchView v2 = loader2.getController();
-        v2.setHotelController(connection);
+        v2.setControllers(connection);
 
         stillaView(v1, v2);
 

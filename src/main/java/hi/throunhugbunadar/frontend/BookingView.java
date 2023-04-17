@@ -3,15 +3,11 @@ package hi.throunhugbunadar.frontend;
 import hi.throunhugbunadar.backend.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 
 public class BookingView {
     @FXML
@@ -52,6 +48,8 @@ public class BookingView {
     private Criteria criteria;
     private User user;//frekar en usercontroller?
     private HotelView hotelView;
+    private Hotel hotel;
+    private BookingController bookingController;
 
     /**
      * Setja upp bókunarviðmót.
@@ -60,12 +58,11 @@ public class BookingView {
      */
     public void frumstilla(Hotel hotel, boolean hotelrooms) {
         rules();
+        this.hotel = hotel;
 
         // ATH hafa min og max m.t.t. hvers hótels?
         SpinnerValueFactory<Integer> valueFactoryGuestCount = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5,1,1);
         spinnerGuestCount.setValueFactory(valueFactoryGuestCount);
-
-
 
         if(hotelrooms) {
             user = hotelRoomsView.getUser();
@@ -177,7 +174,24 @@ public class BookingView {
     }
 
     public void reserveMouseClicked(MouseEvent mouseEvent) {
+        int guestCount = spinnerGuestCount.getValue();
+        int numberOfRooms = spinnerNumberOfRooms.getValue();
 
+        LocalDate localDateArrival = datePickerArrival.getValue();
+        ZoneId zoneId = ZoneId.systemDefault();
+        Instant instantArrival = localDateArrival.atStartOfDay(zoneId).toInstant();
+        java.sql.Date DateArrival = new java.sql.Date(instantArrival.toEpochMilli());
+
+        LocalDate localDateDeparture = datePickerArrival.getValue();
+        Instant instantDeparture = localDateDeparture.atStartOfDay(zoneId).toInstant();
+        java.sql.Date DateDeparture = new java.sql.Date(instantDeparture.toEpochMilli());
+
+        //Reservation reservation = new Reservation(user, hotel, guestCount, numberOfRooms, DateArrival, DateDeparture);
+        //bookingController.reserveRooms(reservation);
+
+        //labelAlert.setText("Herbergi bókað");
+
+        System.out.println("Bóka herbergi. Klára að útfæra virkni!");
     }
 
     /**
@@ -194,5 +208,10 @@ public class BookingView {
      */
     public void setTenging(HotelView hotelView) {
         this.hotelView = hotelView;
+    }
+
+    // ATH, alltaf að connecta aftur og aftur?
+    public void setBookingController(BookingController bookingController) {
+        this.bookingController = bookingController;
     }
 }

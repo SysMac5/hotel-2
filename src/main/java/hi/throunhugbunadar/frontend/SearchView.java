@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.awt.print.Book;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.Instant;
@@ -39,6 +40,7 @@ public class SearchView implements Initializable {
     private LoginView loginView;
     private static final String[] region = {"Höfuðborgarsvæðið", "Suðurland", "Norðurland", "Austurland", "Vesturland"};
     private HotelController hotelController;
+    private BookingController bookingController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -102,6 +104,7 @@ public class SearchView implements Initializable {
 
         hv.setTenging(this);
         hv.frumstilla(hotelList);
+        hv.setBookingController(bookingController);
 
         stage.show();
     }
@@ -125,6 +128,7 @@ public class SearchView implements Initializable {
 
         hv.setTenging(this);
         hv.frumstilla(hotelList);
+        hv.setBookingController(bookingController);
 
         stage.show();
     }
@@ -201,9 +205,12 @@ public class SearchView implements Initializable {
         this.loginView = loginView;
     }
 
-    public void setHotelController(Connection connection) {
+    public void setControllers(Connection connection) {
         HotelRepository hotelRepository = new HotelRepository(connection);
         this.hotelController = new HotelController(hotelRepository);
+
+        BookingRepository bookingRepository = new BookingRepository(connection);
+        this.bookingController = new BookingController(bookingRepository);
     }
 
     public User getUser() {
