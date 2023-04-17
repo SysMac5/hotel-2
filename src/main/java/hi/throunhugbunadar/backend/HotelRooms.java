@@ -37,7 +37,7 @@ public class HotelRooms {
     /**
      * Skilar fjölda sem kemst í hvert herbergi af herbergistegundinni.
      *
-     * @return
+     * @return fjöldi sem kemst í herbergi
      */
     public int getNumberOfGuests() {
         return numberOfGuests;
