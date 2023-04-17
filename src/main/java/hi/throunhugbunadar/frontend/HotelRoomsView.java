@@ -1,7 +1,6 @@
 package hi.throunhugbunadar.frontend;
 
-import hi.throunhugbunadar.backend.Hotel;
-import hi.throunhugbunadar.backend.HotelList;
+import hi.throunhugbunadar.backend.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -33,8 +32,9 @@ public class HotelRoomsView {
     @FXML
     private ListView<Hotel> listViewHotelroomList;
     private HotelList hotelList;
-    private static final String[] sort = {"Verði", "Stjörnum"};
-    //ATH vantar ennþá sort (raða eftir)
+    private static final String[] sort = {"Verði", "Stjörnum"}; //ATH vantar ennþá sort (raða eftir)
+    private SearchView searchView;
+
 
     /**
      * Setja upp notendaviðmót.
@@ -51,7 +51,7 @@ public class HotelRoomsView {
         listViewHotelroomList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 try {
-                    nyrGluggi(newValue);
+                    nyrGluggi((Hotel)newValue);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -92,10 +92,10 @@ public class HotelRoomsView {
         BookingView bv = loader.getController();
 
         stage.setTitle(selectedHotel.getName());
-        Scene s = new Scene(root, 650, 590);
+        Scene s = new Scene(root, 650, 805);
         stage.setScene(s);
 
-        //uv.setTenging(lv);
+        bv.setTenging(this);
         bv.frumstilla(selectedHotel);
 
         stage.show();
@@ -129,5 +129,17 @@ public class HotelRoomsView {
         ObservableList<Hotel> hotelObservableList = FXCollections.observableArrayList(hotelList.getList());
 
         listViewHotelroomList.setItems(hotelObservableList);
+    }
+
+    public Criteria getCriteria(){
+        return hotelList.getCriteria();
+    }
+
+    public void setTenging(SearchView searchView) {
+        this.searchView = searchView;
+    }
+
+    public User getUser() {
+        return searchView.getUser();
     }
 }

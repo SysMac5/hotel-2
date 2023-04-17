@@ -35,7 +35,7 @@ public class SearchView implements Initializable {
     private Spinner<Integer> spinnerGuestCount;
     @FXML
     private Button buttonSearchHotelrooms;
-    private LoginView lv;
+    private LoginView loginView;
     private static final String[] region = {"Höfuðborgarsvæðið", "Suðurland", "Norðurland", "Austurland", "Vesturland"};
     private HotelController hotelController;
 
@@ -99,7 +99,7 @@ public class SearchView implements Initializable {
 
         HotelList hotelList = searchByCriteria();
 
-        //uv.setTenging(lv);
+        hv.setTenging(this);
         hv.frumstilla(hotelList);
 
         stage.show();
@@ -163,7 +163,7 @@ public class SearchView implements Initializable {
         Scene s = new Scene(root, 400, 505);
         stage.setScene(s);
 
-        uv.setTenging(lv);
+        uv.setTenging(loginView);
         uv.frumstilla();
 
         stage.show();
@@ -177,12 +177,16 @@ public class SearchView implements Initializable {
      * Tengir SearchView við LoginView.
      * @param lv LoginView
      */
-    public void setTenging(LoginView lv) {
-        this.lv = lv;
+    public void setTenging(LoginView loginView) {
+        this.loginView = loginView;
     }
 
     public void setHotelController(Connection connection) {
         HotelRepository hotelRepository = new HotelRepository(connection);
         this.hotelController = new HotelController(hotelRepository);
+    }
+
+    public User getUser() {
+        return loginView.getUserController().getUser();
     }
 }
