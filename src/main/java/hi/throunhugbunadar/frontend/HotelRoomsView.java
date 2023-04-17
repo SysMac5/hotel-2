@@ -98,7 +98,7 @@ public class HotelRoomsView {
         BookingView bv = loader.getController();
 
         stage.setTitle(selectedHotel.getName());
-        Scene s = new Scene(root, 600, 730);
+        Scene s = new Scene(root, 600, 720);
         stage.setScene(s);
 
         bv.setTenging(this);

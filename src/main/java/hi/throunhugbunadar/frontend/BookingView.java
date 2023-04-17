@@ -2,14 +2,22 @@ package hi.throunhugbunadar.frontend;
 
 import hi.throunhugbunadar.backend.*;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 
+import java.io.File;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.util.ResourceBundle;
 
 public class BookingView {
+    @FXML
+    private ListView<ImageView> listViewImages;
     @FXML
     private Spinner<Integer> spinnerNumberOfRooms;
     @FXML
@@ -79,8 +87,6 @@ public class BookingView {
             LocalDate localDateDeparture = LocalDate.parse(formatter.format(criteria.departure));
             datePickerDeparture.setValue(localDateDeparture);
             //ATH, date ekki rétt? sama í arrival og departure
-
-            System.out.println("date2");
         }
         else {
             user = hotelView.getUser();
@@ -91,55 +97,30 @@ public class BookingView {
 
         labelHotelName.setText(hotel.getName());
 
-        System.out.println(hotel.getLocation());
-
         labelLocation.setText(hotel.getLocation()); //breyta í nöfnin
-/*
-        if (Region.valueOf(hotel.getLocation()) == Region.HOFUDBORGARSVAEDID){
-            labelLocation.setText("Höfuðborgarsvæðið"); //breyta í nöfnin
+
+        //Location!
+
+        for(File file: hotel.getImageList()){
+            Image image = new Image(file.toURI().toString());
+            // Virkar ekki: Image image = new Image("../../resources/images/dyrholaey1.jpg");
+            // Virkar: Image image = new Image("C:/Users/Gyða Perla/IdeaProjects/hotel-2/src/main/resources/images/siglo" + i + ".jpg");
+            ImageView imageView = new ImageView(image);
+            imageView.setFitHeight(200);
+            imageView.setFitWidth(200);
+            //imageViewHotel.setImage(image);
+            //imageViewHotel.setVisible(true);
+            listViewImages.getItems().add(imageView);
         }
 
- */
-
-        /*
-        Region region = Region.valueOf(hotel.getLocation().trim());
-        String nameLocation;
-        switch (region) {
-            case HOFUDBORGARSVAEDID:
-                nameLocation = "Höfuðborgarsvæðið";
-                break;
-            case SUDURLAND:
-                nameLocation = "Suðurland";
-                break;
-            case NORDURLAND:
-                nameLocation = "Norðurland";
-                break;
-            case AUSTURLAND:
-                nameLocation = "Austurland";
-                break;
-            case VESTURLAND:
-                nameLocation = "Vesturland";
-                break;
-            default:
-                nameLocation = "Ekki vitað";
-                break;
+        if(hotel.getImageList().isEmpty()){
+            listViewImages.setVisible(false);
+            listViewImages.setManaged(false);
         }
 
-         */
-/*
-        if (hotel.getImageList().get(0) != null) {
-            File imageFile = (File) hotel.getImageList().get(0);
-            Image image = new Image(imageFile.toURI().toString());
-            imageViewHotel.setImage(image);
-        } else {
-            System.out.println("imageView virkar ekki");
-        }
-
- */
         labelHotelInformation.setText(hotel.getInfo());
 
         frumstillaNotandaUpplysingar();
-        System.out.println("user");
     }
 
     /**
@@ -178,7 +159,7 @@ public class BookingView {
      * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
      */
     public void reserveMouseClicked(MouseEvent mouseEvent) {
-        int guestCount = spinnerGuestCount.getValue();
+        int guestPerRoom = spinnerGuestCount.getValue();
         int numberOfRooms = spinnerNumberOfRooms.getValue();
 
         LocalDate localDateArrival = datePickerArrival.getValue();
@@ -190,12 +171,16 @@ public class BookingView {
         Instant instantDeparture = localDateDeparture.atStartOfDay(zoneId).toInstant();
         java.sql.Date DateDeparture = new java.sql.Date(instantDeparture.toEpochMilli());
 
-        //Reservation reservation = new Reservation(user, hotel, guestCount, numberOfRooms, DateArrival, DateDeparture);
-        //bookingController.reserveRooms(reservation);
+        Reservation reservation = new Reservation(user, hotel, DateArrival, DateDeparture, guestPerRoom, numberOfRooms);
 
-        //labelAlert.setText("Herbergi bókað");
-
-        System.out.println("Bóka herbergi. Klára að útfæra virkni!");
+        if(bookingController.reserveRooms(reservation)){
+            labelAlert.setTextFill(Color.web("#00FFFF"));
+            labelAlert.setText("Herbergi bókað");
+        }
+        else{
+            labelAlert.setTextFill(Color.web("#880808"));
+            labelAlert.setText("Herbergi ekki laust");
+        }
     }
 
     /**
