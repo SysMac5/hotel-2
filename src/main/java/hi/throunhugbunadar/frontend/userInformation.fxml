@@ -99,7 +99,7 @@
         </VBox>
         <VBox alignment="CENTER_RIGHT" spacing="10.0">
             <children>
-                <Button mnemonicParsing="false" onMouseClicked="#saveMouseClicked" text="Vista" />
+                <Button fx:id="buttonSave" mnemonicParsing="false" onMouseClicked="#saveMouseClicked" text="Vista" />
                 <Label fx:id="labelAlert" textFill="#56bf22" />
             </children>
             <VBox.margin>

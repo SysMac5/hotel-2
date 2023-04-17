@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SearchView implements Initializable {
@@ -80,6 +81,24 @@ public class SearchView implements Initializable {
 
     public TextField getTextFieldHotel() {
         return textFieldHotel;
+    }
+
+    public void searchHotelMouseClicked(MouseEvent mouseEvent) throws Exception {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hotel-search-results.fxml"));
+        Parent root = loader.load();
+        HotelView hv = loader.getController();
+
+        stage.setTitle("Leitarniðurstöður");
+        Scene s = new Scene(root, 300, 364);
+        stage.setScene(s);
+
+        ArrayList<Hotel> hotelList = hotelController.searchForHotel(textFieldHotel.getText());
+
+        hv.setTenging(this);
+        hv.frumstilla(hotelList);
+
+        stage.show();
     }
 
     /**
@@ -169,13 +188,9 @@ public class SearchView implements Initializable {
         stage.show();
     }
 
-    public void searchHotelMouseClicked(MouseEvent mouseEvent) throws Exception {
-        //hotelController.searchForHotel(textFieldHotel.getText());
-    }
-
     /**
      * Tengir SearchView við LoginView.
-     * @param lv LoginView
+     * @param loginView LoginView
      */
     public void setTenging(LoginView loginView) {
         this.loginView = loginView;

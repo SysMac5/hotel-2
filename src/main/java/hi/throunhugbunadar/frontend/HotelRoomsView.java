@@ -92,11 +92,11 @@ public class HotelRoomsView {
         BookingView bv = loader.getController();
 
         stage.setTitle(selectedHotel.getName());
-        Scene s = new Scene(root, 650, 805);
+        Scene s = new Scene(root, 600, 707);
         stage.setScene(s);
 
         bv.setTenging(this);
-        bv.frumstilla(selectedHotel);
+        bv.frumstilla(selectedHotel, true);
 
         stage.show();
     }
