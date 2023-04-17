@@ -1,9 +1,6 @@
 package hi.throunhugbunadar.backend;
 
-import java.sql.Date;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class BookingController {
     private final iBookingRepository bookingRepository;
@@ -15,15 +12,33 @@ public class BookingController {
         this.bookingRepository = bookingRepository;
     }
 
-    private int howManyAvailable(Reservation reservation) throws SQLException {
+    /**
+     * Skilar fjölda herbergja sem eru laus af sömu tegund og herbergi í bókun yfir sama tímabil og bókun.
+     *
+     * @param reservation bókun
+     * @return fjöldi herbergja laus
+     */
+    private int howManyAvailable(Reservation reservation) {
         return bookingRepository.howManyAvailable(reservation);
     }
 
-    public boolean reserveRooms(Reservation reservation) { // óklárað ! !
-        throw new UnsupportedOperationException();
+    /**
+     * Vistar bókun.
+     *
+     * @param reservation bókun
+     * @return hvort vistun hafi heppnast
+     */
+    public boolean reserveRooms(Reservation reservation) {
+        return bookingRepository.reserveRooms(reservation);
     }
 
-    public ArrayList<Reservation> getReservations(Hotel hotel) { // óklárað ! !
-        throw new UnsupportedOperationException();
+    /**
+     * Skilar bókunum fyrir gefið hótel.
+     *
+     * @param hotel hótel
+     * @return bókanir
+     */
+    public ArrayList<Reservation> getReservations(Hotel hotel) {
+        return bookingRepository.getReservations(hotel);
     }
 }
