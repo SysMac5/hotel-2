@@ -40,24 +40,27 @@ public class BookingRepository implements iBookingRepository {
         }
 
         try {
-            // ResultSet result2;
-            // result2 = statement2.executeQuery();
-            statement1.setInt(1, maxId);
-            statement1.setInt(2, reservation.getHotelRooms().getId());
-            statement1.setString(3, reservation.getUser().getUsername());
-            statement1.setInt(4, reservation.getNumberOfRooms());
-            statement1.setDate(5, reservation.getArrival());
-            statement1.setDate(6, reservation.getDeparture());
+            statement2.setInt(1, maxId);
+            statement2.setInt(2, reservation.getHotelRooms().getId());
+            statement2.setString(3, reservation.getUser().getUsername());
+            statement2.setInt(4, reservation.getNumberOfRooms());
+            statement2.setDate(5, reservation.getArrival());
+            statement2.setDate(6, reservation.getDeparture());
 
+            ResultSet result2;
+            result2 = statement2.executeQuery(); // Keyra skipunina að setja inn í gagnagrunn
+
+            PreparedStatement statement3 = null;
             ResultSet result3;
-            result3 = statement2.executeQuery(); // Instead, you should call executeUpdate() on statement2 to execute the insert statement.
 
+            statement3 = connection.prepareStatement("Select Max(id) as max from reservations;"); // Keyrum aftur til að tékka hvort að bókunin hafi verið sett inn
+            result3 = statement3.executeQuery();
 
             int maxIdCheck = 0;
             maxIdCheck = result3.getInt("max");
 
 
-            if (maxId == maxIdCheck) return true; // You should use the equals() method to compare the values of two Integer objects. = maxId.equals(maxIdCheck)
+            if (maxId == maxIdCheck) return true; // You should use the equals() method to compare the values of two Integer objects. => maxId.equals(maxIdCheck)
             else return false;
 
 
