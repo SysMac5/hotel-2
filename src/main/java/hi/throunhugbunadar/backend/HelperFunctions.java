@@ -91,7 +91,7 @@ public class HelperFunctions {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                String url = "images/" + resultSet.getString("file_name");
+                String url = "src/main/resources/images/" + resultSet.getString("file_name");
                 File image = new File(url);
                 images.add(image);
             }
