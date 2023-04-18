@@ -24,7 +24,8 @@ public class Reservation {
      * @param guestsPerRoom fjöldi í hverju herbergi
      * @param numberOfRooms fjöldi herbergja bókuð
      */
-    public Reservation(User user, Hotel hotel, Date arrival, Date departure, int guestsPerRoom, int numberOfRooms) {
+    public Reservation(User user, Hotel hotel, Date arrival, Date departure, int guestsPerRoom, int numberOfRooms) throws Exception {
+        if (arrival.after(departure)) throw new Exception("Arrival before departure.");
         this.user = user;
         this.guestsPerRoom = guestsPerRoom;
         this.hotel = hotel;

@@ -171,7 +171,12 @@ public class BookingView {
         Instant instantDeparture = localDateDeparture.atStartOfDay(zoneId).toInstant();
         java.sql.Date DateDeparture = new java.sql.Date(instantDeparture.toEpochMilli());
 
-        Reservation reservation = new Reservation(user, hotel, DateArrival, DateDeparture, guestPerRoom, numberOfRooms);
+        Reservation reservation;
+        try {
+            reservation = new Reservation(user, hotel, DateArrival, DateDeparture, guestPerRoom, numberOfRooms);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         if(bookingController.reserveRooms(reservation)){
             labelAlert.setTextFill(Color.web("#00FFFF"));

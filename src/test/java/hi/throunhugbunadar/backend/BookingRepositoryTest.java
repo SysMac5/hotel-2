@@ -68,7 +68,7 @@ public class BookingRepositoryTest {
                 Assertions.assertEquals(hotel.getName(), reservation1.getHotel().getName());
             }
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -82,7 +82,7 @@ public class BookingRepositoryTest {
             HotelRooms hotelRooms = new HotelRooms(50,4,25000,143);
             Assertions.assertThrows(Exception.class, () -> new Reservation(user, hotel, new Date(1679312610), new Date(1679226210), hotelRooms.getNumberOfGuests(),1));
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 }
