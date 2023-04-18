@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public class HotelRoomsView {
     @FXML
@@ -160,14 +161,19 @@ public class HotelRoomsView {
         this.bookingController = bookingController;
     }
 
+    /**
+     * Raða lista af hótelum.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
+     */
     public void sortMouseClicked(MouseEvent mouseEvent) {
+        ArrayList<Hotel> sortedList = new ArrayList<>();
         if (choiceBoxSort.getValue().equals("Verði")) {
-            //hotelList.sortByPrice();
+            sortedList = hotelList.sortByPrice();
         } else if (choiceBoxSort.getValue().equals("Stjörnum")) {
-            //hotelList.sortByStars();
+            sortedList = hotelList.sortByStars();
         }
 
-        ObservableList<Hotel> hotelObservableList = FXCollections.observableArrayList(hotelList.getList());
+        ObservableList<Hotel> hotelObservableList = FXCollections.observableArrayList(sortedList);
 
         listViewHotelroomList.setItems(hotelObservableList);
     }

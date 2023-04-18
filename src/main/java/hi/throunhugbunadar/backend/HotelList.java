@@ -99,4 +99,38 @@ public class HotelList {
         }
         throw new Exception();
     }
+
+    /**
+     * Raða lista eftir verði.
+     * @return röðuðum lista
+     */
+    public ArrayList<Hotel> sortByPrice() {
+        ArrayList<Hotel> sortedList = new ArrayList<Hotel>(getList());
+        sortedList.sort(new Comparator<Hotel>() {
+            @Override
+            public int compare(Hotel h1, Hotel h2) {
+                double price1 = h1.getHotelRoom(criteria.guestCount).getPricePerNight();
+                double price2 = h2.getHotelRoom(criteria.guestCount).getPricePerNight();
+                return Double.compare(price1, price2);
+            }
+        });
+        return sortedList;
+    }
+
+    /**
+     * Raða lista eftir stjörnum.
+     * @return röðuðum lista
+     */
+    public ArrayList<Hotel> sortByStars() {
+        ArrayList<Hotel> sortedList = new ArrayList<Hotel>(getList());
+        sortedList.sort(new Comparator<Hotel>() {
+            @Override
+            public int compare(Hotel h1, Hotel h2) {
+                double stars1 = h1.getStars();
+                double stars2 = h2.getStars();
+                return Double.compare(stars1, stars2);
+            }
+        });
+        return sortedList;
+    }
 }
