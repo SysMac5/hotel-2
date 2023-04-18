@@ -6,7 +6,7 @@ package hi.throunhugbunadar.backend;
 
 public class Owner extends User {
 
-    private Hotel hotel;
+    private final Hotel hotel;
 
     /**
      * Býr til nýjan notanda.
@@ -20,15 +20,6 @@ public class Owner extends User {
      */
     public Owner(String name, String username, String password, String phoneNumber, String email, PaymentInfo paymentInfo, Hotel hotel) {
         super(name, username, password, phoneNumber, email, paymentInfo);
-        this.hotel = hotel;
-    }
-
-    /**
-     * Setur notanda sem eiganda gefins hótels.
-     *
-     * @param hotel hótel
-     */
-    public void setHotel(Hotel hotel) {
         this.hotel = hotel;
     }
 

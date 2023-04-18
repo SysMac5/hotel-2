@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Myndir birtast núna.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Owner.java" afterDir="false" />
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Owner bætt við.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Owner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -419,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681778793801</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Owner bætt við.">
+      <created>1681780876643</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1681780876643</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bæta við .db." />
     <MESSAGE value="Færði mynd" />
     <MESSAGE value="Einhverjar breytingar." />
     <MESSAGE value="Breyta HotelRepository í BookingRepository." />
@@ -477,6 +481,7 @@
     <MESSAGE value="BookingController kláraður." />
     <MESSAGE value="BookingRepositoryTest kemur út sem grænt." />
     <MESSAGE value="Myndir birtast núna." />
-    <option name="LAST_COMMIT_MESSAGE" value="Myndir birtast núna." />
+    <MESSAGE value="Owner bætt við." />
+    <option name="LAST_COMMIT_MESSAGE" value="Owner bætt við." />
   </component>
 </project>
