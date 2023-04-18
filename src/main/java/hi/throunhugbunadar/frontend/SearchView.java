@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.awt.print.Book;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.Instant;
@@ -22,7 +23,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SearchView implements Initializable {
-
+    @FXML
+    private Button buttonReservations;
     @FXML
     private TextField textFieldHotel;
     @FXML
@@ -44,7 +46,11 @@ public class SearchView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        frumstillaGogn();
+        ObservableList<String> regionNode = FXCollections.observableArrayList(region);
+        choiceBoxLocation.setItems(regionNode);
+
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5,1,1);
+        spinnerGuestCount.setValueFactory(valueFactory);
 
         searchHotelRule();
         searchHotelroomsRule();
@@ -53,13 +59,10 @@ public class SearchView implements Initializable {
     /**
      * Setja upp notendaviðmót.
      */
-    private void frumstillaGogn() {
-        ObservableList<String> regionNode = FXCollections.observableArrayList(region);
-        choiceBoxLocation.setItems(regionNode);
-
-        //Spinner<Integer> spinnerGuestCount = new Spinner<>();
-        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5,1,1);
-        spinnerGuestCount.setValueFactory(valueFactory);
+    public void frumstilla() {
+        if(!(getUser() instanceof Owner)){
+            buttonReservations.setVisible(false);
+        }
     }
 
     /**
@@ -218,5 +221,25 @@ public class SearchView implements Initializable {
 
     public User getUser() {
         return loginView.getUserController().getUser();
+    }
+
+    /**
+     * Opnar nýjan glugga með lista yfir bókanir fyrir hótel sem eigandi á.
+     * @param mouseEvent atburðurinn sem kemur inn en er ónotaður
+     */
+    public void reservationsMouseClicked(MouseEvent mouseEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("reservations.fxml"));
+        Parent root = loader.load();
+        ReservationsView rv = loader.getController();
+
+        stage.setTitle("Listi af bókunum");
+        Scene s = new Scene(root, 650, 365);
+        stage.setScene(s);
+
+        rv.setBookingController(bookingController);
+        rv.frumstilla((Owner) getUser());
+
+        stage.show();
     }
 }

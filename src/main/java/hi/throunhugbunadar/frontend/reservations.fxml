@@ -17,9 +17,9 @@
                 <Insets bottom="10.0" left="10.0" top="15.0" />
             </VBox.margin>
         </Label>
-        <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="300.0">
+        <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="650.0">
             <content>
-                <ListView fx:id="listViewReservations" prefHeight="300.0" prefWidth="300.0" />
+                <ListView fx:id="listViewReservations" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="650.0" />
             </content>
         </ScrollPane>
     </children>

@@ -68,6 +68,8 @@ public class LoginView implements Initializable {
         s.setScene(sv.getTextFieldHotel().getScene());
 
         s.setTitle("Hótel á Íslandi");
+
+        sv.frumstilla();
     }
 
     /**
