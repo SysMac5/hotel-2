@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="BookingRepositoryTest kemur út sem grænt.">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Myndir birtast núna.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/Owner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HelperFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/HelperFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GG_9.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GG_9.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hi/throunhugbunadar/backend/UserRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <recent name="hi.throunhugbunadar.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.Keyra forrit">
+  <component name="RunManager" selected="JUnit.UserRepositoryTest">
     <configuration name="BookingRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hotel-2" />
       <extension name="coverage">
@@ -137,22 +137,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hotel-2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hi.throunhugbunadar.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hi.throunhugbunadar.backend" />
-      <option name="MAIN_CLASS_NAME" value="hi.throunhugbunadar.backend.UserControllerTest" />
-      <option name="METHOD_NAME" value="testLogin" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hotel-2" />
       <extension name="coverage">
@@ -164,6 +148,22 @@
       <option name="PACKAGE_NAME" value="hi.throunhugbunadar.backend" />
       <option name="MAIN_CLASS_NAME" value="hi.throunhugbunadar.backend.UserRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.testGetOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotel-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hi.throunhugbunadar.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hi.throunhugbunadar.backend" />
+      <option name="MAIN_CLASS_NAME" value="hi.throunhugbunadar.backend.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="testGetOwner" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -194,20 +194,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.UserRepositoryTest.testGetOwner" />
       <item itemvalue="JUnit.BookingRepositoryTest" />
       <item itemvalue="JUnit.HotelRepositoryTest" />
       <item itemvalue="JUnit.UserRepositoryTest" />
       <item itemvalue="JUnit.UserControllerTest" />
-      <item itemvalue="JUnit.UserControllerTest.testLogin" />
       <item itemvalue="Maven.Keyra forrit" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRepositoryTest" />
+        <item itemvalue="JUnit.UserRepositoryTest.testGetOwner" />
         <item itemvalue="JUnit.BookingRepositoryTest" />
         <item itemvalue="JUnit.HotelRepositoryTest" />
-        <item itemvalue="JUnit.UserRepositoryTest" />
         <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.UserControllerTest.testLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -412,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681776877077</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Myndir birtast núna.">
+      <created>1681778793801</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1681778793801</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,8 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test uppfærð og Mock object bætt við." />
-    <MESSAGE value="Bætti við BookingController, HotelRepository og UserRepository." />
     <MESSAGE value="Bæta við .db." />
     <MESSAGE value="Færði mynd" />
     <MESSAGE value="Einhverjar breytingar." />
@@ -471,6 +476,7 @@
     <MESSAGE value="BookingRepository klárað." />
     <MESSAGE value="BookingController kláraður." />
     <MESSAGE value="BookingRepositoryTest kemur út sem grænt." />
-    <option name="LAST_COMMIT_MESSAGE" value="BookingRepositoryTest kemur út sem grænt." />
+    <MESSAGE value="Myndir birtast núna." />
+    <option name="LAST_COMMIT_MESSAGE" value="Myndir birtast núna." />
   </component>
 </project>

@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 public class UserRepositoryTest {
     private UserRepository userRepository;
@@ -21,7 +20,7 @@ public class UserRepositoryTest {
             this.connection = DriverManager.getConnection(url);
             this.userRepository = new UserRepository(this.connection);
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -30,7 +29,7 @@ public class UserRepositoryTest {
         try {
             connection.close();
         } catch (SQLException e) {
-            Assertions.fail(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -48,7 +47,7 @@ public class UserRepositoryTest {
         try {
             Assertions.assertThrows(Exception.class, () -> userRepository.getUser(testUsername));
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -59,18 +58,16 @@ public class UserRepositoryTest {
         try {
             user = userRepository.getUser(testUsername);
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
-            return;
+            throw new RuntimeException(e);
         }
         String newPhoneNumber = "+354 693 7742";
         String newName = "S. Maggi Snorrason";
         String newEmail = "maggi@queer.is";
-        PaymentInfo newPaymentInfo = null;
+        PaymentInfo newPaymentInfo;
         try {
             newPaymentInfo = new PaymentInfo("1234987645675432", "03", "25", "333");
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
-            return;
+            throw new RuntimeException(e);
         }
         user.setPhoneNumber(newPhoneNumber);
         user.setName(newName);
@@ -82,8 +79,7 @@ public class UserRepositoryTest {
         try {
             user = userRepository.getUser(testUsername);
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
-            return;
+            throw new RuntimeException(e);
         }
 
         Assertions.assertEquals(newName, user.getName(),"Name not updated.");
@@ -102,18 +98,16 @@ public class UserRepositoryTest {
         try {
             user = userRepository.getUser(testUsername);
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
-            return;
+            throw new RuntimeException(e);
         }
         String newPhoneNumber = "+354 58 12345";
         String newName = "Maggi Snorra";
         String newEmail = "sms70@hi.is";
-        PaymentInfo newPaymentInfo = null;
+        PaymentInfo newPaymentInfo;
         try {
             newPaymentInfo = new PaymentInfo("0987563498657834", "09", "29", "222");
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
-            return;
+            throw new RuntimeException(e);
         }
         user.setPhoneNumber(newPhoneNumber);
         user.setName(newName);
@@ -125,8 +119,7 @@ public class UserRepositoryTest {
         try {
             user = userRepository.getUser(testUsername);
         } catch (Exception e) {
-            Assertions.fail(e.getMessage());
-            return;
+            throw new RuntimeException(e);
         }
 
         Assertions.assertEquals(newName, user.getName(),"Name not updated.");
@@ -136,5 +129,18 @@ public class UserRepositoryTest {
         Assertions.assertEquals(newPaymentInfo.getCvv(), user.getPaymentInfo().getCvv(), "CVV not updated.");
         Assertions.assertEquals(newPaymentInfo.getMonthValid(), user.getPaymentInfo().getMonthValid(), "Year in payment information not updated.");
         Assertions.assertEquals(newPaymentInfo.getYearValid(), user.getPaymentInfo().getYearValid(), "Month in payment information not updated.");
+    }
+
+    @Test
+    public void testGetOwner() {
+        String testUsername = "maggi";
+        try {
+            Owner owner = userRepository.getOwner(testUsername);
+            Assertions.assertNotNull(owner);
+            Assertions.assertEquals(testUsername, owner.getUsername());
+            Assertions.assertEquals("Hótel Íslands", owner.getHotel().getName());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

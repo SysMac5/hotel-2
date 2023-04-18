@@ -41,6 +41,60 @@ public class UserRepository implements iUserRepository {
     }
 
     /**
+     * Sækir eiganda í gagnagrunn eftir notandanafni ef hann á hótel.
+     *
+     * @param username notandanafn
+     * @return eigandi ef hann er það, annars ekki
+     * @throws Exception ef gagnagrunnurinn eða klasar kasta villumeldingu
+     */
+    public Owner getOwner(String username) throws Exception {
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
+        statement.setString(1,username);
+        ResultSet resultSet = statement.executeQuery();
+
+        Hotel hotel = getHotel(resultSet.getString("username"));
+        if (hotel == null) return null;
+
+        if (resultSet.next()) {
+            PaymentInfo paymentInfo = getPaymentInfo(resultSet.getInt("payment_info_id"));
+            return new Owner(resultSet.getString("name"),
+                    username,
+                    resultSet.getString("password"),
+                    resultSet.getString("phone_number"),
+                    resultSet.getString("email"),
+                    paymentInfo,
+                    hotel);
+        }
+
+        return null;
+    }
+
+    /**
+     * Skilar hóteli með gefið notandanafn eiganda ef það er til.
+     *
+     * @param owner notandanafn eiganda
+     * @return hóteli ef það er til, annars {@code null}
+     * @throws SQLException ef gagnagrunnurinn kastar villurmeldingu
+     */
+    private Hotel getHotel(String owner) throws SQLException {
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM hotels WHERE owner = ?");
+        statement.setString(1,owner);
+        ResultSet resultSet = statement.executeQuery();
+
+        if (resultSet.next()) {
+            return new Hotel(resultSet.getInt("id"),
+                    resultSet.getString("hotel_name"),
+                    resultSet.getString("information"),
+                    HelperFunctions.getImageList(resultSet.getInt("id"), connection),
+                    HelperFunctions.getHotelRoomsList(resultSet.getInt("id"), connection),
+                    resultSet.getInt("stars"),
+                    resultSet.getString("location"));
+        }
+
+        return null;
+    }
+
+    /**
      * Sækja greiðsluupplýsingar með auðkennið {@code id}.
      *
      * @param id auðkennið
