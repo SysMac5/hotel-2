@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Hotel tilviksbreyta í Owner breytt í final.">
+    <list default="true" id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Breytti svo dagsetningar virka">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__apr___2023_11_36_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11__apr___2023_11_36__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepositoryMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/UserRepositoryMock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/backend/iUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/BookingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/booking.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/throunhugbunadar/frontend/booking.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/GG_9.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GG_9.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +220,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="20b3552b-786c-46ea-8dd3-2b940b19e35f" name="Changes" comment="Alls konar tengingar. Nú er hægt að leita af hóteli og líka bóka." />
+      <changelist id="74f809db-f7fd-4dc9-bc40-ff4e70b73b6e" name="Changes" comment="Breytti svo dagsetningar virka" />
       <created>1675987897743</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -230,6 +235,7 @@
       <workItem from="1680878688543" duration="14073000" />
       <workItem from="1681488336072" duration="4205000" />
       <workItem from="1681747958554" duration="2772000" />
+      <workItem from="1681829212253" duration="124000" />
     </task>
     <task id="LOCAL-00001" summary="Viðeigandi skrám bætt við.">
       <created>1676126732678</created>
@@ -467,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Einhverjar breytingar." />
     <MESSAGE value="Breyta HotelRepository í BookingRepository." />
     <MESSAGE value="Lýsingar á föll í HotelRepository." />
     <MESSAGE value="setja inn í howManyAvailable" />
@@ -492,6 +497,7 @@
     <MESSAGE value="Myndir birtast núna." />
     <MESSAGE value="Owner bætt við." />
     <MESSAGE value="Hotel tilviksbreyta í Owner breytt í final." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hotel tilviksbreyta í Owner breytt í final." />
+    <MESSAGE value="Breytti svo dagsetningar virka" />
+    <option name="LAST_COMMIT_MESSAGE" value="Breytti svo dagsetningar virka" />
   </component>
 </project>

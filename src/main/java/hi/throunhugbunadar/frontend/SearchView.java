@@ -166,10 +166,13 @@ public class SearchView implements Initializable {
         java.sql.Date sqlDateArrival = new java.sql.Date(instantArrival.toEpochMilli());
         criteria.arrival = sqlDateArrival;
 
-        LocalDate localDateDeparture = datePickerArrival.getValue();
+        LocalDate localDateDeparture = datePickerDeparture.getValue();
         Instant instantDeparture = localDateDeparture.atStartOfDay(zoneId).toInstant();
         java.sql.Date sqlDateDeparture = new java.sql.Date(instantDeparture.toEpochMilli());
         criteria.departure = sqlDateDeparture;
+
+        System.out.println("localDateArrival: " + localDateArrival);
+        System.out.println("localDateDeparture: " + localDateDeparture);
 
         criteria.guestCount = (int) spinnerGuestCount.getValue();
 

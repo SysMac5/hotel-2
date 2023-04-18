@@ -129,16 +129,16 @@
         </Label>
         <VBox>
             <children>
-                <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                <HBox spacing="20.0">
                     <children>
-                        <VBox spacing="5.0">
+                        <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
                             <children>
-                                <Label prefHeight="25.0" text="Kortanúmer:" />
-                                <Label prefHeight="25.0" text="Gildistími (MM/YY):" />
-                                <Label prefHeight="25.0" text="CVV:" />
+                                <Label maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Kortanúmer:" />
+                                <Label maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Gildistími (MM/YY):" />
+                                <Label maxWidth="1.7976931348623157E308" prefHeight="25.0" text="CVV:" />
                             </children>
                         </VBox>
-                        <VBox prefHeight="200.0" prefWidth="200.0" spacing="5.0">
+                        <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
                             <children>
                                 <TextField fx:id="textFieldCardNumber" />
                                 <HBox alignment="CENTER_LEFT" spacing="5.0">
@@ -154,10 +154,10 @@
                         <VBox alignment="BOTTOM_RIGHT" spacing="10.0">
                             <children>
                                 <Button fx:id="buttonReserve" mnemonicParsing="false" onMouseClicked="#reserveMouseClicked" text="Bóka" />
-                                <Label fx:id="labelAlert" textFill="RED" />
+                                <Label fx:id="labelAlert" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefWidth="150.0" textFill="RED" />
                             </children>
                             <HBox.margin>
-                                <Insets left="175.0" />
+                                <Insets left="125.0" />
                             </HBox.margin>
                         </VBox>
                     </children>
@@ -169,6 +169,6 @@
         </VBox>
     </children>
     <padding>
-        <Insets left="10.0" right="10.0" top="20.0" />
+        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
     </padding>
 </VBox>

@@ -167,9 +167,12 @@ public class BookingView {
         Instant instantArrival = localDateArrival.atStartOfDay(zoneId).toInstant();
         java.sql.Date DateArrival = new java.sql.Date(instantArrival.toEpochMilli());
 
-        LocalDate localDateDeparture = datePickerArrival.getValue();
+        LocalDate localDateDeparture = datePickerDeparture.getValue();
         Instant instantDeparture = localDateDeparture.atStartOfDay(zoneId).toInstant();
         java.sql.Date DateDeparture = new java.sql.Date(instantDeparture.toEpochMilli());
+
+        System.out.println("localDateArrival: " + localDateArrival);
+        System.out.println("localDateDeparture: " + localDateDeparture);
 
         Reservation reservation;
         try {
@@ -179,7 +182,7 @@ public class BookingView {
         }
 
         if(bookingController.reserveRooms(reservation)){
-            labelAlert.setTextFill(Color.web("#00FFFF"));
+            labelAlert.setTextFill(Color.web("#32CD32"));
             labelAlert.setText("Herbergi bókað");
         }
         else{
