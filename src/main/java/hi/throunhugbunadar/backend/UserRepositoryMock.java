@@ -46,4 +46,9 @@ public class UserRepositoryMock implements iUserRepository {
         }
         return false;
     }
+
+    @Override
+    public Owner getOwner(String username) throws Exception {
+        return null;
+    }
 }

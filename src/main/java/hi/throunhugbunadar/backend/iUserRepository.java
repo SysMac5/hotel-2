@@ -17,5 +17,7 @@ public interface iUserRepository {
      * @param user uppfærður notandi
      * @return hvort breyting hafi heppanst
      */
-    boolean updateUser(User user);
+    boolean updateUser(User user) ;
+
+    Owner getOwner(String username) throws Exception;
 }
