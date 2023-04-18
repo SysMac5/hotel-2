@@ -36,7 +36,10 @@ public class UserController {
         User userLoggingIn;
 
         try {
-            userLoggingIn = userRepository.getUser(username);
+            userLoggingIn = userRepository.getOwner(username);
+            if (userLoggingIn == null) {
+                userLoggingIn = userRepository.getUser(username);
+            }
         } catch (Exception e) {
             return false;
         }
