@@ -103,6 +103,7 @@
                             <children>
                                 <Label prefHeight="25.0" text="Raða eftir:" />
                                 <ChoiceBox fx:id="choiceBoxSort" prefWidth="100.0" />
+                                <Button fx:id="buttonSort" mnemonicParsing="false" onMousePressed="#sortMouseClicked" text="Raða" />
                             </children>
                             <padding>
                                 <Insets bottom="5.0" left="5.0" top="10.0" />

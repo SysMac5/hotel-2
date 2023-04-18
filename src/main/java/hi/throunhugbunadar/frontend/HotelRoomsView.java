@@ -16,6 +16,8 @@ import java.sql.Connection;
 
 public class HotelRoomsView {
     @FXML
+    private Button buttonSort;
+    @FXML
     private ChoiceBox<String> choiceBoxSort;
     @FXML
     private Slider sliderMinPrice;
@@ -156,5 +158,17 @@ public class HotelRoomsView {
 
     public void setBookingController(BookingController bookingController) {
         this.bookingController = bookingController;
+    }
+
+    public void sortMouseClicked(MouseEvent mouseEvent) {
+        if (choiceBoxSort.getValue().equals("Verði")) {
+            //hotelList.sortByPrice();
+        } else if (choiceBoxSort.getValue().equals("Stjörnum")) {
+            //hotelList.sortByStars();
+        }
+
+        ObservableList<Hotel> hotelObservableList = FXCollections.observableArrayList(hotelList.getList());
+
+        listViewHotelroomList.setItems(hotelObservableList);
     }
 }

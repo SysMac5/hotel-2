@@ -1,6 +1,9 @@
 package hi.throunhugbunadar.backend;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Listi af hótelherbergjum sem hægt er að sía eftir verði og stjörnum hótela.

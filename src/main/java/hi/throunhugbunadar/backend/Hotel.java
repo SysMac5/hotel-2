@@ -8,7 +8,7 @@ import java.util.List;
  * Hótel.
  */
 
-public class Hotel {
+public class Hotel{
     private final int id;
     private final String name;
     private final String info;
