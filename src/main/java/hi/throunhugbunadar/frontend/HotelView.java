@@ -61,11 +61,23 @@ public class HotelView {
             protected void updateItem(Hotel hotel, boolean empty) {
                 super.updateItem(hotel, empty);
 
+
+
                 if (empty || hotel == null) {
                     setText(null);
                 } else {
                     try {
-                        setText(hotel.getName() + " - " + hotel.getStars() + " stjörnur");
+                        StringBuilder stars = new StringBuilder();
+
+                        for (int i = 0; i < 5; i++) {
+                            if (i < hotel.getStars()) {
+                                stars.append("★");
+                            } else {
+                                stars.append("☆");
+                            }
+                        }
+
+                        setText(hotel.getName() + " - " + stars);
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }

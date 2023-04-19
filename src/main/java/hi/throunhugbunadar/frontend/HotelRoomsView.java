@@ -80,7 +80,17 @@ public class HotelRoomsView {
                     setText(null);
                 } else {
                     try {
-                        setText(hotel.getName() + " - " + hotel.getStars() + " stjörnur - " + hotelList.getPrice(hotel) + " kr nóttin");
+                        StringBuilder stars = new StringBuilder();
+
+                        for (int i = 0; i < 5; i++) {
+                            if (i < hotel.getStars()) {
+                                stars.append("★");
+                            } else {
+                                stars.append("☆");
+                            }
+                        }
+
+                        setText(hotel.getName() + " - " + stars + " - " + hotelList.getPrice(hotel) + " kr nóttin");
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
