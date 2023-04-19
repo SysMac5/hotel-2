@@ -7,7 +7,7 @@ import java.sql.Date;
  */
 
 public class Reservation {
-    private final User user;
+    private final User reservee;
     private final Hotel hotel;
     private final Date arrival;
     private final Date departure;
@@ -17,16 +17,16 @@ public class Reservation {
     /**
      * Smiður fyrir bókunina.
      *
-     * @param user notandinn skrifaður fyrir bókun
+     * @param reservee notandinn skrifaður fyrir bókun
      * @param hotel hótelið
      * @param arrival komudagur
      * @param departure brottfarardagur
      * @param guestsPerRoom fjöldi í hverju herbergi
      * @param numberOfRooms fjöldi herbergja bókuð
      */
-    public Reservation(User user, Hotel hotel, Date arrival, Date departure, int guestsPerRoom, int numberOfRooms) throws Exception {
+    public Reservation(User reservee, Hotel hotel, Date arrival, Date departure, int guestsPerRoom, int numberOfRooms) throws Exception {
         if (arrival.after(departure)) throw new Exception("Arrival before departure.");
-        this.user = user;
+        this.reservee = reservee;
         this.guestsPerRoom = guestsPerRoom;
         this.hotel = hotel;
         this.arrival = arrival;
@@ -40,7 +40,7 @@ public class Reservation {
      * @return notandi
      */
     public User getReservee() {
-        return user;
+        return reservee;
     }
 
     /**
