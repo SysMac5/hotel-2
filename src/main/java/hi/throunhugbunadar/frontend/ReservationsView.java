@@ -37,8 +37,8 @@ public class ReservationsView {
                     setText(null);
                 } else {
                     try {
-                        setText(reservation.getUser().getName() + " | " + reservation.getUser().getPhoneNumber()
-                                + " | " + reservation.getUser().getEmail() + " | " + reservation.getGuestPerRoom()
+                        setText(reservation.getReservee().getName() + " | " + reservation.getReservee().getPhoneNumber()
+                                + " | " + reservation.getReservee().getEmail() + " | " + reservation.getGuestPerRoom()
                                 + ". manna herbergi | " + reservation.getNumberOfRooms() + " herbergi | "
                                 + reservation.getArrival() + " til " + reservation.getDeparture());
                     } catch (Exception e) {

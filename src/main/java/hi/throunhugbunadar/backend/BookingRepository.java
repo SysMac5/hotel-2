@@ -27,7 +27,7 @@ public class BookingRepository implements iBookingRepository {
             statement = connection.prepareStatement("INSERT INTO reservations (id, hotel_rooms_id, user_id, number_of_rooms, arrival_date, departure_date) VALUES (?,?,?,?,?,?)");
             statement.setInt(1, maxId);
             statement.setInt(2, reservation.getHotel().getHotelRoom(reservation.getGuestPerRoom()).getId());
-            statement.setString(3, reservation.getUser().getUsername());
+            statement.setString(3, reservation.getReservee().getUsername());
             statement.setInt(4, reservation.getNumberOfRooms());
             statement.setDate(5, reservation.getArrival());
             statement.setDate(6, reservation.getDeparture());

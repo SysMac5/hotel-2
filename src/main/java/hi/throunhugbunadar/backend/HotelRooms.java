@@ -30,7 +30,7 @@ public class HotelRooms {
      *
      * @return fjöldi herbergja
      */
-    public int getCapacity() {
+    public int getNumberOfRooms() {
         return capacity;
     }
 

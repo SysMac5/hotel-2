@@ -29,7 +29,10 @@ public class BookingController {
      * @return hvort vistun hafi heppnast
      */
     public boolean reserveRooms(Reservation reservation) {
-        return bookingRepository.reserveRooms(reservation);
+        if (howManyAvailable(reservation) > 0) {
+            return bookingRepository.reserveRooms(reservation);
+        }
+        return false;
     }
 
     /**

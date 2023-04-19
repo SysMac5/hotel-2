@@ -128,7 +128,7 @@ public class HotelList {
             public int compare(Hotel h1, Hotel h2) {
                 double stars1 = h1.getStars();
                 double stars2 = h2.getStars();
-                return Double.compare(stars1, stars2);
+                return Double.compare(stars2, stars1);
             }
         });
         return sortedList;

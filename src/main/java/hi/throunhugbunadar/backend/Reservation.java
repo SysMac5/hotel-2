@@ -39,7 +39,7 @@ public class Reservation {
      *
      * @return notandi
      */
-    public User getUser() {
+    public User getReservee() {
         return user;
     }
 
